@@ -24,6 +24,7 @@ if __name__ == '__main__':
                     article = {
                         '_id': name,
                         'path': filepath,
-                        'content': f.read().decode('latin-1')                  }
+                        'content': f.read().decode('latin-1')
+                    }
                     articles.insert(article)
     print(articles.count())
