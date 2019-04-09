@@ -1,0 +1,166 @@
+---
+title: "Article Metadata Summaries"
+author: "Toph Allen"
+date: "4/9/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(magrittr)
+library(knitr)
+library(kableExtra)
+library(scales)
+
+ktable <- function(...) {
+  knitr::kable(table(...)) %>%
+    kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
+                  full_width = FALSE,
+                  position = "left")
+}
+```
+
+```{r load}
+articles <- read_csv("article_sample.csv") %>%
+  select(-X1, -id_types, -keywords)
+id_types <- read_csv("id_types.csv") %>%
+  select(-X1)
+keywords <- read_csv("keywords.csv") %>%
+  select(-X1)
+text_matches <- read_csv("text_matches.csv") %>%
+  select(-X1)
+```
+
+
+## Prevalence of Text Matches
+
+We search for four phrases in the extracted text: "field work", "fieldwork", "field study" and "study site".
+
+Matching articles are a smallish subset of the total, `r sum(articles$any_matches) / nrow(articles) * 100`%.
+
+```{r}
+ktable(articles$any_matches)
+ktable(articles$text_matches)
+```
+
+```{r}
+text_matches %>%
+  filter(!is.na(text_matches)) %>%
+  ggplot(aes(x = factor(text_matches))) +
+  geom_bar(stat = "count") +
+  theme_bw()
+```
+
+## Examining characteristics of the subset
+
+I pulled a few pieces of metadata for our subset of articles. These include:
+
+- What type of article is it?
+- Does it have a `<body>` tag?
+- How long is it?
+- Associated keywords
+- What types of document identifiers does it have?
+
+### Article types
+
+There are many article types, but only a few which are widely used.
+
+```{r}
+articles %<>%
+  mutate(article_type = fct_infreq(article_type))
+ktable(articles$article_type)
+```
+
+```{r}
+articles %>% 
+  group_by(article_type) %>%
+  mutate(n = n()) %>%
+  filter(n > 50) %>%
+  ungroup() %>%
+  ggplot(aes(x = factor(article_type))) +
+  geom_bar() +
+  theme_bw() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+
+```
+
+Does the usage of these differ between the fieldwork subset?
+
+```{r}
+articles %>% 
+  group_by(any_matches) %>%
+  mutate(n_matches = n()) %>%
+  group_by(any_matches, article_type) %>%
+  summarize(type_freq = (n() / n_matches)[1]) %>%
+  ungroup() %>%
+  group_by(article_type) %>%
+  filter(n() > 1) %>%
+  ungroup() %>%
+  ggplot(aes(x = factor(article_type), y = type_freq, fill = any_matches)) +
+  geom_col(position = "dodge") +
+  theme_bw() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+There are more research articles, and fewer of everything else.
+
+### Presence of `<body>` tag
+
+```{r}
+ktable(articles$has_body)
+ktable(articles$article_type, articles$has_body)
+```
+
+### Length
+
+```{r}
+types <- articles %>%
+  group_by(any_matches) %>%
+  mutate(match_n = n()) %>%
+  group_by(article_type) %>%
+  mutate(type_n = n()) %>%
+  group_by(any_matches, article_type) %>%
+  summarize(match_x_type = n(),
+            match_n = match_n[1],
+            type_n = type_n[1]) %>%
+  ungroup() %>%
+  mutate(x_over_match = match_x_type / match_n,
+         x_over_type = match_x_type / type_n)
+
+type_filter <- types %>%
+  filter(x_over_match > 0.005) %>%
+  group_by(article_type) %>%
+  filter(n() > 1) %>%
+  pull(article_type) %>%
+  unique()
+```
+
+```{r}
+ggplot(articles, aes(x = text_length)) +
+  geom_density() +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+ggplot(articles, aes(x = text_length, fill = any_matches)) +
+  geom_density(alpha = 0.5) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+articles %>%
+  group_by(article_type) %>%
+  filter(n() > 100) %>%
+  ggplot(aes(x = text_length, fill = article_type)) +
+  geom_density(alpha = 0.25) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+articles %>%
+  filter(article_type %in% type_filter) %>%
+  ggplot(aes(x = text_length, fill = article_type)) +
+  geom_density(alpha = 0.25) +
+  scale_x_log10(labels = comma) +
+  facet_grid(article_type ~ any_matches) +
+  theme_bw()
+```
