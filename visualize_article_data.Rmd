@@ -12,6 +12,7 @@ library(magrittr)
 library(knitr)
 library(kableExtra)
 library(scales)
+library(here)
 
 ktable <- function(...) {
   knitr::kable(table(...)) %>%
@@ -22,13 +23,13 @@ ktable <- function(...) {
 ```
 
 ```{r load}
-articles <- read_csv("article_sample.csv") %>%
+articles <- read_csv(here("data", "articles.csv")) %>%
   select(-X1, -id_types, -keywords)
-id_types <- read_csv("id_types.csv") %>%
+id_types <- read_csv(here("data", "id_types.csv")) %>%
   select(-X1)
-keywords <- read_csv("keywords.csv") %>%
+keywords <- read_csv(here("data", "keywords.csv")) %>%
   select(-X1)
-text_matches <- read_csv("text_matches.csv") %>%
+text_matches <- read_csv(here("data", "text_matches.csv")) %>%
   select(-X1)
 ```
 
