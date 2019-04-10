@@ -31,14 +31,10 @@ if __name__ == "__main__":
 
     count = articles.count_documents({})
     cursor = articles.find({})
-
     reporter = Reporter(25, count)
-
     rows = []
 
     for idx, record in enumerate(cursor):
-        reporter.report(idx)
-
         row = {}
         article = Article(record["xml"])
 
@@ -53,6 +49,7 @@ if __name__ == "__main__":
         row["text_length"] = len(record["extracted_text"])
 
         rows.append(row)
+        reporter.report(idx)
 
     article_df = pd.DataFrame.from_records(rows)
     article_df["any_matches"] = [False if row is None else True for row in article_df["text_matches"]]

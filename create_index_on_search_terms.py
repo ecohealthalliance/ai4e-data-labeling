@@ -8,36 +8,31 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-p", "--pmc_path", default="pmc", dest="pmc_path"
-    )
-    parser.add_argument(
-        "-n", default=1000, dest="n", type=int
-    )
-    parser.add_argument(
         "--mongo_host", default="localhost", dest="mongo_host"
     )
     parser.add_argument(
         "--mongo_port", default=27017
     )
     parser.add_argument(
-        "-t",
-        "--terms",
-        default=["field work",
-                 "fieldwork",
-                 "field study",
-                 "study site"],
-        nargs="+",
-        dest="terms")
-
+        "--drop_matches", action="store_true", dest="drop_matches"
+    )
     args = parser.parse_args()
-    terms = args.terms
-
     articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
+    
+    with open("terms") as f:
+        terms = [line.strip() for line in f.readlines()]
 
     print("Creating text index...")
 
     # Make sure we have a text index
     articles.create_index([("extracted_text", pymongo.TEXT,)])
+
+    if args.drop_matches:
+        print("Dropping previously-matched terms...")
+        articles.update_many(
+            filter={},
+            update={ "$unset": { "text_matches": "" } }
+        )
 
     print("Searching for terms:")
 

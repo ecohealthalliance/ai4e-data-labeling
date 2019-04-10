@@ -4,6 +4,8 @@ Toph Allen
 4/9/2019
 
 ``` r
+terms <- read_lines("terms")
+
 articles <- read_csv(here("data", "articles.csv")) %>%
   select(-X1, -id_types, -keywords)
 id_types <- read_csv(here("data", "id_types.csv")) %>%
@@ -21,10 +23,12 @@ geonames <- read_csv(here("data", "geonames.csv")) %>%
 We searched for four terms in the extracted text of articles, using
 MongoDB’s text search capabilities. We think these terms will select
 articles which have a fieldwork component over those that don’t. The
-terms used are: `["field work", "fieldwork", "field study", "study
-site"]`.
+terms used are: field work, fieldwork, field study, field site, field
+area, study site, study location, study area, research site, research
+location, research area, sampling site, sampling location, sampling
+area.
 
-Matching articles are a smallish subset of the total, 2.346%.
+Matching articles are a smallish subset of the total, 4.952%.
 
 ``` r
 ktable(articles$any_matches)
@@ -64,7 +68,7 @@ FALSE
 
 <td style="text-align:right;">
 
-48827
+47524
 
 </td>
 
@@ -80,7 +84,7 @@ TRUE
 
 <td style="text-align:right;">
 
-1173
+2476
 
 </td>
 
@@ -91,8 +95,10 @@ TRUE
 </table>
 
 ``` r
-ktable(articles$text_matches)
+ktable(articles$text_matches) %>% scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -100,13 +106,13 @@ ktable(articles$text_matches)
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 Var1
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 Freq
 
@@ -122,13 +128,591 @@ Freq
 
 <td style="text-align:left;">
 
+\[‘field area’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field area’, ‘study site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+22
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study area’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study location’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study area’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
+area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study location’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+31
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’, ‘study site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
+area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field study’, ‘study site’\]
 
 </td>
 
 <td style="text-align:right;">
 
-20
+7
 
 </td>
 
@@ -144,7 +728,7 @@ Freq
 
 <td style="text-align:right;">
 
-85
+63
 
 </td>
 
@@ -154,7 +738,39 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field work’, ‘field study’, ‘study site’\]
+\[‘field work’, ‘field site’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘field study’, ‘field site’, ‘study site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘field study’, ‘study area’, ‘sampling site’\]
 
 </td>
 
@@ -176,6 +792,103 @@ Freq
 
 <td style="text-align:right;">
 
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field site’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field site’, ‘study site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘study site’, ‘sampling site’, ‘sampling
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
 3
 
 </td>
@@ -192,7 +905,7 @@ Freq
 
 <td style="text-align:right;">
 
-8
+2
 
 </td>
 
@@ -208,7 +921,183 @@ Freq
 
 <td style="text-align:right;">
 
-16
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+20
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study area’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+10
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -224,7 +1113,7 @@ Freq
 
 <td style="text-align:right;">
 
-32
+16
 
 </td>
 
@@ -240,7 +1129,7 @@ Freq
 
 <td style="text-align:right;">
 
-101
+74
 
 </td>
 
@@ -250,13 +1139,110 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘fieldwork’, ‘field study’, ‘study site’\]
+\[‘fieldwork’, ‘field site’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field site’, ‘study site’, ‘research location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field site’\]
 
 </td>
 
 <td style="text-align:right;">
 
 2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field study’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field study’, ‘study site’, ‘study area’, ‘sampling
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field study’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -272,7 +1258,281 @@ Freq
 
 <td style="text-align:right;">
 
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+22
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study location’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
 2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
+area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+17
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study location’, ‘study area’, ‘sampling
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -288,7 +1548,7 @@ Freq
 
 <td style="text-align:right;">
 
-37
+14
 
 </td>
 
@@ -304,7 +1564,857 @@ Freq
 
 <td style="text-align:right;">
 
-166
+123
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+255
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘research location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘research site’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘research site’, ‘research location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+35
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+39
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+61
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+11
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+32
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+126
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research area’, ‘sampling site’, ‘sampling location’,
+‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+12
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+7
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+28
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+497
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘study area’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+12
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+61
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘research location’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘research location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘research site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+18
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘research area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling site’, ‘sampling location’,
+‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+17
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+118
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study location’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+8
 
 </td>
 
@@ -320,7 +2430,7 @@ Freq
 
 <td style="text-align:right;">
 
-700
+474
 
 </td>
 
@@ -329,6 +2439,8 @@ Freq
 </tbody>
 
 </table>
+
+</div>
 
 ``` r
 text_matches %>%
@@ -358,8 +2470,10 @@ There are many article types, but only a few which are widely used.
 ``` r
 articles %<>%
   mutate(article_type = fct_infreq(article_type))
-ktable(articles$article_type)
+ktable(articles$article_type) %>% scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -367,13 +2481,13 @@ ktable(articles$article_type)
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 Var1
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 Freq
 
@@ -917,6 +3031,8 @@ index
 
 </table>
 
+</div>
+
 ``` r
 articles %>% 
   group_by(article_type) %>%
@@ -1018,8 +3134,10 @@ TRUE
 </table>
 
 ``` r
-ktable(articles$article_type, articles$has_body)
+ktable(articles$article_type, articles$has_body) %>% scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -1027,17 +3145,17 @@ ktable(articles$article_type, articles$has_body)
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 FALSE
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 TRUE
 
@@ -1779,6 +3897,8 @@ index
 
 </table>
 
+</div>
+
 ### Length
 
 ``` r
@@ -1869,7 +3989,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 57.63001
+    ## [1] 58.52181
 
 For those not matching fieldwork terms:
 
@@ -1884,7 +4004,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 50.94108
+    ## [1] 50.71122
 
 These are the top twenty-five keywords used in all documents:
 
@@ -1898,8 +4018,11 @@ keyword_summary <- keywords %>%
 knitr::kable(keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -1907,13 +4030,13 @@ knitr::kable(keyword_summary) %>%
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 keywords
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 n
 
@@ -2329,6 +4452,8 @@ metastasis
 
 </table>
 
+</div>
+
 For those matching fieldwork terms:
 
 ``` r
@@ -2342,8 +4467,11 @@ fw_keyword_summary <- keywords %>%
 knitr::kable(fw_keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -2351,13 +4479,13 @@ knitr::kable(fw_keyword_summary) %>%
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 keywords
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 n
 
@@ -2379,7 +4507,7 @@ Malaria
 
 <td style="text-align:right;">
 
-19
+30
 
 </td>
 
@@ -2395,55 +4523,7 @@ HIV
 
 <td style="text-align:right;">
 
-18
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Plasmodium falciparum
-
-</td>
-
-<td style="text-align:right;">
-
-10
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-South Africa
-
-</td>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Tuberculosis
-
-</td>
-
-<td style="text-align:right;">
-
-9
+21
 
 </td>
 
@@ -2459,39 +4539,7 @@ epidemiology
 
 <td style="text-align:right;">
 
-8
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-India
-
-</td>
-
-<td style="text-align:right;">
-
-7
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Africa
-
-</td>
-
-<td style="text-align:right;">
-
-6
+19
 
 </td>
 
@@ -2507,103 +4555,7 @@ Ethiopia
 
 <td style="text-align:right;">
 
-6
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-HIV/AIDS
-
-</td>
-
-<td style="text-align:right;">
-
-6
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-malaria
-
-</td>
-
-<td style="text-align:right;">
-
-6
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-obesity
-
-</td>
-
-<td style="text-align:right;">
-
-6
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Adolescents
-
-</td>
-
-<td style="text-align:right;">
-
-5
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-children
-
-</td>
-
-<td style="text-align:right;">
-
-5
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-China
-
-</td>
-
-<td style="text-align:right;">
-
-5
+18
 
 </td>
 
@@ -2619,7 +4571,7 @@ Epidemiology
 
 <td style="text-align:right;">
 
-5
+17
 
 </td>
 
@@ -2629,13 +4581,13 @@ Epidemiology
 
 <td style="text-align:left;">
 
-Europe
+Plasmodium falciparum
 
 </td>
 
 <td style="text-align:right;">
 
-5
+15
 
 </td>
 
@@ -2645,13 +4597,13 @@ Europe
 
 <td style="text-align:left;">
 
-influenza
+India
 
 </td>
 
 <td style="text-align:right;">
 
-5
+14
 
 </td>
 
@@ -2661,13 +4613,13 @@ influenza
 
 <td style="text-align:left;">
 
-Randomised controlled trial
+Africa
 
 </td>
 
 <td style="text-align:right;">
 
-5
+13
 
 </td>
 
@@ -2677,13 +4629,13 @@ Randomised controlled trial
 
 <td style="text-align:left;">
 
-Sub-Saharan Africa
+children
 
 </td>
 
 <td style="text-align:right;">
 
-5
+12
 
 </td>
 
@@ -2693,13 +4645,13 @@ Sub-Saharan Africa
 
 <td style="text-align:left;">
 
-Treatment
+malaria
 
 </td>
 
 <td style="text-align:right;">
 
-5
+12
 
 </td>
 
@@ -2709,13 +4661,13 @@ Treatment
 
 <td style="text-align:left;">
 
-Uganda
+Mental health
 
 </td>
 
 <td style="text-align:right;">
 
-5
+12
 
 </td>
 
@@ -2725,13 +4677,13 @@ Uganda
 
 <td style="text-align:left;">
 
-Vaccination
+Prevalence
 
 </td>
 
 <td style="text-align:right;">
 
-5
+12
 
 </td>
 
@@ -2741,13 +4693,45 @@ Vaccination
 
 <td style="text-align:left;">
 
-antiretroviral therapy
+South Africa
 
 </td>
 
 <td style="text-align:right;">
 
-4
+12
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Tuberculosis
+
+</td>
+
+<td style="text-align:right;">
+
+11
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Tanzania
+
+</td>
+
+<td style="text-align:right;">
+
+10
 
 </td>
 
@@ -2763,7 +4747,151 @@ Brazil
 
 <td style="text-align:right;">
 
-4
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+China
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Europe
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Iran
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Obesity
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+viruses
+
+</td>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Adolescents
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GIS
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+influenza
+
+</td>
+
+<td style="text-align:right;">
+
+8
 
 </td>
 
@@ -2772,6 +4900,8 @@ Brazil
 </tbody>
 
 </table>
+
+</div>
 
 And those with no matches for fieldwork terms:
 
@@ -2786,8 +4916,11 @@ nofw_keyword_summary <- keywords %>%
 knitr::kable(nofw_keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
 ```
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
 
@@ -2795,13 +4928,13 @@ knitr::kable(nofw_keyword_summary) %>%
 
 <tr>
 
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 
 keywords
 
 </th>
 
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 
 n
 
@@ -2823,23 +4956,7 @@ inflammation
 
 <td style="text-align:right;">
 
-174
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-breast cancer
-
-</td>
-
-<td style="text-align:right;">
-
-172
+173
 
 </td>
 
@@ -2855,7 +4972,23 @@ apoptosis
 
 <td style="text-align:right;">
 
-171
+170
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+breast cancer
+
+</td>
+
+<td style="text-align:right;">
+
+169
 
 </td>
 
@@ -2871,7 +5004,7 @@ cancer
 
 <td style="text-align:right;">
 
-162
+157
 
 </td>
 
@@ -2887,7 +5020,7 @@ HIV
 
 <td style="text-align:right;">
 
-145
+142
 
 </td>
 
@@ -2903,7 +5036,7 @@ prognosis
 
 <td style="text-align:right;">
 
-138
+137
 
 </td>
 
@@ -2919,39 +5052,7 @@ Breast cancer
 
 <td style="text-align:right;">
 
-119
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Epidemiology
-
-</td>
-
-<td style="text-align:right;">
-
-113
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Obesity
-
-</td>
-
-<td style="text-align:right;">
-
-108
+118
 
 </td>
 
@@ -2983,22 +5084,6 @@ oxidative stress
 
 <td style="text-align:right;">
 
-106
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-meta-analysis
-
-</td>
-
-<td style="text-align:right;">
-
 105
 
 </td>
@@ -3015,7 +5100,55 @@ Inflammation
 
 <td style="text-align:right;">
 
-103
+102
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+meta-analysis
+
+</td>
+
+<td style="text-align:right;">
+
+102
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Obesity
+
+</td>
+
+<td style="text-align:right;">
+
+102
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Epidemiology
+
+</td>
+
+<td style="text-align:right;">
+
+101
 
 </td>
 
@@ -3031,23 +5164,7 @@ children
 
 <td style="text-align:right;">
 
-100
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-epidemiology
-
-</td>
-
-<td style="text-align:right;">
-
-94
+93
 
 </td>
 
@@ -3063,7 +5180,7 @@ colorectal cancer
 
 <td style="text-align:right;">
 
-93
+92
 
 </td>
 
@@ -3079,7 +5196,7 @@ depression
 
 <td style="text-align:right;">
 
-89
+88
 
 </td>
 
@@ -3111,7 +5228,7 @@ aging
 
 <td style="text-align:right;">
 
-86
+85
 
 </td>
 
@@ -3121,39 +5238,7 @@ aging
 
 <td style="text-align:left;">
 
-Children
-
-</td>
-
-<td style="text-align:right;">
-
-86
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-microRNA
-
-</td>
-
-<td style="text-align:right;">
-
-86
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Iran
+epidemiology
 
 </td>
 
@@ -3169,13 +5254,13 @@ Iran
 
 <td style="text-align:left;">
 
-Alzheimer’s disease
+microRNA
 
 </td>
 
 <td style="text-align:right;">
 
-82
+83
 
 </td>
 
@@ -3201,6 +5286,38 @@ Prognosis
 
 <td style="text-align:left;">
 
+Alzheimer’s disease
+
+</td>
+
+<td style="text-align:right;">
+
+80
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+80
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 metastasis
 
 </td>
@@ -3213,9 +5330,271 @@ metastasis
 
 </tr>
 
+<tr>
+
+<td style="text-align:left;">
+
+Iran
+
+</td>
+
+<td style="text-align:right;">
+
+76
+
+</td>
+
+</tr>
+
 </tbody>
 
 </table>
+
+</div>
+
+And per fieldwork term:
+
+``` r
+kwd_x_match <- keywords %>%
+  left_join(select(articles, id, text_matches), by = "id") %>%
+  mutate(text_matches = replace_na(text_matches, ""))
+
+for (term in terms) {
+  print(paste("Term: ", term))
+  kwd_x_match %>%
+    filter(map_lgl(kwd_x_match$text_matches, ~str_detect(.x, fixed(term)))) %>%
+    group_by(keywords) %>%
+    summarize(n = n()) %>%
+    arrange(desc(n)) %>%
+    print()
+    print("\n")
+}
+```
+
+    ## [1] "Term:  field work"
+    ## # A tibble: 481 x 2
+    ##    keywords            n
+    ##    <chr>           <int>
+    ##  1 India               4
+    ##  2 Malaria             3
+    ##  3 epidemiology        2
+    ##  4 Ghana               2
+    ##  5 HIV/AIDS            2
+    ##  6 Kenya               2
+    ##  7 Loop migration      2
+    ##  8 malaria             2
+    ##  9 Mayotte             2
+    ## 10 microsatellites     2
+    ## # … with 471 more rows
+    ## [1] "\n"
+    ## [1] "Term:  fieldwork"
+    ## # A tibble: 762 x 2
+    ##    keywords           n
+    ##    <chr>          <int>
+    ##  1 South Africa       6
+    ##  2 HIV                5
+    ##  3 Africa             3
+    ##  4 hypertension       3
+    ##  5 Malawi             3
+    ##  6 obesity            3
+    ##  7 Brazil             2
+    ##  8 children           2
+    ##  9 climate change     2
+    ## 10 dispersal          2
+    ## # … with 752 more rows
+    ## [1] "\n"
+    ## [1] "Term:  field study"
+    ## # A tibble: 356 x 2
+    ##    keywords              n
+    ##    <chr>             <int>
+    ##  1 Epidemiology          3
+    ##  2 Malaria               3
+    ##  3 Chiroptera            2
+    ##  4 Drug resistance       2
+    ##  5 Europe                2
+    ##  6 health                2
+    ##  7 Mosquito              2
+    ##  8 seed treatment        2
+    ##  9 West Nile virus       2
+    ## 10 “quiet” courtyard     1
+    ## # … with 346 more rows
+    ## [1] "\n"
+    ## [1] "Term:  field site"
+    ## # A tibble: 250 x 2
+    ##    keywords                     n
+    ##    <chr>                    <int>
+    ##  1 Malaria                      3
+    ##  2 Malawi                       2
+    ##  3 "\nAnthophila\n"             1
+    ##  4 "\nApoidea\n"                1
+    ##  5 Acacia longifolia            1
+    ##  6 Acoustic communication       1
+    ##  7 Acoustic tracking            1
+    ##  8 adaptive landscape           1
+    ##  9 Aerial photography           1
+    ## 10 agricultural abandonment     1
+    ## # … with 240 more rows
+    ## [1] "\n"
+    ## [1] "Term:  field area"
+    ## # A tibble: 57 x 2
+    ##    keywords           n
+    ##    <chr>          <int>
+    ##  1 Antioxidants       1
+    ##  2 Archaea            1
+    ##  3 asymmetry          1
+    ##  4 Axis selective     1
+    ##  5 axon               1
+    ##  6 breast cancer      1
+    ##  7 breast dose        1
+    ##  8 C5aR1              1
+    ##  9 Cancer             1
+    ## 10 cancer therapy     1
+    ## # … with 47 more rows
+    ## [1] "\n"
+    ## [1] "Term:  study site"
+    ## # A tibble: 2,244 x 2
+    ##    keywords                   n
+    ##    <chr>                  <int>
+    ##  1 HIV                       16
+    ##  2 Malaria                   14
+    ##  3 Plasmodium falciparum      9
+    ##  4 Tuberculosis               7
+    ##  5 epidemiology               6
+    ##  6 Ethiopia                   5
+    ##  7 South Africa               5
+    ##  8 Adolescents                4
+    ##  9 antiretroviral therapy     4
+    ## 10 Europe                     4
+    ## # … with 2,234 more rows
+    ## [1] "\n"
+    ## [1] "Term:  study location"
+    ## # A tibble: 327 x 2
+    ##    keywords                       n
+    ##    <chr>                      <int>
+    ##  1 Activities of daily living     2
+    ##  2 Disability                     2
+    ##  3 Epidemiology                   2
+    ##  4 Malaria                        2
+    ##  5 Malaysia                       2
+    ##  6 meta-analysis                  2
+    ##  7 Meta-analysis                  2
+    ##  8 Obesity                        2
+    ##  9 Physical activity              2
+    ## 10 Prevalence                     2
+    ## # … with 317 more rows
+    ## [1] "\n"
+    ## [1] "Term:  study area"
+    ## # A tibble: 2,364 x 2
+    ##    keywords                  n
+    ##    <chr>                 <int>
+    ##  1 Ethiopia                 18
+    ##  2 Malaria                  17
+    ##  3 Epidemiology             10
+    ##  4 epidemiology              9
+    ##  5 malaria                   9
+    ##  6 Iran                      7
+    ##  7 Prevalence                7
+    ##  8 GIS                       6
+    ##  9 India                     6
+    ## 10 Plasmodium falciparum     6
+    ## # … with 2,354 more rows
+    ## [1] "\n"
+    ## [1] "Term:  research site"
+    ## # A tibble: 208 x 2
+    ##    keywords                      n
+    ##    <chr>                     <int>
+    ##  1 expectations                  2
+    ##  2 Mental health                 2
+    ##  3 Pilot study                   2
+    ##  4 qualitative research          2
+    ##  5 accelerated EPI               1
+    ##  6 Adolescent girls              1
+    ##  7 Africa                        1
+    ##  8 African American              1
+    ##  9 agrobiodiversity              1
+    ## 10 AHA Scientific Statements     1
+    ## # … with 198 more rows
+    ## [1] "\n"
+    ## [1] "Term:  research location"
+    ## # A tibble: 38 x 2
+    ##    keywords                 n
+    ##    <chr>                <int>
+    ##  1 indoor air pollution     2
+    ##  2 particulate matter       2
+    ##  3 PM2.5                    2
+    ##  4 Aged                     1
+    ##  5 Aged, 80 and Over        1
+    ##  6 Androgenic alopecia      1
+    ##  7 biomass fuels            1
+    ##  8 Caregivers               1
+    ##  9 Case study               1
+    ## 10 casino                   1
+    ## # … with 28 more rows
+    ## [1] "\n"
+    ## [1] "Term:  research area"
+    ## # A tibble: 1,091 x 2
+    ##    keywords                n
+    ##    <chr>               <int>
+    ##  1 Mental health           6
+    ##  2 cancer                  4
+    ##  3 Bioinformatics          3
+    ##  4 Europe                  3
+    ##  5 microRNA                3
+    ##  6 Parkinson’s disease     3
+    ##  7 Peer review             3
+    ##  8 Bacteria                2
+    ##  9 bacteriophage           2
+    ## 10 big data                2
+    ## # … with 1,081 more rows
+    ## [1] "\n"
+    ## [1] "Term:  sampling site"
+    ## # A tibble: 843 x 2
+    ##    keywords                             n
+    ##    <chr>                            <int>
+    ##  1 Genetic diversity                    4
+    ##  2 16S rRNA gene                        3
+    ##  3 bacteria                             3
+    ##  4 Biodiversity                         3
+    ##  5 Genetic structure                    3
+    ##  6 16S rRNA                             2
+    ##  7 Adaptive radiation                   2
+    ##  8 Allergy                              2
+    ##  9 Ammonia-oxidizing archaea (AOA)      2
+    ## 10 Ammonia-oxidizing bacteria (AOB)     2
+    ## # … with 833 more rows
+    ## [1] "\n"
+    ## [1] "Term:  sampling location"
+    ## # A tibble: 509 x 2
+    ##    keywords                      n
+    ##    <chr>                     <int>
+    ##  1 16S rRNA gene                 3
+    ##  2 adaptation                    2
+    ##  3 Air                           2
+    ##  4 Antarctica                    2
+    ##  5 Brazil                        2
+    ##  6 Crustacea                     2
+    ##  7 Effective population size     2
+    ##  8 environmental assessment      2
+    ##  9 Genetic diversity             2
+    ## 10 particulate matter            2
+    ## # … with 499 more rows
+    ## [1] "\n"
+    ## [1] "Term:  sampling area"
+    ## # A tibble: 302 x 2
+    ##    keywords                      n
+    ##    <chr>                     <int>
+    ##  1 bacteria                      2
+    ##  2 16S rRNA metagenome           1
+    ##  3 A. incertus                   1
+    ##  4 abundance                     1
+    ##  5 Acanthuridae                  1
+    ##  6 Adolescent                    1
+    ##  7 adult Anura                   1
+    ##  8 African buffaloes             1
+    ##  9 agricultural activity         1
+    ## 10 Al2O3–ZrO2 nanocomposites     1
+    ## # … with 292 more rows
+    ## [1] "\n"
 
 ## GeoNames
 
@@ -3226,37 +5605,37 @@ geonames in them than those that don’t.
 summary(geonames)
 ```
 
-    ##     n_spans        n_spans_over90   text_matches       any_matches    
-    ##  Min.   :   0.00   Min.   :  0.00   Length:500         Mode :logical  
-    ##  1st Qu.:   5.00   1st Qu.:  1.00   Class :character   FALSE:250      
-    ##  Median :  13.00   Median :  4.00   Mode  :character   TRUE :250      
-    ##  Mean   :  32.36   Mean   : 12.16                                     
-    ##  3rd Qu.:  32.00   3rd Qu.: 12.00                                     
-    ##  Max.   :2448.00   Max.   :680.00
-
-``` r
-geonames %>% filter(any_matches == FALSE) %>% summary
-```
-
-    ##     n_spans       n_spans_over90   text_matches       any_matches    
-    ##  Min.   :  0.00   Min.   : 0.000   Length:250         Mode :logical  
-    ##  1st Qu.:  2.00   1st Qu.: 0.000   Class :character   FALSE:250      
-    ##  Median :  7.00   Median : 1.000   Mode  :character                  
-    ##  Mean   : 12.51   Mean   : 5.088                                     
-    ##  3rd Qu.: 15.00   3rd Qu.: 5.000                                     
-    ##  Max.   :107.00   Max.   :59.000
+    ##     n_spans       n_spans_over90    text_matches       any_matches    
+    ##  Min.   :  0.00   Min.   :  0.000   Length:600         Mode :logical  
+    ##  1st Qu.:  4.00   1st Qu.:  1.000   Class :character   FALSE:300      
+    ##  Median : 12.00   Median :  3.000   Mode  :character   TRUE :300      
+    ##  Mean   : 24.92   Mean   :  9.372                                     
+    ##  3rd Qu.: 29.00   3rd Qu.: 11.000                                     
+    ##  Max.   :647.00   Max.   :211.000
 
 ``` r
 geonames %>% filter(any_matches == TRUE) %>% summary
 ```
 
-    ##     n_spans        n_spans_over90   text_matches       any_matches   
-    ##  Min.   :   0.00   Min.   :  0.00   Length:250         Mode:logical  
-    ##  1st Qu.:  11.00   1st Qu.:  3.00   Class :character   TRUE:250      
-    ##  Median :  24.00   Median :  8.00   Mode  :character                 
-    ##  Mean   :  52.20   Mean   : 19.24                                    
-    ##  3rd Qu.:  45.75   3rd Qu.: 20.00                                    
-    ##  Max.   :2448.00   Max.   :680.00
+    ##     n_spans       n_spans_over90   text_matches       any_matches   
+    ##  Min.   :  0.00   Min.   :  0.00   Length:300         Mode:logical  
+    ##  1st Qu.: 10.00   1st Qu.:  2.00   Class :character   TRUE:300      
+    ##  Median : 22.00   Median :  6.00   Mode  :character                 
+    ##  Mean   : 37.94   Mean   : 13.66                                    
+    ##  3rd Qu.: 38.00   3rd Qu.: 16.00                                    
+    ##  Max.   :647.00   Max.   :188.00
+
+``` r
+geonames %>% filter(any_matches == FALSE) %>% summary
+```
+
+    ##     n_spans       n_spans_over90    text_matches       any_matches    
+    ##  Min.   :  0.00   Min.   :  0.000   Length:300         Mode :logical  
+    ##  1st Qu.:  1.00   1st Qu.:  0.000   Class :character   FALSE:300      
+    ##  Median :  6.00   Median :  1.000   Mode  :character                  
+    ##  Mean   : 11.91   Mean   :  5.083                                     
+    ##  3rd Qu.: 14.00   3rd Qu.:  5.000                                     
+    ##  Max.   :240.00   Max.   :211.000
 
 ## Summary
 

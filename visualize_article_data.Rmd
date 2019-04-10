@@ -24,6 +24,8 @@ ktable <- function(...) {
 ```
 
 ```{r load}
+terms <- read_lines("terms")
+
 articles <- read_csv(here("data", "articles.csv")) %>%
   select(-X1, -id_types, -keywords)
 id_types <- read_csv(here("data", "id_types.csv")) %>%
@@ -39,13 +41,13 @@ geonames <- read_csv(here("data", "geonames.csv")) %>%
 
 ## Prevalence of Text Matches
 
-We searched for four terms in the extracted text of articles, using MongoDB's text search capabilities. We think these terms will select articles which have a fieldwork component over those that don't. The terms used are: `["field work", "fieldwork", "field study", "study site"]`.
+We searched for four terms in the extracted text of articles, using MongoDB's text search capabilities. We think these terms will select articles which have a fieldwork component over those that don't. The terms used are: `r terms`.
 
 Matching articles are a smallish subset of the total, `r sum(articles$any_matches) / nrow(articles) * 100`%.
 
 ```{r text_matches_1}
 ktable(articles$any_matches)
-ktable(articles$text_matches)
+ktable(articles$text_matches) %>% scroll_box(height = "400px")
 ```
 
 ```{r text_matches_2}
@@ -73,7 +75,7 @@ There are many article types, but only a few which are widely used.
 ```{r article_types_1}
 articles %<>%
   mutate(article_type = fct_infreq(article_type))
-ktable(articles$article_type)
+ktable(articles$article_type) %>% scroll_box(height = "400px")
 ```
 
 ```{r article_types_2}
@@ -110,7 +112,7 @@ There are more research articles, and fewer of everything else.
 
 ```{r body_tag}
 ktable(articles$has_body)
-ktable(articles$article_type, articles$has_body)
+ktable(articles$article_type, articles$has_body) %>% scroll_box(height = "400px")
 ```
 
 ### Length
@@ -215,7 +217,8 @@ keyword_summary <- keywords %>%
 knitr::kable(keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
 ```
 
 For those matching fieldwork terms:
@@ -231,7 +234,8 @@ fw_keyword_summary <- keywords %>%
 knitr::kable(fw_keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
 ```
 
 And those with no matches for fieldwork terms:
@@ -247,7 +251,27 @@ nofw_keyword_summary <- keywords %>%
 knitr::kable(nofw_keyword_summary) %>%
   kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
                 full_width = FALSE,
-                position = "left")
+                position = "left") %>%
+  scroll_box(height = "400px")
+```
+
+And per fieldwork term:
+
+```{r keywords_7}
+kwd_x_match <- keywords %>%
+  left_join(select(articles, id, text_matches), by = "id") %>%
+  mutate(text_matches = replace_na(text_matches, ""))
+
+for (term in terms) {
+  print(paste("Term: ", term))
+  kwd_x_match %>%
+    filter(map_lgl(kwd_x_match$text_matches, ~str_detect(.x, fixed(term)))) %>%
+    group_by(keywords) %>%
+    summarize(n = n()) %>%
+    arrange(desc(n)) %>%
+    print()
+    print("\n")
+}
 ```
 
 
@@ -257,8 +281,8 @@ It looks like articles that match the fieldwork terms have many more geonames in
 
 ```{r geonames}
 summary(geonames)
-geonames %>% filter(any_matches == FALSE) %>% summary
 geonames %>% filter(any_matches == TRUE) %>% summary
+geonames %>% filter(any_matches == FALSE) %>% summary
 ```
 
 
