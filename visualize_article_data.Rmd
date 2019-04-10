@@ -84,10 +84,6 @@ articles %>%
   theme_bw() + theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-```{r}
-
-```
-
 Does the usage of these differ between the fieldwork subset?
 
 ```{r}
@@ -160,8 +156,103 @@ articles %>%
 articles %>%
   filter(article_type %in% type_filter) %>%
   ggplot(aes(x = text_length, fill = article_type)) +
-  geom_density(alpha = 0.25) +
+  geom_density() +
   scale_x_log10(labels = comma) +
   facet_grid(article_type ~ any_matches) +
   theme_bw()
 ```
+
+
+### Usage of Keywords
+
+```{r}
+keywords_per_paper <- keywords %>%
+  group_by(id) %>%
+  summarize(any_matches = unique(any_matches),
+            n = n())
+```
+
+A total of `r nrow(keywords_per_paper)` papers out of `r nrow(articles)` (`r nrow(keywords_per_paper)/nrow(articles) * 100`%) had keywords.
+
+For those matching fieldwork terms:
+
+```{r}
+k <- keywords_per_paper %>%
+  filter(any_matches == TRUE) %>%
+  nrow()
+nk <- articles %>%
+  filter(any_matches == TRUE) %>%
+  nrow()
+
+k / nk * 100
+```
+
+For those not matching fieldwork terms:
+
+```{r}
+k <- keywords_per_paper %>%
+  filter(any_matches == FALSE) %>%
+  nrow()
+nk <- articles %>%
+  filter(any_matches == FALSE) %>%
+  nrow()
+
+k / nk * 100
+```
+
+These are the top twenty-five keywords used in all documents:
+
+```{r}
+keyword_summary <- keywords %>%
+  group_by(keywords) %>%
+  summarize(n = n()) %>%
+  arrange(-n) %>%
+  head(25)
+
+knitr::kable(keyword_summary) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
+                full_width = FALSE,
+                position = "left")
+```
+
+For those matching fieldwork terms:
+
+```{r}
+fw_keyword_summary <- keywords %>%
+  filter(any_matches == TRUE) %>%
+  group_by(keywords) %>%
+  summarize(n = n()) %>%
+  arrange(-n) %>%
+  head(25)
+
+knitr::kable(fw_keyword_summary) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
+                full_width = FALSE,
+                position = "left")
+```
+
+And those with no matches for fieldwork terms:
+
+```{r}
+nofw_keyword_summary <- keywords %>%
+  filter(any_matches == FALSE) %>%
+  group_by(keywords) %>%
+  summarize(n = n()) %>%
+  arrange(-n) %>%
+  head(25)
+
+knitr::kable(nofw_keyword_summary) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive"),
+                full_width = FALSE,
+                position = "left")
+```
+
+## Summary
+
+We should use documents which
+
+- match this set of search terms;
+- have a `<body>` tag;
+- are a `"research-article"`.
+
+We could also consider including `"review-article"` and `"brief-report"` types, but those seem fairly uncommon.

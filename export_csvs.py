@@ -2,6 +2,8 @@ import os
 import pymongo
 from pubcrawler.article import Article
 from reporter import Reporter
+import pandas as pd
+import numpy as np
 
 
 if __name__ == "__main__":
@@ -30,7 +32,7 @@ if __name__ == "__main__":
     count = articles.count_documents({})
     cursor = articles.find({})
 
-    reporter = Reporter(25, cursor_count)
+    reporter = Reporter(25, count)
 
     rows = []
 
