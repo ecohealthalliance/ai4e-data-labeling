@@ -2,7 +2,8 @@
 title: "Article Metadata Summaries"
 author: "Toph Allen"
 date: "4/9/2019"
-output: html_document
+output: github_document
+always_allow_html: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -42,12 +43,12 @@ We search for four phrases in the extracted text: "field work", "fieldwork", "fi
 
 Matching articles are a smallish subset of the total, `r sum(articles$any_matches) / nrow(articles) * 100`%.
 
-```{r}
+```{r text_matches_1}
 ktable(articles$any_matches)
 ktable(articles$text_matches)
 ```
 
-```{r}
+```{r text_matches_2}
 text_matches %>%
   filter(!is.na(text_matches)) %>%
   ggplot(aes(x = factor(text_matches))) +
@@ -69,13 +70,13 @@ I pulled a few pieces of metadata for our subset of articles. These include:
 
 There are many article types, but only a few which are widely used.
 
-```{r}
+```{r article_types_1}
 articles %<>%
   mutate(article_type = fct_infreq(article_type))
 ktable(articles$article_type)
 ```
 
-```{r}
+```{r article_types_2}
 articles %>% 
   group_by(article_type) %>%
   mutate(n = n()) %>%
@@ -88,7 +89,7 @@ articles %>%
 
 Does the usage of these differ between the fieldwork subset?
 
-```{r}
+```{r article_types_3}
 articles %>% 
   group_by(any_matches) %>%
   mutate(n_matches = n()) %>%
@@ -107,14 +108,14 @@ There are more research articles, and fewer of everything else.
 
 ### Presence of `<body>` tag
 
-```{r}
+```{r body_tag}
 ktable(articles$has_body)
 ktable(articles$article_type, articles$has_body)
 ```
 
 ### Length
 
-```{r}
+```{r length_1}
 types <- articles %>%
   group_by(any_matches) %>%
   mutate(match_n = n()) %>%
@@ -136,7 +137,7 @@ type_filter <- types %>%
   unique()
 ```
 
-```{r}
+```{r length_2}
 ggplot(articles, aes(x = text_length)) +
   geom_density() +
   scale_x_log10(labels = comma) +
@@ -167,7 +168,7 @@ articles %>%
 
 ### Usage of Keywords
 
-```{r}
+```{r keywords_1}
 keywords_per_paper <- keywords %>%
   group_by(id) %>%
   summarize(any_matches = unique(any_matches),
@@ -178,7 +179,7 @@ A total of `r nrow(keywords_per_paper)` papers out of `r nrow(articles)` (`r nro
 
 For those matching fieldwork terms:
 
-```{r}
+```{r keywords_2}
 k <- keywords_per_paper %>%
   filter(any_matches == TRUE) %>%
   nrow()
@@ -191,7 +192,7 @@ k / nk * 100
 
 For those not matching fieldwork terms:
 
-```{r}
+```{r keywords_3}
 k <- keywords_per_paper %>%
   filter(any_matches == FALSE) %>%
   nrow()
@@ -204,7 +205,7 @@ k / nk * 100
 
 These are the top twenty-five keywords used in all documents:
 
-```{r}
+```{r keywords_4}
 keyword_summary <- keywords %>%
   group_by(keywords) %>%
   summarize(n = n()) %>%
@@ -219,7 +220,7 @@ knitr::kable(keyword_summary) %>%
 
 For those matching fieldwork terms:
 
-```{r}
+```{r keywords_5}
 fw_keyword_summary <- keywords %>%
   filter(any_matches == TRUE) %>%
   group_by(keywords) %>%
@@ -235,7 +236,7 @@ knitr::kable(fw_keyword_summary) %>%
 
 And those with no matches for fieldwork terms:
 
-```{r}
+```{r keywords_6}
 nofw_keyword_summary <- keywords %>%
   filter(any_matches == FALSE) %>%
   group_by(keywords) %>%
@@ -254,7 +255,7 @@ knitr::kable(nofw_keyword_summary) %>%
 
 It looks like articles that match the fieldwork terms have many more geonames in them than those that don't.
 
-```{r}
+```{r geonames}
 summary(geonames)
 geonames %>% filter(any_matches == FALSE) %>% summary
 geonames %>% filter(any_matches == TRUE) %>% summary
