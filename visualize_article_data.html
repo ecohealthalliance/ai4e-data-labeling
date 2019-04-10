@@ -397,6 +397,8 @@ id_types &lt;- read_csv(here(&quot;data&quot;, &quot;id_types.csv&quot;)) %&gt;%
 keywords &lt;- read_csv(here(&quot;data&quot;, &quot;keywords.csv&quot;)) %&gt;%
   select(-X1)
 text_matches &lt;- read_csv(here(&quot;data&quot;, &quot;text_matches.csv&quot;)) %&gt;%
+  select(-X1)
+geonames &lt;- read_csv(here(&quot;data&quot;, &quot;geonames.csv&quot;)) %&gt;%
   select(-X1)</code></pre>
 <div id="prevalence-of-text-matches" class="section level2">
 <h2>Prevalence of Text Matches</h2>
@@ -2045,6 +2047,34 @@ metastasis
 </tbody>
 </table>
 </div>
+</div>
+<div id="geonames" class="section level2">
+<h2>GeoNames</h2>
+<p>It looks like articles that match the fieldwork terms have many more geonames in them than those that don’t.</p>
+<pre class="r"><code>summary(geonames)</code></pre>
+<pre><code>##     n_spans        n_spans_over90   text_matches       any_matches    
+##  Min.   :   0.00   Min.   :  0.00   Length:500         Mode :logical  
+##  1st Qu.:   5.00   1st Qu.:  1.00   Class :character   FALSE:250      
+##  Median :  13.00   Median :  4.00   Mode  :character   TRUE :250      
+##  Mean   :  32.36   Mean   : 12.16                                     
+##  3rd Qu.:  32.00   3rd Qu.: 12.00                                     
+##  Max.   :2448.00   Max.   :680.00</code></pre>
+<pre class="r"><code>geonames %&gt;% filter(any_matches == FALSE) %&gt;% summary</code></pre>
+<pre><code>##     n_spans       n_spans_over90   text_matches       any_matches    
+##  Min.   :  0.00   Min.   : 0.000   Length:250         Mode :logical  
+##  1st Qu.:  2.00   1st Qu.: 0.000   Class :character   FALSE:250      
+##  Median :  7.00   Median : 1.000   Mode  :character                  
+##  Mean   : 12.51   Mean   : 5.088                                     
+##  3rd Qu.: 15.00   3rd Qu.: 5.000                                     
+##  Max.   :107.00   Max.   :59.000</code></pre>
+<pre class="r"><code>geonames %&gt;% filter(any_matches == TRUE) %&gt;% summary</code></pre>
+<pre><code>##     n_spans        n_spans_over90   text_matches       any_matches   
+##  Min.   :   0.00   Min.   :  0.00   Length:250         Mode:logical  
+##  1st Qu.:  11.00   1st Qu.:  3.00   Class :character   TRUE:250      
+##  Median :  24.00   Median :  8.00   Mode  :character                 
+##  Mean   :  52.20   Mean   : 19.24                                    
+##  3rd Qu.:  45.75   3rd Qu.: 20.00                                    
+##  Max.   :2448.00   Max.   :680.00</code></pre>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>

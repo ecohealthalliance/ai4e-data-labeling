@@ -31,6 +31,8 @@ keywords <- read_csv(here("data", "keywords.csv")) %>%
   select(-X1)
 text_matches <- read_csv(here("data", "text_matches.csv")) %>%
   select(-X1)
+geonames <- read_csv(here("data", "geonames.csv")) %>%
+  select(-X1)
 ```
 
 
@@ -246,6 +248,18 @@ knitr::kable(nofw_keyword_summary) %>%
                 full_width = FALSE,
                 position = "left")
 ```
+
+
+## GeoNames
+
+It looks like articles that match the fieldwork terms have many more geonames in them than those that don't.
+
+```{r}
+summary(geonames)
+geonames %>% filter(any_matches == FALSE) %>% summary
+geonames %>% filter(any_matches == TRUE) %>% summary
+```
+
 
 ## Summary
 
