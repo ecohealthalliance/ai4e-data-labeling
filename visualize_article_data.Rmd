@@ -39,7 +39,7 @@ geonames <- read_csv(here("data", "geonames.csv")) %>%
 
 ## Prevalence of Text Matches
 
-We search for four phrases in the extracted text: "field work", "fieldwork", "field study" and "study site".
+We searched for four terms in the extracted text of articles, using MongoDB's text search capabilities. We think these terms will select articles which have a fieldwork component over those that don't. The terms used are: `["field work", "fieldwork", "field study", "study site"]`.
 
 Matching articles are a smallish subset of the total, `r sum(articles$any_matches) / nrow(articles) * 100`%.
 

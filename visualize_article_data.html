@@ -613,7 +613,7 @@ body {
 <a class="sourceLine" id="cb1-9" title="9">geonames &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;geonames.csv&quot;</span>)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>X1)</a></code></pre></div>
 <h2 id="prevalence-of-text-matches">Prevalence of Text Matches</h2>
-<p>We search for four phrases in the extracted text: “field work”, “fieldwork”, “field study” and “study site”.</p>
+<p>We searched for four terms in the extracted text of articles, using MongoDB’s text search capabilities. We think these terms will select articles which have a fieldwork component over those that don’t. The terms used are: <code>[&quot;field work&quot;, &quot;fieldwork&quot;, &quot;field study&quot;, &quot;study site&quot;]</code>.</p>
 <p>Matching articles are a smallish subset of the total, 2.346%.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">ktable</span>(articles<span class="op">$</span>any_matches)</a></code></pre></div>
 <table class="table table-hover table-condensed table-responsive" style="width: auto !important; ">
