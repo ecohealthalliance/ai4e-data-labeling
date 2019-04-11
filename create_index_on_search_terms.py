@@ -14,7 +14,7 @@ if __name__ == "__main__":
         "--mongo_port", default=27017
     )
     parser.add_argument(
-        "--drop_matches", action="store_true", dest="drop_matches"
+        "--keep_previous", action="store_true", dest="keep_previous"
     )
     args = parser.parse_args()
     articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # Make sure we have a text index
     articles.create_index([("extracted_text", pymongo.TEXT,)])
 
-    if args.drop_matches:
+    if not args.keep_previous:
         print("Dropping previously-matched terms...")
         articles.update_many(
             filter={},

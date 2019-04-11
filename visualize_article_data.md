@@ -25,10 +25,9 @@ MongoDB’s text search capabilities. We think these terms will select
 articles which have a fieldwork component over those that don’t. The
 terms used are: field work, fieldwork, field study, field site, field
 area, study site, study location, study area, research site, research
-location, research area, sampling site, sampling location, sampling
-area.
+location, sampling site, sampling location, sampling area.
 
-Matching articles are a smallish subset of the total, 4.952%.
+Matching articles are a smallish subset of the total, 4.442%.
 
 ``` r
 ktable(articles$any_matches)
@@ -68,7 +67,7 @@ FALSE
 
 <td style="text-align:right;">
 
-47524
+47779
 
 </td>
 
@@ -84,7 +83,7 @@ TRUE
 
 <td style="text-align:right;">
 
-2476
+2221
 
 </td>
 
@@ -176,22 +175,6 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘field site’, ‘sampling site’, ‘sampling location’\]
 
 </td>
@@ -224,22 +207,6 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘study area’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘field site’, ‘study area’, ‘sampling site’\]
 
 </td>
@@ -262,7 +229,7 @@ Freq
 
 <td style="text-align:right;">
 
-5
+6
 
 </td>
 
@@ -320,22 +287,6 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘study site’, ‘study area’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘field site’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
 area’\]
 
@@ -359,7 +310,7 @@ area’\]
 
 <td style="text-align:right;">
 
-6
+7
 
 </td>
 
@@ -423,7 +374,7 @@ area’\]
 
 <td style="text-align:right;">
 
-31
+32
 
 </td>
 
@@ -488,22 +439,6 @@ area’\]
 <td style="text-align:right;">
 
 5
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘field study’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
 
 </td>
 
@@ -728,7 +663,7 @@ area’\]
 
 <td style="text-align:right;">
 
-63
+64
 
 </td>
 
@@ -1043,22 +978,6 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘field work’, ‘study site’, ‘study area’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘field work’, ‘study site’, ‘study area’, ‘sampling site’\]
 
 </td>
@@ -1081,7 +1000,7 @@ location’\]
 
 <td style="text-align:right;">
 
-10
+11
 
 </td>
 
@@ -1259,22 +1178,6 @@ location’\]
 <td style="text-align:right;">
 
 1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘fieldwork’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-3
 
 </td>
 
@@ -1564,23 +1467,7 @@ location’\]
 
 <td style="text-align:right;">
 
-123
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-255
+126
 
 </td>
 
@@ -1597,22 +1484,6 @@ location’\]
 <td style="text-align:right;">
 
 5
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘research site’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
 
 </td>
 
@@ -1644,7 +1515,7 @@ location’\]
 
 <td style="text-align:right;">
 
-35
+36
 
 </td>
 
@@ -1766,55 +1637,6 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘study area’, ‘research area’, ‘sampling location’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘study area’, ‘research area’, ‘sampling site’, ‘sampling location’,
-‘sampling area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘study area’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-16
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘study area’, ‘research site’, ‘sampling area’\]
 
 </td>
@@ -1901,7 +1723,7 @@ location’\]
 
 <td style="text-align:right;">
 
-12
+13
 
 </td>
 
@@ -1918,6 +1740,22 @@ location’\]
 <td style="text-align:right;">
 
 4
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘sampling site’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -1965,23 +1803,7 @@ location’\]
 
 <td style="text-align:right;">
 
-497
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘study location’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-1
+513
 
 </td>
 
@@ -2077,23 +1899,7 @@ location’\]
 
 <td style="text-align:right;">
 
-61
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘study site’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-2
+62
 
 </td>
 
@@ -2247,22 +2053,6 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘study site’, ‘study area’, ‘research area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-2
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 \[‘study site’, ‘study area’, ‘research site’\]
 
 </td>
@@ -2382,7 +2172,7 @@ location’\]
 
 <td style="text-align:right;">
 
-118
+120
 
 </td>
 
@@ -2430,7 +2220,7 @@ location’\]
 
 <td style="text-align:right;">
 
-474
+476
 
 </td>
 
@@ -3989,7 +3779,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 58.52181
+    ## [1] 57.6317
 
 For those not matching fieldwork terms:
 
@@ -4004,7 +3794,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 50.71122
+    ## [1] 50.79428
 
 These are the top twenty-five keywords used in all documents:
 
@@ -4523,7 +4313,7 @@ HIV
 
 <td style="text-align:right;">
 
-21
+20
 
 </td>
 
@@ -4571,7 +4361,7 @@ Epidemiology
 
 <td style="text-align:right;">
 
-17
+16
 
 </td>
 
@@ -4603,22 +4393,6 @@ India
 
 <td style="text-align:right;">
 
-14
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Africa
-
-</td>
-
-<td style="text-align:right;">
-
 13
 
 </td>
@@ -4629,7 +4403,7 @@ Africa
 
 <td style="text-align:left;">
 
-children
+Africa
 
 </td>
 
@@ -4646,22 +4420,6 @@ children
 <td style="text-align:left;">
 
 malaria
-
-</td>
-
-<td style="text-align:right;">
-
-12
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Mental health
 
 </td>
 
@@ -4725,6 +4483,22 @@ Tuberculosis
 
 <td style="text-align:left;">
 
+children
+
+</td>
+
+<td style="text-align:right;">
+
+10
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 Tanzania
 
 </td>
@@ -4757,38 +4531,6 @@ Brazil
 
 <td style="text-align:left;">
 
-China
-
-</td>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Europe
-
-</td>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 Iran
 
 </td>
@@ -4805,55 +4547,7 @@ Iran
 
 <td style="text-align:left;">
 
-Obesity
-
-</td>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-viruses
-
-</td>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 Adolescents
-
-</td>
-
-<td style="text-align:right;">
-
-8
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Children
 
 </td>
 
@@ -4892,6 +4586,102 @@ influenza
 <td style="text-align:right;">
 
 8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mental health
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Physical activity
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Plasmodium vivax
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Risk factors
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+viruses
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+7
 
 </td>
 
@@ -4956,7 +4746,7 @@ inflammation
 
 <td style="text-align:right;">
 
-173
+174
 
 </td>
 
@@ -4972,7 +4762,7 @@ apoptosis
 
 <td style="text-align:right;">
 
-170
+171
 
 </td>
 
@@ -4988,7 +4778,7 @@ breast cancer
 
 <td style="text-align:right;">
 
-169
+170
 
 </td>
 
@@ -5004,7 +4794,7 @@ cancer
 
 <td style="text-align:right;">
 
-157
+161
 
 </td>
 
@@ -5020,7 +4810,7 @@ HIV
 
 <td style="text-align:right;">
 
-142
+143
 
 </td>
 
@@ -5052,7 +4842,7 @@ Breast cancer
 
 <td style="text-align:right;">
 
-118
+119
 
 </td>
 
@@ -5094,13 +4884,29 @@ oxidative stress
 
 <td style="text-align:left;">
 
+Obesity
+
+</td>
+
+<td style="text-align:right;">
+
+104
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 Inflammation
 
 </td>
 
 <td style="text-align:right;">
 
-102
+103
 
 </td>
 
@@ -5116,23 +4922,7 @@ meta-analysis
 
 <td style="text-align:right;">
 
-102
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Obesity
-
-</td>
-
-<td style="text-align:right;">
-
-102
+103
 
 </td>
 
@@ -5148,7 +4938,7 @@ Epidemiology
 
 <td style="text-align:right;">
 
-101
+102
 
 </td>
 
@@ -5164,7 +4954,7 @@ children
 
 <td style="text-align:right;">
 
-93
+95
 
 </td>
 
@@ -5180,7 +4970,7 @@ colorectal cancer
 
 <td style="text-align:right;">
 
-92
+93
 
 </td>
 
@@ -5228,7 +5018,23 @@ aging
 
 <td style="text-align:right;">
 
-85
+86
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+microRNA
+
+</td>
+
+<td style="text-align:right;">
+
+86
 
 </td>
 
@@ -5254,13 +5060,29 @@ epidemiology
 
 <td style="text-align:left;">
 
-microRNA
+Alzheimer’s disease
 
 </td>
 
 <td style="text-align:right;">
 
-83
+81
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+81
 
 </td>
 
@@ -5286,38 +5108,6 @@ Prognosis
 
 <td style="text-align:left;">
 
-Alzheimer’s disease
-
-</td>
-
-<td style="text-align:right;">
-
-80
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Children
-
-</td>
-
-<td style="text-align:right;">
-
-80
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 metastasis
 
 </td>
@@ -5334,7 +5124,7 @@ metastasis
 
 <td style="text-align:left;">
 
-Iran
+Cancer
 
 </td>
 
@@ -5531,22 +5321,6 @@ for (term in terms) {
     ## 10 casino                   1
     ## # … with 28 more rows
     ## [1] "\n"
-    ## [1] "Term:  research area"
-    ## # A tibble: 1,091 x 2
-    ##    keywords                n
-    ##    <chr>               <int>
-    ##  1 Mental health           6
-    ##  2 cancer                  4
-    ##  3 Bioinformatics          3
-    ##  4 Europe                  3
-    ##  5 microRNA                3
-    ##  6 Parkinson’s disease     3
-    ##  7 Peer review             3
-    ##  8 Bacteria                2
-    ##  9 bacteriophage           2
-    ## 10 big data                2
-    ## # … with 1,081 more rows
-    ## [1] "\n"
     ## [1] "Term:  sampling site"
     ## # A tibble: 843 x 2
     ##    keywords                             n
@@ -5605,13 +5379,13 @@ geonames in them than those that don’t.
 summary(geonames)
 ```
 
-    ##     n_spans       n_spans_over90    text_matches       any_matches    
-    ##  Min.   :  0.00   Min.   :  0.000   Length:600         Mode :logical  
-    ##  1st Qu.:  4.00   1st Qu.:  1.000   Class :character   FALSE:300      
-    ##  Median : 12.00   Median :  3.000   Mode  :character   TRUE :300      
-    ##  Mean   : 24.92   Mean   :  9.372                                     
-    ##  3rd Qu.: 29.00   3rd Qu.: 11.000                                     
-    ##  Max.   :647.00   Max.   :211.000
+    ##     n_spans       n_spans_over90   text_matches       any_matches    
+    ##  Min.   :  0.00   Min.   :  0.00   Length:600         Mode :logical  
+    ##  1st Qu.:  4.00   1st Qu.:  1.00   Class :character   FALSE:300      
+    ##  Median : 12.00   Median :  3.00   Mode  :character   TRUE :300      
+    ##  Mean   : 24.91   Mean   :  9.37                                     
+    ##  3rd Qu.: 29.00   3rd Qu.: 11.00                                     
+    ##  Max.   :647.00   Max.   :211.00
 
 ``` r
 geonames %>% filter(any_matches == TRUE) %>% summary
@@ -5629,13 +5403,13 @@ geonames %>% filter(any_matches == TRUE) %>% summary
 geonames %>% filter(any_matches == FALSE) %>% summary
 ```
 
-    ##     n_spans       n_spans_over90    text_matches       any_matches    
-    ##  Min.   :  0.00   Min.   :  0.000   Length:300         Mode :logical  
-    ##  1st Qu.:  1.00   1st Qu.:  0.000   Class :character   FALSE:300      
-    ##  Median :  6.00   Median :  1.000   Mode  :character                  
-    ##  Mean   : 11.91   Mean   :  5.083                                     
-    ##  3rd Qu.: 14.00   3rd Qu.:  5.000                                     
-    ##  Max.   :240.00   Max.   :211.000
+    ##     n_spans       n_spans_over90   text_matches       any_matches    
+    ##  Min.   :  0.00   Min.   :  0.00   Length:300         Mode :logical  
+    ##  1st Qu.:  1.00   1st Qu.:  0.00   Class :character   FALSE:300      
+    ##  Median :  6.00   Median :  1.00   Mode  :character                  
+    ##  Mean   : 11.89   Mean   :  5.08                                     
+    ##  3rd Qu.: 14.00   3rd Qu.:  5.00                                     
+    ##  Max.   :240.00   Max.   :211.00
 
 ## Summary
 
