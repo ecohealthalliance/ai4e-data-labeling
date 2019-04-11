@@ -67,7 +67,7 @@ if __name__ == "__main__":
         ]
     )
 
-    results = list(results)
+    results = list(result_cursor)
 
     print("Breakdown of article types:")
     print(results)
