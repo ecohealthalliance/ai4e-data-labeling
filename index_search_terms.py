@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import os
 import pymongo
 from collections import defaultdict
 
@@ -17,8 +16,9 @@ if __name__ == "__main__":
         "--keep_previous", action="store_true", dest="keep_previous"
     )
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
-    
+    articles = pymongo.MongoClient(args.mongo_host,
+                                   args.mongo_port).pmc.articles
+
     with open("terms") as f:
         terms = [line.strip() for line in f.readlines()]
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         print("Dropping previously-matched terms...")
         articles.update_many(
             filter={},
-            update={ "$unset": { "text_matches": "" } }
+            update={"$unset": {"text_matches": ""}}
         )
 
     print("Searching for terms:")
@@ -40,8 +40,8 @@ if __name__ == "__main__":
     for term in terms:
         print(term)
         results = articles.update_many(
-            filter={ '$text': { '$search': '"' + term + '"' } },
-            update={ "$addToSet": { "text_matches": term} }
+            filter={'$text': {'$search': '"' + term + '"'}},
+            update={"$addToSet": {"text_matches": term}}
         )
 
     print("Creating index on search results...")
@@ -53,8 +53,8 @@ if __name__ == "__main__":
     by_id = defaultdict(list)
     for term in terms:
         results = articles.find(
-            { "text_matches": term },
-            { '_id': '_id'}
+            {"text_matches": term},
+            {'_id': '_id'}
         )
         result_set = {result["_id"] for result in results}
         by_term[term] = result_set

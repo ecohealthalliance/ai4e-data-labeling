@@ -52,14 +52,16 @@ if __name__ == "__main__":
         reporter.report(idx)
 
     article_df = pd.DataFrame.from_records(rows)
-    article_df["any_matches"] = [False if row is None else True for row in article_df["text_matches"]]
+    article_df["any_matches"] = [False if row is None else True
+                                 for row in article_df["text_matches"]]
 
     # Small function to unnest nested iterables.
     def unnest(data, unnest_var, keep_vars):
-        all_vars = keep_vars + [unnest_var]
         nested = article_df.loc[:, keep_vars + [unnest_var]]
-        lens = [len(item) if item is not None else 1 for item in nested[unnest_var]]
-        unnested_dict = {var: np.repeat([nested[var].values], lens) for var in keep_vars}
+        lens = [len(item) if item is not None else 1
+                for item in nested[unnest_var]]
+        unnested_dict = {var: np.repeat([nested[var].values], lens)
+                         for var in keep_vars}
         unnested_dict[unnest_var] = np.hstack(nested[unnest_var])
         unnested = pd.DataFrame(unnested_dict)
         return(unnested)

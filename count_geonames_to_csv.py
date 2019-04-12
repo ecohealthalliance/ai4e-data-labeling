@@ -23,7 +23,8 @@ if __name__ == "__main__":
         "--mongo_port", default=27017
     )
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host,
+                                   args.mongo_port).pmc.articles
     n = args.n
 
     geoname_annotator = GeonameAnnotator()
@@ -32,8 +33,10 @@ if __name__ == "__main__":
     with open("terms") as f:
         terms = [line.strip() for line in f.readlines()]
 
-    terms_cursor = articles.find({ "text_matches": { "$in": terms } }, limit = n)
-    noterms_cursor = articles.find({ "text_matches": { "$not": {"$in": terms } } }, limit = n)
+    terms_cursor = articles.find({"text_matches": {"$in": terms}}, limit=n)
+    noterms_cursor = articles.find({
+        "text_matches": {"$not": {"$in": terms}}
+    }, limit=n)
     sample = list(terms_cursor) + list(noterms_cursor)
 
     reporter = Reporter(5, len(sample))
@@ -46,12 +49,14 @@ if __name__ == "__main__":
         geospans = article.tiers["geonames"]
         row["text_matches"] = record.get("text_matches")
         row["n_spans"] = len(geospans)
-        row["n_spans_over90"] = sum([1 for span in geospans if span.metadata["geoname"].score > 0.9])
+        row["n_spans_over90"] = sum([1 for span in geospans
+                                     if span.metadata["geoname"].score > 0.9])
         rows.append(row)
         reporter.report(idx)
 
     df = pd.DataFrame.from_records(rows)
-    df["any_matches"] = [False if row is None else True for row in df["text_matches"]]
+    df["any_matches"] = [False if row is None else True
+                         for row in df["text_matches"]]
 
     # Print summaries
     print(df.loc[df["any_matches"]].describe())

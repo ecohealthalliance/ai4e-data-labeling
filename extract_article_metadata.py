@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import os
 import pymongo
 from reporter import Reporter
 from pubcrawler.article import Article
@@ -18,13 +17,18 @@ if __name__ == "__main__":
         "--keep_previous", action="store_true", dest="keep_previous"
     )
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host,
+                                   args.mongo_port).pmc.articles
 
     if not args.keep_previous:
-        print("Dropping previously-indexed metadata...")
+        print("Dropping previously-extracted metadata...")
         articles.update_many(
             filter={},
-            update={ "$unset": { "article_meta": "" } }
+            update={"$unset": {
+                "article_title": "",
+                "journal_title": "",
+                "article_meta": ""
+            }}
         )
 
     count = articles.count_documents({})
@@ -38,6 +42,8 @@ if __name__ == "__main__":
         article = Article(record["xml"])
 
         record_update = {
+            "article_title": article.article_title(),
+            "journal_title": article.journal_title(),
             "article_meta": {
                 "has_body": True if article.soup.body else False,
                 "article_type": article.article_type()
@@ -45,8 +51,8 @@ if __name__ == "__main__":
         }
 
         articles.update_one(
-            filter={ "_id": record["_id"] },
-            update={ "$set": record_update }
+            filter={"_id": record["_id"]},
+            update={"$set": record_update}
         )
 
         reporter.report(idx)
@@ -57,11 +63,11 @@ if __name__ == "__main__":
     print("Testing index...")
 
     result_cursor = articles.aggregate(
-        [ {"$limit": 100},
+        [{"$limit": 100},
             {
                 "$group": {
                     "_id": "$article_meta.article_type",
-                    "count": { "$sum": 1 }
+                    "count": {"$sum": 1}
                 }
             }
         ]

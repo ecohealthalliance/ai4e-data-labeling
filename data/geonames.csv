@@ -299,303 +299,1703 @@
 297,21,14,"['field work', 'study location', 'study area']",True
 298,647,152,"['field work', 'research site']",True
 299,29,6,['field work'],True
-300,2,1,,False
-301,0,0,,False
-302,4,0,,False
-303,10,6,,False
-304,0,0,,False
-305,10,4,,False
-306,30,19,,False
-307,1,0,,False
-308,5,2,,False
-309,68,41,,False
-310,16,12,,False
-311,8,1,,False
-312,12,1,,False
-313,8,0,,False
-314,2,1,,False
-315,7,1,,False
-316,0,0,,False
-317,3,0,,False
-318,12,5,,False
-319,4,0,,False
-320,1,0,,False
-321,0,0,,False
-322,0,0,,False
-323,9,1,,False
-324,12,3,,False
-325,16,4,,False
-326,15,13,,False
-327,0,0,,False
-328,8,5,,False
-329,17,13,,False
-330,7,1,,False
-331,13,1,,False
-332,1,0,,False
-333,33,14,,False
-334,5,0,,False
-335,1,0,,False
-336,104,10,,False
-337,10,2,,False
-338,21,9,,False
-339,12,5,,False
-340,0,0,,False
-341,5,3,,False
-342,3,0,,False
-343,22,14,,False
-344,21,0,,False
-345,31,20,,False
-346,6,4,,False
-347,0,0,,False
-348,45,36,,False
-349,0,0,,False
-350,2,0,,False
-351,68,24,,False
-352,0,0,,False
-353,9,1,,False
-354,0,0,,False
-355,3,3,,False
-356,5,0,,False
-357,6,0,,False
-358,2,0,,False
-359,9,4,,False
-360,1,0,,False
-361,27,12,,False
-362,7,1,,False
-363,8,0,,False
-364,0,0,,False
-365,3,3,,False
-366,6,1,,False
-367,19,12,,False
-368,22,14,,False
-369,37,19,,False
-370,3,0,,False
-371,0,0,,False
-372,0,0,,False
-373,7,1,,False
-374,53,35,,False
-375,7,1,,False
-376,8,3,,False
-377,3,0,,False
-378,30,25,,False
-379,0,0,,False
-380,0,0,,False
-381,1,1,,False
-382,9,0,,False
-383,6,0,,False
-384,4,0,,False
-385,1,0,,False
-386,2,1,,False
-387,3,1,,False
-388,0,0,,False
-389,6,3,,False
-390,45,2,,False
-391,0,0,,False
-392,1,0,,False
-393,0,0,,False
-394,1,0,,False
-395,3,2,,False
-396,1,0,,False
-397,37,25,,False
-398,0,0,,False
-399,17,10,,False
-400,1,0,,False
-401,56,51,,False
-402,11,0,,False
-403,46,7,,False
-404,11,3,,False
-405,8,5,,False
-406,18,7,,False
-407,10,3,,False
-408,0,0,,False
-409,17,0,,False
-410,3,0,,False
-411,15,2,,False
-412,17,11,,False
-413,8,4,,False
-414,3,0,,False
-415,4,2,,False
-416,7,1,,False
-417,17,0,,False
-418,2,2,,False
-419,5,4,,False
-420,9,6,,False
-421,0,0,,False
-422,24,17,,False
-423,2,1,,False
-424,17,11,,False
-425,0,0,,False
-426,62,51,,False
-427,1,1,,False
-428,14,9,,False
-429,4,1,,False
-430,15,7,,False
-431,40,30,,False
-432,0,0,,False
-433,0,0,,False
-434,90,35,,False
-435,1,1,,False
-436,2,0,,False
-437,4,2,,False
-438,62,35,,False
-439,0,0,,False
-440,16,2,,False
-441,13,2,,False
-442,11,4,,False
-443,8,2,,False
-444,13,0,,False
-445,2,1,,False
-446,8,0,,False
-447,14,5,,False
-448,9,4,,False
-449,3,2,,False
-450,0,0,,False
-451,24,3,,False
-452,15,8,,False
-453,15,7,,False
-454,5,2,,False
-455,18,3,,False
-456,11,4,,False
-457,13,4,,False
-458,2,0,,False
-459,48,20,,False
-460,1,0,,False
-461,33,4,,False
-462,2,0,,False
-463,4,3,,False
-464,2,0,,False
-465,9,4,,False
-466,16,8,,False
-467,12,4,,False
-468,2,1,,False
-469,34,20,,False
-470,0,0,,False
-471,10,1,,False
-472,10,5,,False
-473,15,3,,False
-474,8,2,,False
-475,0,0,,False
-476,0,0,,False
-477,2,2,,False
-478,91,24,,False
-479,18,2,,False
-480,1,0,,False
-481,14,8,,False
-482,3,1,,False
-483,17,10,,False
-484,1,0,,False
-485,2,0,,False
-486,6,2,,False
-487,34,10,,False
-488,3,0,,False
-489,25,13,,False
-490,52,38,,False
-491,1,1,,False
-492,22,2,,False
-493,0,0,,False
-494,4,1,,False
-495,0,0,,False
-496,7,0,,False
-497,1,0,,False
-498,1,0,,False
-499,0,0,,False
-500,0,0,,False
-501,30,15,,False
-502,11,0,,False
-503,5,0,,False
-504,3,0,,False
-505,37,0,,False
-506,11,9,,False
-507,8,3,,False
-508,2,1,,False
-509,15,5,,False
-510,4,0,,False
-511,7,6,,False
-512,19,12,,False
-513,12,1,,False
-514,12,5,,False
-515,37,19,,False
-516,9,2,,False
-517,9,3,,False
-518,1,1,,False
-519,2,0,,False
-520,0,0,,False
-521,1,0,,False
-522,4,0,,False
-523,20,5,,False
-524,46,11,,False
-525,3,0,,False
-526,12,4,,False
-527,3,1,,False
-528,18,7,,False
-529,0,0,,False
-530,6,2,,False
-531,11,2,,False
-532,14,5,,False
-533,2,1,,False
-534,1,1,,False
-535,5,1,,False
-536,8,3,,False
-537,4,2,,False
-538,0,0,,False
-539,1,0,,False
-540,8,5,,False
-541,5,5,,False
-542,10,5,,False
-543,6,1,,False
-544,5,0,,False
-545,10,8,,False
-546,4,0,,False
-547,0,0,,False
-548,50,1,,False
-549,16,8,,False
-550,4,4,,False
-551,3,3,,False
-552,1,0,,False
-553,12,0,,False
-554,8,0,,False
-555,19,7,,False
-556,0,0,,False
-557,2,0,,False
-558,11,9,,False
-559,0,0,,False
-560,31,24,,False
-561,14,8,,False
-562,16,1,,False
-563,1,1,,False
-564,6,1,,False
-565,0,0,,False
-566,8,4,,False
-567,0,0,,False
-568,0,0,,False
-569,2,0,,False
-570,240,211,,False
-571,15,4,,False
-572,0,0,,False
-573,7,0,,False
-574,28,19,,False
-575,18,0,,False
-576,0,0,,False
-577,9,5,,False
-578,6,4,,False
-579,8,4,,False
-580,3,0,,False
-581,0,0,,False
-582,3,0,,False
-583,8,4,,False
-584,8,4,,False
-585,7,2,,False
-586,0,0,,False
-587,0,0,,False
-588,0,0,,False
-589,0,0,,False
-590,13,5,,False
-591,0,0,,False
-592,67,6,,False
-593,29,11,,False
-594,17,10,,False
-595,5,1,,False
-596,2,0,,False
-597,7,5,,False
-598,0,0,,False
-599,2,0,,False
+300,56,7,"['field work', 'study site', 'study area']",True
+301,35,12,"['field work', 'study site']",True
+302,31,6,"['field work', 'fieldwork', 'study site', 'study area']",True
+303,16,10,"['field work', 'study site']",True
+304,27,7,['field work'],True
+305,22,16,['field work'],True
+306,2448,680,['field work'],True
+307,76,41,"['field work', 'study site', 'study area', 'sampling site']",True
+308,33,13,"['field work', 'study site', 'study area']",True
+309,238,103,['field work'],True
+310,19,15,"['field work', 'study area']",True
+311,32,14,"['field work', 'study area']",True
+312,111,72,['field work'],True
+313,36,1,['field work'],True
+314,19,0,['field work'],True
+315,13,4,['field work'],True
+316,52,12,"['field work', 'fieldwork', 'study site']",True
+317,62,32,['field work'],True
+318,38,14,"['field work', 'study site', 'study area']",True
+319,1,1,"['field work', 'fieldwork']",True
+320,171,55,"['field work', 'study site']",True
+321,34,21,"['field work', 'fieldwork', 'study site', 'study area']",True
+322,36,6,['field work'],True
+323,63,20,"['field work', 'study area']",True
+324,30,23,"['field work', 'study site']",True
+325,62,25,"['field work', 'study area']",True
+326,26,6,['field work'],True
+327,201,102,['field work'],True
+328,15,9,"['field work', 'fieldwork', 'study site', 'sampling site', 'sampling location']",True
+329,48,1,['field work'],True
+330,50,11,"['field work', 'study area']",True
+331,20,8,"['field work', 'fieldwork', 'study area']",True
+332,49,28,['field work'],True
+333,106,93,['field work'],True
+334,69,20,"['field work', 'study site']",True
+335,6,3,"['field work', 'study area']",True
+336,15,5,['field work'],True
+337,55,3,['field work'],True
+338,82,61,['field work'],True
+339,20,5,"['field work', 'study site', 'sampling location', 'sampling area']",True
+340,17,12,['field work'],True
+341,24,20,"['field work', 'fieldwork']",True
+342,17,9,['field work'],True
+343,22,2,"['field work', 'study area']",True
+344,439,47,"['field work', 'fieldwork']",True
+345,18,1,"['field work', 'study site', 'study area']",True
+346,68,47,"['field work', 'study site', 'study location']",True
+347,7,2,"['field work', 'sampling site']",True
+348,122,83,['field work'],True
+349,38,12,"['field work', 'study site', 'study area']",True
+350,25,4,"['field work', 'research site']",True
+351,90,62,"['field work', 'study area']",True
+352,12,9,['field work'],True
+353,29,9,"['field work', 'fieldwork', 'study area']",True
+354,9,5,"['field work', 'fieldwork']",True
+355,1,0,['field work'],True
+356,18,18,"['field work', 'fieldwork']",True
+357,350,264,['field work'],True
+358,30,20,"['field work', 'study site', 'study area']",True
+359,20,16,['field work'],True
+360,26,5,['field work'],True
+361,232,127,['field work'],True
+362,18,4,['field work'],True
+363,22,14,"['field work', 'fieldwork', 'study area']",True
+364,20,8,['field work'],True
+365,62,34,['fieldwork'],True
+366,2,0,['fieldwork'],True
+367,46,23,['fieldwork'],True
+368,24,2,"['fieldwork', 'research site']",True
+369,51,20,['fieldwork'],True
+370,32,12,"['fieldwork', 'study area']",True
+371,24,1,"['fieldwork', 'study area']",True
+372,40,21,['fieldwork'],True
+373,11,8,"['fieldwork', 'study site', 'study area']",True
+374,262,15,['fieldwork'],True
+375,39,27,['fieldwork'],True
+376,75,42,"['fieldwork', 'study area']",True
+377,15,2,['fieldwork'],True
+378,9,0,['fieldwork'],True
+379,6,0,['fieldwork'],True
+380,20,6,['fieldwork'],True
+381,106,67,['fieldwork'],True
+382,25,8,['fieldwork'],True
+383,51,1,['fieldwork'],True
+384,29,12,"['fieldwork', 'study area']",True
+385,15,0,['fieldwork'],True
+386,11,6,['fieldwork'],True
+387,79,6,"['fieldwork', 'study site']",True
+388,91,64,['fieldwork'],True
+389,35,8,['fieldwork'],True
+390,10,6,['fieldwork'],True
+391,8,1,['fieldwork'],True
+392,116,66,"['fieldwork', 'study site', 'study area']",True
+393,24,17,['fieldwork'],True
+394,19,5,"['fieldwork', 'study site']",True
+395,11,2,['fieldwork'],True
+396,142,66,['fieldwork'],True
+397,41,36,['fieldwork'],True
+398,59,47,"['fieldwork', 'study site', 'study area', 'sampling location']",True
+399,16,6,['fieldwork'],True
+400,35,4,['fieldwork'],True
+401,19,4,['fieldwork'],True
+402,81,39,"['fieldwork', 'study site', 'sampling site']",True
+403,18,13,['fieldwork'],True
+404,9,0,['fieldwork'],True
+405,18,8,"['fieldwork', 'study site', 'study area']",True
+406,9,0,['fieldwork'],True
+407,37,8,['fieldwork'],True
+408,32,27,['fieldwork'],True
+409,24,11,['fieldwork'],True
+410,40,26,"['fieldwork', 'study area']",True
+411,34,18,"['fieldwork', 'study area']",True
+412,29,10,"['fieldwork', 'study site', 'study area']",True
+413,10,9,"['fieldwork', 'study site', 'study area']",True
+414,141,98,['fieldwork'],True
+415,10,1,"['fieldwork', 'study area']",True
+416,57,29,"['fieldwork', 'study site', 'study area', 'sampling site', 'sampling area']",True
+417,15,8,"['fieldwork', 'study site']",True
+418,49,16,['fieldwork'],True
+419,11,3,"['fieldwork', 'study area', 'sampling area']",True
+420,1,0,['fieldwork'],True
+421,8,4,['fieldwork'],True
+422,110,53,['fieldwork'],True
+423,20,1,['fieldwork'],True
+424,40,36,['fieldwork'],True
+425,17,14,"['fieldwork', 'study area']",True
+426,99,21,"['fieldwork', 'sampling location']",True
+427,9,6,"['fieldwork', 'study area']",True
+428,9,6,['fieldwork'],True
+429,7,1,['fieldwork'],True
+430,3,3,['fieldwork'],True
+431,7,0,['fieldwork'],True
+432,8,0,['fieldwork'],True
+433,11,3,['fieldwork'],True
+434,88,7,['fieldwork'],True
+435,13,7,['fieldwork'],True
+436,57,52,['fieldwork'],True
+437,34,22,['fieldwork'],True
+438,73,21,"['fieldwork', 'study site', 'study area']",True
+439,4,3,['fieldwork'],True
+440,10,2,"['fieldwork', 'study site', 'study area']",True
+441,8,2,"['fieldwork', 'research site']",True
+442,67,53,['fieldwork'],True
+443,2,0,"['fieldwork', 'study site']",True
+444,15,2,['fieldwork'],True
+445,19,6,['fieldwork'],True
+446,6,2,['fieldwork'],True
+447,9,0,['fieldwork'],True
+448,8,0,['fieldwork'],True
+449,40,32,['fieldwork'],True
+450,25,22,['fieldwork'],True
+451,74,7,"['fieldwork', 'study area', 'sampling site', 'sampling location']",True
+452,24,17,['fieldwork'],True
+453,290,169,['fieldwork'],True
+454,23,16,['fieldwork'],True
+455,110,23,['fieldwork'],True
+456,51,44,['fieldwork'],True
+457,17,9,"['fieldwork', 'study area', 'sampling location']",True
+458,22,6,['fieldwork'],True
+459,153,24,['fieldwork'],True
+460,22,11,"['fieldwork', 'study area']",True
+461,0,0,['fieldwork'],True
+462,60,28,"['fieldwork', 'study site']",True
+463,51,20,['fieldwork'],True
+464,17,7,"['fieldwork', 'study site']",True
+465,10,3,['fieldwork'],True
+466,28,10,['fieldwork'],True
+467,20,4,['fieldwork'],True
+468,38,6,"['fieldwork', 'study area']",True
+469,19,1,['fieldwork'],True
+470,29,16,"['fieldwork', 'study area']",True
+471,44,14,['fieldwork'],True
+472,236,121,['fieldwork'],True
+473,18,1,['fieldwork'],True
+474,36,3,"['fieldwork', 'study area']",True
+475,126,61,"['fieldwork', 'study site']",True
+476,23,4,['fieldwork'],True
+477,14,12,['fieldwork'],True
+478,21,13,['fieldwork'],True
+479,16,16,['fieldwork'],True
+480,33,5,['fieldwork'],True
+481,6,5,['fieldwork'],True
+482,115,15,"['fieldwork', 'study site']",True
+483,18,9,['fieldwork'],True
+484,7,1,['fieldwork'],True
+485,44,11,"['fieldwork', 'study site']",True
+486,90,3,"['fieldwork', 'study site', 'sampling site']",True
+487,26,16,['fieldwork'],True
+488,33,10,"['fieldwork', 'study site', 'study area']",True
+489,22,2,['fieldwork'],True
+490,118,24,['fieldwork'],True
+491,38,1,"['fieldwork', 'study area']",True
+492,35,31,['fieldwork'],True
+493,55,26,"['fieldwork', 'study site', 'study location', 'study area', 'sampling location']",True
+494,75,63,['fieldwork'],True
+495,112,31,['fieldwork'],True
+496,3,3,['fieldwork'],True
+497,44,30,"['fieldwork', 'study location', 'research site']",True
+498,12,3,"['fieldwork', 'study site', 'study area']",True
+499,24,16,['fieldwork'],True
+500,80,54,"['fieldwork', 'sampling location']",True
+501,21,19,"['fieldwork', 'study site', 'study area']",True
+502,11,1,['fieldwork'],True
+503,14,5,['fieldwork'],True
+504,34,7,"['fieldwork', 'study area']",True
+505,43,19,"['fieldwork', 'study area']",True
+506,26,15,"['fieldwork', 'study site']",True
+507,89,65,['fieldwork'],True
+508,35,17,['fieldwork'],True
+509,665,517,"['fieldwork', 'study site']",True
+510,13,2,['fieldwork'],True
+511,25,14,"['fieldwork', 'study area']",True
+512,54,7,['fieldwork'],True
+513,41,13,"['fieldwork', 'study area']",True
+514,114,22,"['fieldwork', 'sampling location']",True
+515,20,1,['fieldwork'],True
+516,109,40,['fieldwork'],True
+517,13,9,"['fieldwork', 'study site']",True
+518,49,15,"['fieldwork', 'sampling area']",True
+519,53,16,['fieldwork'],True
+520,16,5,"['fieldwork', 'study site', 'study area']",True
+521,73,15,"['fieldwork', 'research site']",True
+522,43,24,"['fieldwork', 'study area']",True
+523,54,22,['fieldwork'],True
+524,7,5,['fieldwork'],True
+525,47,28,['fieldwork'],True
+526,40,7,"['fieldwork', 'study area', 'sampling site']",True
+527,57,17,['fieldwork'],True
+528,39,5,"['fieldwork', 'study site', 'study area']",True
+529,10,2,['fieldwork'],True
+530,22,20,['fieldwork'],True
+531,136,71,['fieldwork'],True
+532,22,20,['fieldwork'],True
+533,22,3,['fieldwork'],True
+534,102,40,['fieldwork'],True
+535,132,106,['fieldwork'],True
+536,24,20,['fieldwork'],True
+537,108,12,"['fieldwork', 'study site', 'study area']",True
+538,11,2,['fieldwork'],True
+539,12,9,['fieldwork'],True
+540,16,14,['fieldwork'],True
+541,14,6,['fieldwork'],True
+542,0,0,['fieldwork'],True
+543,53,20,"['fieldwork', 'study site', 'study area']",True
+544,21,18,['fieldwork'],True
+545,25,2,['fieldwork'],True
+546,75,6,['fieldwork'],True
+547,23,16,"['fieldwork', 'study location']",True
+548,47,16,"['fieldwork', 'sampling site']",True
+549,37,8,"['fieldwork', 'study site', 'study area']",True
+550,25,11,['fieldwork'],True
+551,28,6,"['fieldwork', 'study area']",True
+552,25,13,"['fieldwork', 'study site', 'study area']",True
+553,21,8,['fieldwork'],True
+554,35,18,"['fieldwork', 'study area']",True
+555,41,26,"['fieldwork', 'study area']",True
+556,49,19,"['fieldwork', 'study site', 'study area']",True
+557,5,2,"['fieldwork', 'study site']",True
+558,37,4,['fieldwork'],True
+559,25,12,"['fieldwork', 'study site']",True
+560,27,13,['fieldwork'],True
+561,6,2,['fieldwork'],True
+562,53,7,['fieldwork'],True
+563,21,9,"['research site', 'research location']",True
+564,10,8,"['study site', 'research location']",True
+565,23,18,['research location'],True
+566,72,8,"['study site', 'research location', 'sampling location']",True
+567,22,14,['research location'],True
+568,31,19,['research location'],True
+569,60,31,['research location'],True
+570,7,4,['research location'],True
+571,2,0,['research site'],True
+572,12,7,"['study area', 'research site', 'sampling area']",True
+573,19,9,['research site'],True
+574,3,3,['research site'],True
+575,1,1,['research site'],True
+576,4,0,['research site'],True
+577,79,54,['research site'],True
+578,12,1,['research site'],True
+579,42,24,['research site'],True
+580,21,6,['research site'],True
+581,36,28,['research site'],True
+582,27,16,"['study area', 'research site', 'sampling site']",True
+583,21,5,['research site'],True
+584,130,28,"['study site', 'study area', 'research site']",True
+585,16,6,['research site'],True
+586,6,1,['research site'],True
+587,40,29,['research site'],True
+588,287,99,"['study site', 'study area', 'research site']",True
+589,16,4,['research site'],True
+590,42,11,"['study location', 'research site']",True
+591,105,67,['research site'],True
+592,16,13,"['study site', 'research site']",True
+593,58,11,['research site'],True
+594,0,0,['research site'],True
+595,10,1,['research site'],True
+596,143,113,"['study site', 'study area', 'research site']",True
+597,12,5,['research site'],True
+598,51,49,['research site'],True
+599,68,6,['research site'],True
+600,6,0,['research site'],True
+601,12,5,['research site'],True
+602,47,17,"['study area', 'research site']",True
+603,55,38,"['study area', 'research site']",True
+604,45,6,['research site'],True
+605,39,23,"['study site', 'research site']",True
+606,8,0,['research site'],True
+607,23,1,"['study site', 'research site']",True
+608,15,10,['research site'],True
+609,67,36,['research site'],True
+610,8,2,['research site'],True
+611,25,5,['research site'],True
+612,18,13,"['study area', 'research site']",True
+613,35,14,"['study site', 'research site']",True
+614,5,0,['research site'],True
+615,17,11,"['study site', 'research site', 'sampling location']",True
+616,38,11,"['study site', 'research site']",True
+617,23,5,['research site'],True
+618,29,16,"['study site', 'research site']",True
+619,47,16,['research site'],True
+620,4,2,['research site'],True
+621,34,27,"['study area', 'research site']",True
+622,17,0,"['study location', 'research site']",True
+623,26,21,['research site'],True
+624,3,1,['research site'],True
+625,15,7,['sampling area'],True
+626,28,3,"['study area', 'sampling location', 'sampling area']",True
+627,30,10,['sampling area'],True
+628,9,4,['sampling area'],True
+629,13,9,"['study area', 'sampling area']",True
+630,12,3,"['study area', 'sampling site', 'sampling area']",True
+631,113,22,"['sampling site', 'sampling area']",True
+632,30,10,['sampling area'],True
+633,22,12,['sampling area'],True
+634,49,3,"['study site', 'sampling site', 'sampling area']",True
+635,0,0,['sampling area'],True
+636,24,10,"['study site', 'study area', 'sampling area']",True
+637,22,12,"['study site', 'study area', 'sampling area']",True
+638,26,5,"['sampling site', 'sampling area']",True
+639,209,109,"['study area', 'sampling location', 'sampling area']",True
+640,6,1,['sampling area'],True
+641,39,18,"['sampling site', 'sampling area']",True
+642,287,150,"['sampling site', 'sampling area']",True
+643,156,57,"['study area', 'sampling site', 'sampling area']",True
+644,14,7,['sampling area'],True
+645,86,5,"['sampling site', 'sampling area']",True
+646,25,19,"['study area', 'sampling area']",True
+647,18,6,['sampling area'],True
+648,14,5,['sampling area'],True
+649,55,26,"['study area', 'sampling area']",True
+650,1,0,['sampling area'],True
+651,16,4,"['sampling location', 'sampling area']",True
+652,6,2,['sampling area'],True
+653,25,12,['sampling area'],True
+654,39,6,"['study site', 'study area', 'sampling site', 'sampling area']",True
+655,43,8,"['study area', 'sampling site', 'sampling location', 'sampling area']",True
+656,172,9,"['sampling location', 'sampling area']",True
+657,43,12,"['study site', 'study location', 'sampling site', 'sampling area']",True
+658,78,37,['sampling area'],True
+659,172,36,['sampling area'],True
+660,81,44,"['study area', 'sampling site', 'sampling area']",True
+661,16,10,['sampling area'],True
+662,1,0,"['study site', 'study area', 'sampling site', 'sampling location', 'sampling area']",True
+663,6,1,['sampling area'],True
+664,14,5,['sampling area'],True
+665,5,1,['sampling area'],True
+666,43,9,"['study site', 'study area', 'sampling area']",True
+667,3,3,['sampling area'],True
+668,30,6,"['study site', 'study area', 'sampling site', 'sampling area']",True
+669,61,6,['sampling area'],True
+670,92,1,['sampling area'],True
+671,4,1,"['sampling location', 'sampling area']",True
+672,53,31,"['study site', 'study area', 'sampling area']",True
+673,136,93,['sampling area'],True
+674,73,24,"['sampling site', 'sampling area']",True
+675,14,9,"['sampling location', 'sampling area']",True
+676,83,2,"['sampling site', 'sampling area']",True
+677,32,20,"['study area', 'sampling area']",True
+678,149,64,"['study area', 'sampling location', 'sampling area']",True
+679,37,0,"['study site', 'study area', 'sampling site', 'sampling location', 'sampling area']",True
+680,118,18,"['study site', 'sampling area']",True
+681,22,11,['sampling area'],True
+682,185,62,"['sampling site', 'sampling area']",True
+683,36,20,"['sampling site', 'sampling area']",True
+684,12,5,"['study site', 'study area', 'sampling location', 'sampling area']",True
+685,23,4,['sampling area'],True
+686,183,77,"['sampling site', 'sampling area']",True
+687,1,0,"['study area', 'sampling area']",True
+688,8,3,['sampling area'],True
+689,17,14,['sampling area'],True
+690,70,41,"['study site', 'study area', 'sampling area']",True
+691,15,3,['sampling area'],True
+692,87,35,"['study area', 'sampling location', 'sampling area']",True
+693,27,14,"['sampling location', 'sampling area']",True
+694,78,72,['sampling area'],True
+695,21,16,['sampling area'],True
+696,10,10,['sampling area'],True
+697,48,16,"['sampling site', 'sampling area']",True
+698,40,26,['sampling area'],True
+699,13,9,['sampling area'],True
+700,14,8,['sampling area'],True
+701,3,1,['sampling area'],True
+702,113,43,"['study area', 'sampling site', 'sampling area']",True
+703,9,0,"['sampling location', 'sampling area']",True
+704,208,48,['sampling area'],True
+705,18,7,['sampling area'],True
+706,9,6,['sampling area'],True
+707,83,22,"['sampling site', 'sampling location', 'sampling area']",True
+708,38,8,"['study site', 'study area', 'sampling area']",True
+709,9,4,['sampling area'],True
+710,107,59,['sampling location'],True
+711,86,56,['sampling location'],True
+712,54,16,['sampling location'],True
+713,57,19,"['study area', 'sampling location']",True
+714,8,4,['sampling location'],True
+715,6,2,"['study site', 'sampling site', 'sampling location']",True
+716,9,6,"['sampling site', 'sampling location']",True
+717,28,18,['sampling location'],True
+718,30,8,"['sampling site', 'sampling location']",True
+719,72,9,['sampling location'],True
+720,14,0,['sampling location'],True
+721,54,9,"['sampling site', 'sampling location']",True
+722,39,14,['sampling location'],True
+723,65,12,['sampling location'],True
+724,15,2,"['sampling site', 'sampling location']",True
+725,1,0,['sampling location'],True
+726,3,1,['sampling location'],True
+727,66,9,['sampling location'],True
+728,9,1,"['study site', 'sampling location']",True
+729,55,27,"['study site', 'sampling location']",True
+730,6,2,['sampling location'],True
+731,136,55,['sampling location'],True
+732,32,10,['sampling location'],True
+733,38,10,"['sampling site', 'sampling location']",True
+734,36,1,"['study site', 'sampling site', 'sampling location']",True
+735,110,17,['sampling location'],True
+736,29,10,['sampling location'],True
+737,11,3,"['sampling site', 'sampling location']",True
+738,37,13,"['sampling site', 'sampling location']",True
+739,8,3,['sampling location'],True
+740,141,61,"['study area', 'sampling location']",True
+741,41,39,"['study area', 'sampling location']",True
+742,38,23,['sampling location'],True
+743,65,8,['sampling location'],True
+744,11,0,['sampling location'],True
+745,132,12,['sampling location'],True
+746,32,6,"['study area', 'sampling site', 'sampling location']",True
+747,54,15,"['study area', 'sampling site', 'sampling location']",True
+748,27,4,['sampling location'],True
+749,34,2,"['sampling site', 'sampling location']",True
+750,5,3,['sampling location'],True
+751,82,8,"['study location', 'sampling site', 'sampling location']",True
+752,85,43,"['sampling site', 'sampling location']",True
+753,184,89,"['sampling site', 'sampling location']",True
+754,42,24,"['sampling site', 'sampling location']",True
+755,143,81,"['sampling site', 'sampling location']",True
+756,8,1,"['study site', 'sampling location']",True
+757,71,32,"['study site', 'sampling site', 'sampling location']",True
+758,8,6,['sampling location'],True
+759,19,9,"['study site', 'sampling location']",True
+760,289,161,['sampling location'],True
+761,25,4,"['study site', 'study area', 'sampling location']",True
+762,29,8,"['study area', 'sampling location']",True
+763,42,8,"['study site', 'study area', 'sampling location']",True
+764,9,4,"['study area', 'sampling location']",True
+765,48,4,['sampling location'],True
+766,40,35,['sampling location'],True
+767,36,24,"['study site', 'sampling site', 'sampling location']",True
+768,165,12,"['study site', 'sampling location']",True
+769,33,13,"['study area', 'sampling location']",True
+770,19,15,"['sampling site', 'sampling location']",True
+771,46,9,['sampling location'],True
+772,32,21,"['study area', 'sampling site', 'sampling location']",True
+773,109,51,"['study area', 'sampling location']",True
+774,88,30,"['study area', 'sampling location']",True
+775,167,105,['sampling location'],True
+776,60,13,"['study area', 'sampling site', 'sampling location']",True
+777,105,9,['sampling location'],True
+778,27,1,['sampling location'],True
+779,12,8,"['sampling site', 'sampling location']",True
+780,98,32,['sampling location'],True
+781,57,4,['sampling location'],True
+782,30,0,['sampling location'],True
+783,112,42,"['study area', 'sampling site', 'sampling location']",True
+784,156,33,['sampling location'],True
+785,222,118,"['study area', 'sampling location']",True
+786,29,5,"['study area', 'sampling location']",True
+787,17,10,"['sampling site', 'sampling location']",True
+788,29,9,['sampling location'],True
+789,13,8,['sampling location'],True
+790,65,14,['sampling location'],True
+791,23,14,['sampling location'],True
+792,46,9,"['sampling site', 'sampling location']",True
+793,3,2,"['sampling site', 'sampling location']",True
+794,2,0,"['sampling site', 'sampling location']",True
+795,36,7,"['sampling site', 'sampling location']",True
+796,91,49,"['sampling site', 'sampling location']",True
+797,28,0,"['sampling site', 'sampling location']",True
+798,20,3,"['sampling site', 'sampling location']",True
+799,47,29,['sampling location'],True
+800,74,3,"['sampling site', 'sampling location']",True
+801,36,0,"['study area', 'sampling site', 'sampling location']",True
+802,46,14,"['study area', 'sampling location']",True
+803,130,70,['sampling location'],True
+804,83,43,"['sampling site', 'sampling location']",True
+805,50,36,"['sampling site', 'sampling location']",True
+806,74,57,"['study area', 'sampling location']",True
+807,86,64,"['study location', 'sampling site', 'sampling location']",True
+808,10,2,"['study site', 'sampling location']",True
+809,13,8,['sampling location'],True
+810,13,7,['sampling location'],True
+811,25,8,['sampling location'],True
+812,55,19,['sampling location'],True
+813,36,10,"['sampling site', 'sampling location']",True
+814,521,140,"['sampling site', 'sampling location']",True
+815,21,0,['sampling location'],True
+816,17,4,"['study area', 'sampling site', 'sampling location']",True
+817,9,0,['sampling location'],True
+818,24,4,"['sampling site', 'sampling location']",True
+819,22,8,['sampling location'],True
+820,113,10,"['sampling site', 'sampling location']",True
+821,78,40,['sampling location'],True
+822,10,0,['sampling location'],True
+823,118,33,"['sampling site', 'sampling location']",True
+824,28,21,"['study area', 'sampling location']",True
+825,25,13,"['sampling site', 'sampling location']",True
+826,50,1,"['study location', 'study area', 'sampling site', 'sampling location']",True
+827,13,0,['sampling location'],True
+828,34,12,['sampling location'],True
+829,34,8,['sampling location'],True
+830,22,10,"['study site', 'sampling site', 'sampling location']",True
+831,23,2,['sampling location'],True
+832,63,11,"['sampling site', 'sampling location']",True
+833,115,86,['sampling location'],True
+834,188,107,['sampling location'],True
+835,65,19,['sampling location'],True
+836,41,13,['sampling location'],True
+837,83,3,"['study site', 'study area', 'sampling location']",True
+838,28,5,['sampling location'],True
+839,94,47,['sampling location'],True
+840,30,20,"['study site', 'sampling site']",True
+841,18,5,['sampling site'],True
+842,171,101,['sampling site'],True
+843,34,11,"['study site', 'sampling site']",True
+844,11,3,"['study area', 'sampling site']",True
+845,111,26,['sampling site'],True
+846,27,11,['sampling site'],True
+847,116,66,"['study area', 'sampling site']",True
+848,14,1,['sampling site'],True
+849,25,12,['sampling site'],True
+850,37,0,"['study area', 'sampling site']",True
+851,56,42,"['study area', 'sampling site']",True
+852,55,17,['sampling site'],True
+853,41,11,"['study area', 'sampling site']",True
+854,17,7,['sampling site'],True
+855,24,13,['sampling site'],True
+856,35,11,['sampling site'],True
+857,19,6,['sampling site'],True
+858,15,5,['sampling site'],True
+859,115,48,"['study area', 'sampling site']",True
+860,19,15,['sampling site'],True
+861,19,4,['sampling site'],True
+862,10,4,"['study site', 'study area', 'sampling site']",True
+863,17,4,['sampling site'],True
+864,4,4,['sampling site'],True
+865,31,17,['sampling site'],True
+866,18,2,['sampling site'],True
+867,2,0,['sampling site'],True
+868,14,3,"['study area', 'sampling site']",True
+869,24,9,"['study site', 'study area', 'sampling site']",True
+870,19,11,['sampling site'],True
+871,22,7,['sampling site'],True
+872,55,41,"['study site', 'sampling site']",True
+873,149,4,"['study area', 'sampling site']",True
+874,22,15,['sampling site'],True
+875,35,12,"['study site', 'study area', 'sampling site']",True
+876,74,49,['sampling site'],True
+877,44,20,['sampling site'],True
+878,64,10,"['study area', 'sampling site']",True
+879,53,22,['sampling site'],True
+880,6,4,['sampling site'],True
+881,16,7,['sampling site'],True
+882,26,8,"['study site', 'sampling site']",True
+883,18,9,['sampling site'],True
+884,65,32,['sampling site'],True
+885,68,15,['sampling site'],True
+886,21,2,['sampling site'],True
+887,25,3,['sampling site'],True
+888,106,72,['sampling site'],True
+889,26,11,"['study site', 'sampling site']",True
+890,248,140,['sampling site'],True
+891,77,30,['sampling site'],True
+892,52,38,['sampling site'],True
+893,57,7,['sampling site'],True
+894,55,20,['sampling site'],True
+895,8,3,['sampling site'],True
+896,2,0,['sampling site'],True
+897,8,1,['sampling site'],True
+898,15,2,"['study area', 'sampling site']",True
+899,34,22,"['study site', 'study area', 'sampling site']",True
+900,9,6,['sampling site'],True
+901,48,23,['sampling site'],True
+902,52,39,['sampling site'],True
+903,32,4,['sampling site'],True
+904,9,4,['sampling site'],True
+905,82,46,['sampling site'],True
+906,24,5,"['study site', 'study area', 'sampling site']",True
+907,24,4,"['study site', 'study area', 'sampling site']",True
+908,65,19,['sampling site'],True
+909,58,7,"['study site', 'study area', 'sampling site']",True
+910,51,9,['sampling site'],True
+911,63,22,['sampling site'],True
+912,4,3,['sampling site'],True
+913,18,5,"['study site', 'sampling site']",True
+914,51,5,['sampling site'],True
+915,26,7,"['study site', 'study area', 'sampling site']",True
+916,7,3,"['study area', 'sampling site']",True
+917,24,19,['sampling site'],True
+918,15,11,['sampling site'],True
+919,3,0,['sampling site'],True
+920,61,12,['sampling site'],True
+921,143,50,['sampling site'],True
+922,11,7,['sampling site'],True
+923,40,18,['sampling site'],True
+924,9,4,['sampling site'],True
+925,35,29,"['study site', 'study area', 'sampling site']",True
+926,86,39,"['study location', 'sampling site']",True
+927,8,3,['sampling site'],True
+928,58,26,['sampling site'],True
+929,26,9,"['study site', 'sampling site']",True
+930,39,7,['sampling site'],True
+931,32,0,"['study site', 'sampling site']",True
+932,11,7,['sampling site'],True
+933,14,1,['sampling site'],True
+934,106,59,"['study area', 'sampling site']",True
+935,8,2,"['study area', 'sampling site']",True
+936,13,6,['sampling site'],True
+937,52,41,['sampling site'],True
+938,19,5,['sampling site'],True
+939,132,2,"['study site', 'sampling site']",True
+940,10,2,['sampling site'],True
+941,34,5,"['study area', 'sampling site']",True
+942,82,38,"['study area', 'sampling site']",True
+943,32,1,"['study site', 'study area', 'sampling site']",True
+944,8,0,['sampling site'],True
+945,12,6,"['study site', 'study area', 'sampling site']",True
+946,13,4,['sampling site'],True
+947,39,2,"['study area', 'sampling site']",True
+948,21,9,['sampling site'],True
+949,25,0,['sampling site'],True
+950,2,1,['sampling site'],True
+951,105,33,"['study area', 'sampling site']",True
+952,21,1,['sampling site'],True
+953,62,25,['sampling site'],True
+954,58,7,"['study site', 'study area', 'sampling site']",True
+955,55,0,['sampling site'],True
+956,109,102,['sampling site'],True
+957,47,19,"['study site', 'study area', 'sampling site']",True
+958,11,8,['sampling site'],True
+959,26,12,"['study area', 'sampling site']",True
+960,228,133,['sampling site'],True
+961,31,9,"['study area', 'sampling site']",True
+962,34,6,['sampling site'],True
+963,71,16,['sampling site'],True
+964,45,10,"['study area', 'sampling site']",True
+965,81,22,"['study site', 'sampling site']",True
+966,6,4,"['study site', 'sampling site']",True
+967,71,21,['sampling site'],True
+968,26,3,['sampling site'],True
+969,7,2,['sampling site'],True
+970,39,9,"['study site', 'sampling site']",True
+971,39,13,['sampling site'],True
+972,21,13,['sampling site'],True
+973,34,2,['sampling site'],True
+974,33,4,['sampling site'],True
+975,23,19,['sampling site'],True
+976,20,7,"['study area', 'sampling site']",True
+977,64,4,"['study site', 'sampling site']",True
+978,90,28,"['study site', 'study area', 'sampling site']",True
+979,117,50,"['study area', 'sampling site']",True
+980,2,2,['sampling site'],True
+981,20,4,['sampling site'],True
+982,37,8,"['study area', 'sampling site']",True
+983,65,4,"['study site', 'study area', 'sampling site']",True
+984,32,21,"['study area', 'sampling site']",True
+985,695,346,['sampling site'],True
+986,57,43,['sampling site'],True
+987,13,3,['sampling site'],True
+988,0,0,['sampling site'],True
+989,40,11,['sampling site'],True
+990,10,4,['sampling site'],True
+991,5,2,['sampling site'],True
+992,59,12,['sampling site'],True
+993,37,13,['sampling site'],True
+994,45,22,['sampling site'],True
+995,20,5,['sampling site'],True
+996,16,6,['sampling site'],True
+997,21,9,['sampling site'],True
+998,77,29,"['study site', 'sampling site']",True
+999,6,2,['sampling site'],True
+1000,2,1,,False
+1001,0,0,,False
+1002,4,0,,False
+1003,10,6,,False
+1004,0,0,,False
+1005,10,4,,False
+1006,30,19,,False
+1007,1,0,,False
+1008,5,2,,False
+1009,68,41,,False
+1010,16,12,,False
+1011,8,1,,False
+1012,12,1,,False
+1013,8,0,,False
+1014,2,1,,False
+1015,7,1,,False
+1016,0,0,,False
+1017,3,0,,False
+1018,12,5,,False
+1019,4,0,,False
+1020,1,0,,False
+1021,0,0,,False
+1022,0,0,,False
+1023,9,1,,False
+1024,12,3,,False
+1025,16,4,,False
+1026,15,13,,False
+1027,0,0,,False
+1028,8,5,,False
+1029,17,13,,False
+1030,7,1,,False
+1031,13,1,,False
+1032,1,0,,False
+1033,33,14,,False
+1034,5,0,,False
+1035,1,0,,False
+1036,104,10,,False
+1037,10,2,,False
+1038,21,9,,False
+1039,12,5,,False
+1040,0,0,,False
+1041,5,3,,False
+1042,3,0,,False
+1043,22,14,,False
+1044,21,0,,False
+1045,31,20,,False
+1046,6,4,,False
+1047,0,0,,False
+1048,45,36,,False
+1049,0,0,,False
+1050,2,0,,False
+1051,68,24,,False
+1052,0,0,,False
+1053,9,1,,False
+1054,0,0,,False
+1055,3,3,,False
+1056,5,0,,False
+1057,6,0,,False
+1058,2,0,,False
+1059,9,4,,False
+1060,1,0,,False
+1061,27,12,,False
+1062,7,1,,False
+1063,8,0,,False
+1064,0,0,,False
+1065,3,3,,False
+1066,6,1,,False
+1067,19,12,,False
+1068,22,14,,False
+1069,37,19,,False
+1070,3,0,,False
+1071,0,0,,False
+1072,0,0,,False
+1073,7,1,,False
+1074,53,35,,False
+1075,7,1,,False
+1076,8,3,,False
+1077,3,0,,False
+1078,30,25,,False
+1079,0,0,,False
+1080,0,0,,False
+1081,1,1,,False
+1082,9,0,,False
+1083,6,0,,False
+1084,4,0,,False
+1085,1,0,,False
+1086,2,1,,False
+1087,3,1,,False
+1088,0,0,,False
+1089,6,3,,False
+1090,45,2,,False
+1091,0,0,,False
+1092,1,0,,False
+1093,0,0,,False
+1094,1,0,,False
+1095,3,2,,False
+1096,1,0,,False
+1097,37,25,,False
+1098,0,0,,False
+1099,17,10,,False
+1100,1,0,,False
+1101,56,51,,False
+1102,11,0,,False
+1103,46,7,,False
+1104,11,3,,False
+1105,8,5,,False
+1106,18,7,,False
+1107,10,3,,False
+1108,0,0,,False
+1109,17,0,,False
+1110,3,0,,False
+1111,15,2,,False
+1112,17,11,,False
+1113,8,4,,False
+1114,3,0,,False
+1115,4,2,,False
+1116,7,1,,False
+1117,17,0,,False
+1118,2,2,,False
+1119,5,4,,False
+1120,9,6,,False
+1121,0,0,,False
+1122,24,17,,False
+1123,2,1,,False
+1124,17,11,,False
+1125,0,0,,False
+1126,62,51,,False
+1127,1,1,,False
+1128,14,9,,False
+1129,4,1,,False
+1130,15,7,,False
+1131,40,30,,False
+1132,0,0,,False
+1133,0,0,,False
+1134,90,35,,False
+1135,1,1,,False
+1136,2,0,,False
+1137,4,2,,False
+1138,62,35,,False
+1139,0,0,,False
+1140,16,2,,False
+1141,13,2,,False
+1142,11,4,,False
+1143,8,2,,False
+1144,13,0,,False
+1145,2,1,,False
+1146,8,0,,False
+1147,14,5,,False
+1148,9,4,,False
+1149,3,2,,False
+1150,0,0,,False
+1151,24,3,,False
+1152,15,8,,False
+1153,15,7,,False
+1154,5,2,,False
+1155,18,3,,False
+1156,11,4,,False
+1157,13,4,,False
+1158,2,0,,False
+1159,48,20,,False
+1160,1,0,,False
+1161,33,4,,False
+1162,2,0,,False
+1163,4,3,,False
+1164,2,0,,False
+1165,9,4,,False
+1166,16,8,,False
+1167,12,4,,False
+1168,2,1,,False
+1169,34,20,,False
+1170,0,0,,False
+1171,10,1,,False
+1172,10,5,,False
+1173,15,3,,False
+1174,8,2,,False
+1175,0,0,,False
+1176,0,0,,False
+1177,2,2,,False
+1178,91,24,,False
+1179,18,2,,False
+1180,1,0,,False
+1181,14,8,,False
+1182,3,1,,False
+1183,17,10,,False
+1184,1,0,,False
+1185,2,0,,False
+1186,6,2,,False
+1187,34,10,,False
+1188,3,0,,False
+1189,25,13,,False
+1190,52,38,,False
+1191,1,1,,False
+1192,22,2,,False
+1193,0,0,,False
+1194,4,1,,False
+1195,0,0,,False
+1196,7,0,,False
+1197,1,0,,False
+1198,1,0,,False
+1199,0,0,,False
+1200,0,0,,False
+1201,30,15,,False
+1202,11,0,,False
+1203,5,0,,False
+1204,3,0,,False
+1205,37,0,,False
+1206,11,9,,False
+1207,8,3,,False
+1208,2,1,,False
+1209,15,5,,False
+1210,4,0,,False
+1211,7,6,,False
+1212,19,12,,False
+1213,12,1,,False
+1214,12,5,,False
+1215,37,19,,False
+1216,9,2,,False
+1217,9,3,,False
+1218,1,1,,False
+1219,2,0,,False
+1220,0,0,,False
+1221,1,0,,False
+1222,4,0,,False
+1223,20,5,,False
+1224,46,11,,False
+1225,3,0,,False
+1226,12,4,,False
+1227,3,1,,False
+1228,18,7,,False
+1229,0,0,,False
+1230,6,2,,False
+1231,11,2,,False
+1232,14,5,,False
+1233,2,1,,False
+1234,1,1,,False
+1235,5,1,,False
+1236,8,3,,False
+1237,4,2,,False
+1238,0,0,,False
+1239,1,0,,False
+1240,8,5,,False
+1241,5,5,,False
+1242,10,5,,False
+1243,6,1,,False
+1244,5,0,,False
+1245,10,8,,False
+1246,4,0,,False
+1247,0,0,,False
+1248,50,1,,False
+1249,16,8,,False
+1250,4,4,,False
+1251,3,3,,False
+1252,1,0,,False
+1253,12,0,,False
+1254,8,0,,False
+1255,19,7,,False
+1256,0,0,,False
+1257,2,0,,False
+1258,11,9,,False
+1259,0,0,,False
+1260,31,24,,False
+1261,14,8,,False
+1262,16,1,,False
+1263,1,1,,False
+1264,6,1,,False
+1265,0,0,,False
+1266,8,4,,False
+1267,0,0,,False
+1268,0,0,,False
+1269,2,0,,False
+1270,240,211,,False
+1271,15,4,,False
+1272,0,0,,False
+1273,7,0,,False
+1274,28,19,,False
+1275,18,0,,False
+1276,0,0,,False
+1277,9,5,,False
+1278,6,4,,False
+1279,8,4,,False
+1280,3,0,,False
+1281,0,0,,False
+1282,3,0,,False
+1283,8,4,,False
+1284,8,4,,False
+1285,7,2,,False
+1286,0,0,,False
+1287,0,0,,False
+1288,0,0,,False
+1289,0,0,,False
+1290,13,5,,False
+1291,0,0,,False
+1292,67,6,,False
+1293,29,11,,False
+1294,17,10,,False
+1295,5,1,,False
+1296,2,0,,False
+1297,7,5,,False
+1298,0,0,,False
+1299,2,0,,False
+1300,8,1,,False
+1301,3,2,,False
+1302,2,2,,False
+1303,4,2,,False
+1304,14,0,,False
+1305,0,0,,False
+1306,10,5,,False
+1307,0,0,,False
+1308,17,8,,False
+1309,1,0,,False
+1310,3,1,,False
+1311,1,1,,False
+1312,1,0,,False
+1313,4,2,,False
+1314,1,0,,False
+1315,4,0,,False
+1316,33,8,,False
+1317,2,0,,False
+1318,0,0,,False
+1319,0,0,,False
+1320,28,15,,False
+1321,2,1,,False
+1322,5,0,,False
+1323,13,4,,False
+1324,20,4,,False
+1325,0,0,,False
+1326,6,5,,False
+1327,13,4,,False
+1328,0,0,,False
+1329,15,4,,False
+1330,7,5,,False
+1331,17,14,,False
+1332,20,0,,False
+1333,48,2,,False
+1334,11,11,,False
+1335,1,0,,False
+1336,4,3,,False
+1337,6,1,,False
+1338,1,0,,False
+1339,3,3,,False
+1340,9,3,,False
+1341,4,0,,False
+1342,108,96,,False
+1343,45,10,,False
+1344,6,1,,False
+1345,25,11,,False
+1346,13,9,,False
+1347,6,0,,False
+1348,1,1,,False
+1349,15,7,,False
+1350,14,2,,False
+1351,23,17,,False
+1352,1,0,,False
+1353,3,2,,False
+1354,4,0,,False
+1355,3,2,,False
+1356,31,1,,False
+1357,2,2,,False
+1358,2,1,,False
+1359,1,0,,False
+1360,12,6,,False
+1361,0,0,,False
+1362,2,1,,False
+1363,21,6,,False
+1364,5,4,,False
+1365,67,55,,False
+1366,2,1,,False
+1367,3,2,,False
+1368,6,3,,False
+1369,21,0,,False
+1370,0,0,,False
+1371,0,0,,False
+1372,16,8,,False
+1373,6,2,,False
+1374,0,0,,False
+1375,11,6,,False
+1376,2,0,,False
+1377,1,0,,False
+1378,11,2,,False
+1379,1,1,,False
+1380,12,5,,False
+1381,6,3,,False
+1382,44,18,,False
+1383,7,4,,False
+1384,1,1,,False
+1385,41,7,,False
+1386,4,2,,False
+1387,0,0,,False
+1388,12,2,,False
+1389,1,0,,False
+1390,1,0,,False
+1391,23,3,,False
+1392,16,14,,False
+1393,14,3,,False
+1394,21,5,,False
+1395,0,0,,False
+1396,10,8,,False
+1397,0,0,,False
+1398,1,1,,False
+1399,1,0,,False
+1400,70,5,,False
+1401,0,0,,False
+1402,0,0,,False
+1403,39,39,,False
+1404,21,13,,False
+1405,12,6,,False
+1406,83,39,,False
+1407,3,3,,False
+1408,0,0,,False
+1409,2,0,,False
+1410,0,0,,False
+1411,9,6,,False
+1412,11,2,,False
+1413,4,2,,False
+1414,24,9,,False
+1415,12,6,,False
+1416,0,0,,False
+1417,6,1,,False
+1418,13,7,,False
+1419,0,0,,False
+1420,24,2,,False
+1421,38,19,,False
+1422,9,4,,False
+1423,0,0,,False
+1424,14,8,,False
+1425,8,8,,False
+1426,25,0,,False
+1427,12,4,,False
+1428,3,0,,False
+1429,0,0,,False
+1430,0,0,,False
+1431,15,3,,False
+1432,31,15,,False
+1433,2,1,,False
+1434,40,0,,False
+1435,8,4,,False
+1436,27,8,,False
+1437,2,0,,False
+1438,104,49,,False
+1439,3,2,,False
+1440,12,6,,False
+1441,23,18,,False
+1442,4,2,,False
+1443,0,0,,False
+1444,1,0,,False
+1445,15,7,,False
+1446,22,1,,False
+1447,48,18,,False
+1448,0,0,,False
+1449,35,6,,False
+1450,0,0,,False
+1451,63,17,,False
+1452,13,7,,False
+1453,23,23,,False
+1454,19,15,,False
+1455,3,0,,False
+1456,0,0,,False
+1457,8,1,,False
+1458,2,0,,False
+1459,0,0,,False
+1460,9,4,,False
+1461,13,7,,False
+1462,9,0,,False
+1463,13,3,,False
+1464,14,6,,False
+1465,10,6,,False
+1466,11,3,,False
+1467,8,7,,False
+1468,0,0,,False
+1469,13,6,,False
+1470,10,7,,False
+1471,33,6,,False
+1472,8,7,,False
+1473,5,3,,False
+1474,6,4,,False
+1475,1,1,,False
+1476,5,2,,False
+1477,0,0,,False
+1478,16,2,,False
+1479,0,0,,False
+1480,0,0,,False
+1481,1,0,,False
+1482,0,0,,False
+1483,7,5,,False
+1484,2,0,,False
+1485,22,0,,False
+1486,12,1,,False
+1487,0,0,,False
+1488,12,6,,False
+1489,16,12,,False
+1490,17,2,,False
+1491,3,1,,False
+1492,0,0,,False
+1493,5,1,,False
+1494,7,6,,False
+1495,0,0,,False
+1496,5,2,,False
+1497,17,2,,False
+1498,11,0,,False
+1499,4,3,,False
+1500,2,2,,False
+1501,0,0,,False
+1502,0,0,,False
+1503,2,2,,False
+1504,6,1,,False
+1505,6,2,,False
+1506,1,0,,False
+1507,0,0,,False
+1508,5,0,,False
+1509,3,0,,False
+1510,14,5,,False
+1511,20,4,,False
+1512,18,18,,False
+1513,9,9,,False
+1514,29,25,,False
+1515,0,0,,False
+1516,5,0,,False
+1517,4,3,,False
+1518,0,0,,False
+1519,14,8,,False
+1520,7,1,,False
+1521,1,0,,False
+1522,2,1,,False
+1523,1,1,,False
+1524,75,12,,False
+1525,10,4,,False
+1526,10,0,,False
+1527,11,2,,False
+1528,0,0,,False
+1529,0,0,,False
+1530,0,0,,False
+1531,8,5,,False
+1532,3,3,,False
+1533,0,0,,False
+1534,13,6,,False
+1535,14,0,,False
+1536,16,13,,False
+1537,2,2,,False
+1538,19,9,,False
+1539,19,1,,False
+1540,0,0,,False
+1541,7,1,,False
+1542,12,1,,False
+1543,33,0,,False
+1544,0,0,,False
+1545,38,27,,False
+1546,0,0,,False
+1547,1,0,,False
+1548,0,0,,False
+1549,0,0,,False
+1550,65,14,,False
+1551,0,0,,False
+1552,0,0,,False
+1553,6,4,,False
+1554,6,5,,False
+1555,25,4,,False
+1556,1,1,,False
+1557,10,1,,False
+1558,0,0,,False
+1559,1,0,,False
+1560,2,1,,False
+1561,9,0,,False
+1562,26,15,,False
+1563,2,1,,False
+1564,24,12,,False
+1565,12,7,,False
+1566,0,0,,False
+1567,5,1,,False
+1568,12,7,,False
+1569,33,2,,False
+1570,107,85,,False
+1571,3,0,,False
+1572,20,15,,False
+1573,0,0,,False
+1574,3,3,,False
+1575,4,0,,False
+1576,0,0,,False
+1577,28,22,,False
+1578,0,0,,False
+1579,31,22,,False
+1580,2,0,,False
+1581,3,0,,False
+1582,2,0,,False
+1583,16,15,,False
+1584,47,18,,False
+1585,1,0,,False
+1586,0,0,,False
+1587,31,4,,False
+1588,65,12,,False
+1589,8,1,,False
+1590,1,1,,False
+1591,18,8,,False
+1592,10,5,,False
+1593,1,0,,False
+1594,0,0,,False
+1595,4,0,,False
+1596,1,0,,False
+1597,24,15,,False
+1598,3,0,,False
+1599,0,0,,False
+1600,0,0,,False
+1601,8,1,,False
+1602,0,0,,False
+1603,4,1,,False
+1604,9,3,,False
+1605,3,1,,False
+1606,5,1,,False
+1607,40,13,,False
+1608,10,0,,False
+1609,4,1,,False
+1610,11,8,,False
+1611,11,3,,False
+1612,0,0,,False
+1613,25,21,,False
+1614,5,0,,False
+1615,2,1,,False
+1616,0,0,,False
+1617,0,0,,False
+1618,29,7,,False
+1619,116,52,,False
+1620,0,0,,False
+1621,12,7,,False
+1622,1,0,,False
+1623,6,4,,False
+1624,7,1,,False
+1625,8,7,,False
+1626,6,2,,False
+1627,1,1,,False
+1628,3,1,,False
+1629,0,0,,False
+1630,4,1,,False
+1631,9,0,,False
+1632,9,3,,False
+1633,2,0,,False
+1634,1,0,,False
+1635,68,38,,False
+1636,9,4,,False
+1637,13,9,,False
+1638,8,1,,False
+1639,5,1,,False
+1640,10,8,,False
+1641,11,7,,False
+1642,8,8,,False
+1643,24,6,,False
+1644,9,0,,False
+1645,0,0,,False
+1646,8,3,,False
+1647,17,11,,False
+1648,1,0,,False
+1649,27,19,,False
+1650,0,0,,False
+1651,4,0,,False
+1652,0,0,,False
+1653,1,0,,False
+1654,5,0,,False
+1655,12,5,,False
+1656,6,4,,False
+1657,0,0,,False
+1658,0,0,,False
+1659,15,6,,False
+1660,31,7,,False
+1661,19,12,,False
+1662,18,9,,False
+1663,2,1,,False
+1664,0,0,,False
+1665,1,0,,False
+1666,2,0,,False
+1667,14,8,,False
+1668,0,0,,False
+1669,3,0,,False
+1670,23,11,,False
+1671,17,4,,False
+1672,0,0,,False
+1673,8,6,,False
+1674,4,0,,False
+1675,24,17,,False
+1676,10,2,,False
+1677,5,4,,False
+1678,8,3,,False
+1679,0,0,,False
+1680,13,12,,False
+1681,1,0,,False
+1682,11,8,,False
+1683,2,0,,False
+1684,31,17,,False
+1685,13,2,,False
+1686,0,0,,False
+1687,32,0,,False
+1688,7,4,,False
+1689,7,2,,False
+1690,67,7,,False
+1691,14,1,,False
+1692,0,0,,False
+1693,0,0,,False
+1694,10,4,,False
+1695,3,2,,False
+1696,26,14,,False
+1697,9,1,,False
+1698,55,15,,False
+1699,15,8,,False
+1700,5,2,,False
+1701,4,0,,False
+1702,22,6,,False
+1703,1,0,,False
+1704,5,4,,False
+1705,10,0,,False
+1706,5,1,,False
+1707,23,19,,False
+1708,1,1,,False
+1709,0,0,,False
+1710,12,4,,False
+1711,15,7,,False
+1712,2,0,,False
+1713,0,0,,False
+1714,18,7,,False
+1715,0,0,,False
+1716,13,6,,False
+1717,4,0,,False
+1718,8,5,,False
+1719,0,0,,False
+1720,0,0,,False
+1721,0,0,,False
+1722,9,3,,False
+1723,4,0,,False
+1724,32,20,,False
+1725,0,0,,False
+1726,7,3,,False
+1727,5,0,,False
+1728,1,1,,False
+1729,1,0,,False
+1730,14,5,,False
+1731,0,0,,False
+1732,20,18,,False
+1733,3,1,,False
+1734,0,0,,False
+1735,1,0,,False
+1736,23,9,,False
+1737,0,0,,False
+1738,16,13,,False
+1739,20,13,,False
+1740,30,24,,False
+1741,42,0,,False
+1742,21,7,,False
+1743,20,3,,False
+1744,35,10,,False
+1745,8,1,,False
+1746,20,0,,False
+1747,1,0,,False
+1748,23,1,,False
+1749,3,2,,False
+1750,16,2,,False
+1751,2,0,,False
+1752,42,7,,False
+1753,21,21,,False
+1754,3,0,,False
+1755,6,1,,False
+1756,16,4,,False
+1757,1,1,,False
+1758,32,28,,False
+1759,0,0,,False
+1760,16,6,,False
+1761,3,1,,False
+1762,12,0,,False
+1763,1,0,,False
+1764,14,3,,False
+1765,19,2,,False
+1766,5,1,,False
+1767,21,1,,False
+1768,0,0,,False
+1769,5,2,,False
+1770,12,0,,False
+1771,11,7,,False
+1772,11,0,,False
+1773,0,0,,False
+1774,8,2,,False
+1775,16,12,,False
+1776,0,0,,False
+1777,5,3,,False
+1778,14,5,,False
+1779,8,0,,False
+1780,0,0,,False
+1781,3,0,,False
+1782,102,17,,False
+1783,0,0,,False
+1784,72,17,,False
+1785,35,9,,False
+1786,3,1,,False
+1787,0,0,,False
+1788,8,5,,False
+1789,2,0,,False
+1790,4,0,,False
+1791,5,4,,False
+1792,7,0,,False
+1793,8,4,,False
+1794,48,24,,False
+1795,12,10,,False
+1796,0,0,,False
+1797,1,0,,False
+1798,42,28,,False
+1799,4,0,,False
+1800,10,2,,False
+1801,9,0,,False
+1802,2,1,,False
+1803,10,4,,False
+1804,1,0,,False
+1805,0,0,,False
+1806,5,3,,False
+1807,1,0,,False
+1808,1,0,,False
+1809,5,3,,False
+1810,4,0,,False
+1811,2,1,,False
+1812,3,1,,False
+1813,0,0,,False
+1814,13,7,,False
+1815,126,71,,False
+1816,0,0,,False
+1817,0,0,,False
+1818,8,8,,False
+1819,1,0,,False
+1820,21,10,,False
+1821,1,0,,False
+1822,3,1,,False
+1823,19,15,,False
+1824,29,23,,False
+1825,10,6,,False
+1826,3,0,,False
+1827,40,21,,False
+1828,0,0,,False
+1829,1,0,,False
+1830,6,4,,False
+1831,3,2,,False
+1832,0,0,,False
+1833,1,1,,False
+1834,11,3,,False
+1835,8,4,,False
+1836,3,3,,False
+1837,2,1,,False
+1838,0,0,,False
+1839,7,1,,False
+1840,22,5,,False
+1841,15,7,,False
+1842,3,3,,False
+1843,67,5,,False
+1844,0,0,,False
+1845,4,3,,False
+1846,0,0,,False
+1847,4,0,,False
+1848,2,0,,False
+1849,14,5,,False
+1850,56,0,,False
+1851,31,19,,False
+1852,23,16,,False
+1853,26,17,,False
+1854,23,4,,False
+1855,1,0,,False
+1856,0,0,,False
+1857,9,5,,False
+1858,0,0,,False
+1859,16,11,,False
+1860,13,1,,False
+1861,8,4,,False
+1862,3,3,,False
+1863,9,3,,False
+1864,6,1,,False
+1865,4,0,,False
+1866,4,4,,False
+1867,7,5,,False
+1868,48,19,,False
+1869,0,0,,False
+1870,6,5,,False
+1871,7,1,,False
+1872,2,0,,False
+1873,35,26,,False
+1874,15,2,,False
+1875,0,0,,False
+1876,1,1,,False
+1877,1,0,,False
+1878,7,0,,False
+1879,2,0,,False
+1880,0,0,,False
+1881,18,7,,False
+1882,13,6,,False
+1883,10,4,,False
+1884,0,0,,False
+1885,2,0,,False
+1886,10,7,,False
+1887,22,7,,False
+1888,15,1,,False
+1889,15,12,,False
+1890,16,1,,False
+1891,0,0,,False
+1892,12,0,,False
+1893,27,19,,False
+1894,0,0,,False
+1895,2,2,,False
+1896,81,77,,False
+1897,16,6,,False
+1898,5,2,,False
+1899,7,5,,False
+1900,4,1,,False
+1901,2,2,,False
+1902,11,5,,False
+1903,10,1,,False
+1904,4,0,,False
+1905,0,0,,False
+1906,0,0,,False
+1907,0,0,,False
+1908,21,19,,False
+1909,14,4,,False
+1910,0,0,,False
+1911,0,0,,False
+1912,12,1,,False
+1913,45,40,,False
+1914,4,1,,False
+1915,5,3,,False
+1916,12,4,,False
+1917,4,3,,False
+1918,0,0,,False
+1919,0,0,,False
+1920,3,1,,False
+1921,9,2,,False
+1922,34,11,,False
+1923,67,13,,False
+1924,1,1,,False
+1925,11,4,,False
+1926,5,2,,False
+1927,3,2,,False
+1928,11,1,,False
+1929,0,0,,False
+1930,5,2,,False
+1931,21,13,,False
+1932,32,12,,False
+1933,4,3,,False
+1934,12,6,,False
+1935,2,0,,False
+1936,31,23,,False
+1937,19,13,,False
+1938,7,2,,False
+1939,2,0,,False
+1940,0,0,,False
+1941,12,8,,False
+1942,12,4,,False
+1943,16,5,,False
+1944,2,0,,False
+1945,3,1,,False
+1946,30,11,,False
+1947,0,0,,False
+1948,26,0,,False
+1949,7,1,,False
+1950,56,14,,False
+1951,11,6,,False
+1952,37,9,,False
+1953,0,0,,False
+1954,0,0,,False
+1955,1,1,,False
+1956,0,0,,False
+1957,9,8,,False
+1958,3,0,,False
+1959,12,3,,False
+1960,7,3,,False
+1961,3,1,,False
+1962,0,0,,False
+1963,23,14,,False
+1964,3,1,,False
+1965,14,5,,False
+1966,0,0,,False
+1967,3,0,,False
+1968,6,1,,False
+1969,0,0,,False
+1970,32,17,,False
+1971,0,0,,False
+1972,1,0,,False
+1973,4,3,,False
+1974,17,3,,False
+1975,6,4,,False
+1976,0,0,,False
+1977,2,1,,False
+1978,35,17,,False
+1979,3,0,,False
+1980,14,5,,False
+1981,14,8,,False
+1982,7,2,,False
+1983,2,0,,False
+1984,26,23,,False
+1985,2,0,,False
+1986,9,3,,False
+1987,10,7,,False
+1988,4,1,,False
+1989,14,0,,False
+1990,11,1,,False
+1991,0,0,,False
+1992,23,3,,False
+1993,8,6,,False
+1994,3,0,,False
+1995,6,4,,False
+1996,0,0,,False
+1997,3,2,,False
+1998,1,0,,False
+1999,0,0,,False

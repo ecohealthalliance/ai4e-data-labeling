@@ -6,7 +6,7 @@ if __name__ == "__main__":
         terms = [line.strip() for line in f.readlines()]
 
     query = {
-        "text_matches": { 
+        "text_matches": {
             "$in": terms
         },
         "article_meta": {
@@ -17,4 +17,5 @@ if __name__ == "__main__":
 
     print(json.dumps(query, indent=4))
 
-    subprocess.run(["mongodump", "--gzip", "--archive=ai4e_articles.gzip", "-d", "pmc", "-c", "articles", "-q", json.dumps(query)])
+    subprocess.run(["mongodump", "--gzip", "--archive=ai4e_articles.gzip",
+                    "-d", "pmc", "-c", "articles", "-q", json.dumps(query)])
