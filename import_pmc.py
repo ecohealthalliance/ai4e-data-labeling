@@ -25,11 +25,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "-s", "--seed", default=None, dest="seed"
     )
+    parser.add_argument(
+        "-d", "--drop", action="store_true", dest="drop"
+    )
     args = parser.parse_args()
 
     articles = pymongo.MongoClient(args.mongo_host,
                                    args.mongo_port).pmc.articles
-    articles.drop()
+    if args.drop:
+        articles.drop()
 
     print("Gathering list of PMC files to sample...")
 

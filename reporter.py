@@ -22,13 +22,14 @@ class Reporter:
         est_time_left = (self.total - idx) * mean(self.times_per_batch[-10:])
         elapsed = time.time() - self.start
 
-        output = "\033[F\033[K" + "Processed {0} articles ({1:.1f}%) in \
-                {2:.0f}m{3:.0f}s; about {4:.0f}m{5:.0f}s left.".format(
-            idx,
-            idx/self.total * 100,
-            elapsed // 60,
-            elapsed % 60,
-            est_time_left // 60,
-            est_time_left % 60)
+        output = "\033[F\033[K" + "Processed {0} articles ({1:.1f}%) in "\
+            "{2:.0f}m{3:.0f}s; about {4:.0f}m{5:.0f}s left."\
+            .format(
+                idx,
+                idx/self.total * 100,
+                elapsed // 60,
+                elapsed % 60,
+                est_time_left // 60,
+                est_time_left % 60)
         clear_output(wait=True)
         print(output)
