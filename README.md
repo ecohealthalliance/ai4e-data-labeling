@@ -25,7 +25,7 @@ You can pass in a random seed with `-s "seed"` or `--seed "seed"`.
 
 We've been using the seed `"2019-04-05"` for our most recent sample, sampling 50000 documents.
 
-### extract_article_meta.py
+### `extract_article_meta.py`
 
 Iterates over the `articles` collection, setting the following properties for each document:
 
@@ -34,7 +34,7 @@ Iterates over the `articles` collection, setting the following properties for ea
 
 The script creates an index on the `article_meta` field.
 
-### index_search_terms.py
+### `index_search_terms.py`
 
 This script searches the `extracted_text` of each article for a set of terms, and writes a `text_matches` array to the MongoDB document with the results of this session's searches.
 
@@ -44,7 +44,7 @@ The latter behavior is to allow searches which MongoDB's built-in text search en
 
 If you want to *add*, rather than *replace*, the `text_matches` array, pass in `--keep_previous`.
 
-### dump_articles.py
+### `dump_articles.py`
 
 Dumps a subset of articles into a MongoDump file named `ai4e_articles.gzip`.
 
@@ -54,12 +54,12 @@ The subset includes articles with all of the following:
 - a `<body>` tag
 - `article_type` research-article
 
-### export_csvs.py, count_geonames_to_csvs.py
+### `export_csvs.py`, `count_geonames_to_csvs.py`
 
 These files export CSVs to the `data/` directory for use by `visualize_article_data.Rmd`.
 
 The former iterates through all documents and exports a few different summaries, and the latter samples `-n` articles with and without `text_matches` to run our GeoName annotator (from `EpiTator`) and count the number of GeoNames found for each article.
 
-### visualize_article_data.Rmd
+### `visualize_article_data.Rmd`
 
 Build this with `rmarkdown::render()` in R, and it'll update the Markdown and HTML reports with summary statistics.
