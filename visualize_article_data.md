@@ -5379,37 +5379,37 @@ geonames in them than those that don’t.
 summary(geonames)
 ```
 
-    ##     n_spans       n_spans_over90   text_matches       any_matches    
-    ##  Min.   :  0.00   Min.   :  0.00   Length:600         Mode :logical  
-    ##  1st Qu.:  4.00   1st Qu.:  1.00   Class :character   FALSE:300      
-    ##  Median : 12.00   Median :  3.00   Mode  :character   TRUE :300      
-    ##  Mean   : 24.91   Mean   :  9.37                                     
-    ##  3rd Qu.: 29.00   3rd Qu.: 11.00                                     
-    ##  Max.   :647.00   Max.   :211.00
+    ##     n_spans        n_spans_over90  text_matches       any_matches    
+    ##  Min.   :   0.00   Min.   :  0.0   Length:2000        Mode :logical  
+    ##  1st Qu.:   4.00   1st Qu.:  1.0   Class :character   FALSE:1000     
+    ##  Median :  14.00   Median :  4.0   Mode  :character   TRUE :1000     
+    ##  Mean   :  29.55   Mean   : 11.6                                     
+    ##  3rd Qu.:  33.00   3rd Qu.: 12.0                                     
+    ##  Max.   :2448.00   Max.   :680.0
 
 ``` r
 geonames %>% filter(any_matches == TRUE) %>% summary
 ```
 
-    ##     n_spans       n_spans_over90   text_matches       any_matches   
-    ##  Min.   :  0.00   Min.   :  0.00   Length:300         Mode:logical  
-    ##  1st Qu.: 10.00   1st Qu.:  2.00   Class :character   TRUE:300      
-    ##  Median : 22.00   Median :  6.00   Mode  :character                 
-    ##  Mean   : 37.94   Mean   : 13.66                                    
-    ##  3rd Qu.: 38.00   3rd Qu.: 16.00                                    
-    ##  Max.   :647.00   Max.   :188.00
+    ##     n_spans        n_spans_over90   text_matches       any_matches   
+    ##  Min.   :   0.00   Min.   :  0.00   Length:1000        Mode:logical  
+    ##  1st Qu.:  13.00   1st Qu.:  3.00   Class :character   TRUE:1000     
+    ##  Median :  27.00   Median :  9.00   Mode  :character                 
+    ##  Mean   :  47.68   Mean   : 18.46                                    
+    ##  3rd Qu.:  53.25   3rd Qu.: 20.00                                    
+    ##  Max.   :2448.00   Max.   :680.00
 
 ``` r
 geonames %>% filter(any_matches == FALSE) %>% summary
 ```
 
-    ##     n_spans       n_spans_over90   text_matches       any_matches    
-    ##  Min.   :  0.00   Min.   :  0.00   Length:300         Mode :logical  
-    ##  1st Qu.:  1.00   1st Qu.:  0.00   Class :character   FALSE:300      
-    ##  Median :  6.00   Median :  1.00   Mode  :character                  
-    ##  Mean   : 11.89   Mean   :  5.08                                     
-    ##  3rd Qu.: 14.00   3rd Qu.:  5.00                                     
-    ##  Max.   :240.00   Max.   :211.00
+    ##     n_spans       n_spans_over90    text_matches       any_matches    
+    ##  Min.   :  0.00   Min.   :  0.000   Length:1000        Mode :logical  
+    ##  1st Qu.:  1.00   1st Qu.:  0.000   Class :character   FALSE:1000     
+    ##  Median :  6.00   Median :  1.000   Mode  :character                  
+    ##  Mean   : 11.43   Mean   :  4.743                                     
+    ##  3rd Qu.: 14.00   3rd Qu.:  5.000                                     
+    ##  Max.   :240.00   Max.   :211.000
 
 ## Summary
 

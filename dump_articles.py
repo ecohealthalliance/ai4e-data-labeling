@@ -15,7 +15,8 @@ if __name__ == "__main__":
         }
     }
 
-    print(json.dumps(query, indent=4))
+    print("Dumping articles matching this query:\n{}"
+          .format(json.dumps(query, indent=4)))
 
     subprocess.run(["mongodump", "--gzip", "--archive=ai4e_articles.gzip",
                     "-d", "pmc", "-c", "articles", "-q", json.dumps(query)])
