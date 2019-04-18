@@ -44,26 +44,33 @@ if __name__ == "__main__":
     reporter = MongoQueryReporter(1, articles, query)
     rows = []
 
-    print("Updating documents {} documents...\n".format(count))
+    print("Getting {} documents from MongoDB...".format(count))
 
-    for idx, record in enumerate(cursor):
+    records = list(cursor)
+    updates = []
+
+    print("Updating {} documents...\n".format(len(records)))
+
+    for idx, record in enumerate(records):
         article = Article(record["xml"])
 
         record_update = {
             "article_title": article.article_title(),
             "journal_title": article.journal_title(),
-            "article_meta": {
-                "has_body": True if article.soup.body else False,
-                "article_type": article.article_type()
-            }
+            "article_meta.has_body": True if article.soup.body else False,
+            "article_meta.article_type": article.article_type()
         }
 
-        articles.update_one(
+        updates.append(pymongo.UpdateOne(
             filter={"_id": record["_id"]},
             update={"$set": record_update}
-        )
+        ))
 
         reporter.report(idx)
+
+    print("Writing updates to database...")
+
+    articles.bulk_write(updates)
 
     print("Creating index on results...")
     articles.create_index("article_meta")

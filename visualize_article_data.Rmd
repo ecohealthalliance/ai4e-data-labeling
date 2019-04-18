@@ -269,8 +269,7 @@ for (term in terms) {
     group_by(keywords) %>%
     summarize(n = n()) %>%
     arrange(desc(n)) %>%
-    print()
-    print("\n")
+    write_csv(paste0("~/Desktop/", term, ".csv"))
 }
 ```
 

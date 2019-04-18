@@ -33,3 +33,66 @@ class Reporter:
                 est_time_left % 60)
         clear_output(wait=True)
         print(output)
+
+
+class MongoQueryReporter:
+    def __init__(self, interval, collection, query):
+        self.interval = interval
+        self.collection = collection
+        self.query = query
+        self.times = []
+        self.times.append({
+            "time": time.time(),
+            "remaining": self.collection.count_documents(self.query),
+            "completed": 0
+        })
+
+    def update(self, idx=None):
+        t1 = time.time()
+        if idx is not None:
+            completed = idx + 1
+            self.times.append({
+                "time": time.time(),
+                "remaining": self.times[0]["remaining"] - completed,
+                "completed": completed
+            })
+        else:
+            remaining = self.collection.count_documents(self.query)
+            self.times.append({
+                "time": time.time(),
+                "remaining": remaining,
+                "completed": self.times[0]["remaining"] - remaining
+            })
+
+    def report(self, idx=None):
+        if time.time() - self.times[-1]["time"] < self.interval:
+            return self.times[-1]["remaining"]
+        self.update(idx)
+        first = self.times[0]
+        comparison = self.times[-5:][1]
+        latest = self.times[-1]
+        if latest["remaining"] == 0:
+            return latest["remaining"]
+        time_delta = latest["time"] - comparison["time"]
+        task_delta = comparison["remaining"] - latest["remaining"]
+        if task_delta > 0:
+            time_per_task = time_delta / task_delta
+        else:
+            return latest["remaining"]
+        total_time_delta = latest["time"] - first["time"]
+        total_task_delta = first["remaining"] - latest["remaining"]
+        tasks_left = latest["remaining"]
+        est_time_left = tasks_left * time_per_task
+
+        output = "\033[F\033[K" + "Processed {0} articles ({1:.1f}%) in "\
+            "{2:.0f}m{3:.0f}s; about {4:.0f}m{5:.0f}s left."\
+            .format(
+                total_task_delta,
+                total_task_delta / first["remaining"] * 100,
+                total_time_delta // 60,
+                total_time_delta % 60,
+                est_time_left // 60,
+                est_time_left % 60)
+        clear_output(wait=True)
+        print(output)
+        return latest["remaining"]
