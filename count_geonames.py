@@ -71,7 +71,7 @@ if __name__ == "__main__":
     }
 
     count = articles.count_documents(query)
-    print("Updating documents {} documents...\n".format(count))
+    print("Updating documents {} documents...".format(count))
 
     cursor = articles.find(query, ["_id"])
 
@@ -95,5 +95,8 @@ if __name__ == "__main__":
 
     for w in workers:
         w.join()
+
+    print("Creating index on results...")
+    articles.create_index("article_meta")
 
     print("Finished.")

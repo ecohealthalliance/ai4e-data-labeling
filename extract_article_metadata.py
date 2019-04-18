@@ -32,19 +32,19 @@ if __name__ == "__main__":
             }}
         )
 
-    query = {
-              "article_title": {"$exists": False},
-              "article_title": {"$exists": False},
-              "article_title.has_body": {"$exists": False},
-              "article_title.article_type": {"$exists": False},
-    }
+    query = {"$or": [
+              {"article_title": {"$exists": False}},
+              {"journal_title": {"$exists": False}},
+              {"article_meta.has_body": {"$exists": False}},
+              {"article_meta.article_type": {"$exists": False}},
+    ]}
 
     count = articles.count_documents(query)
+
+    print("Updating documents {} documents...".format(count))
+
     cursor = articles.find(query)
     reporter = MongoQueryReporter(1, articles, query)
-    rows = []
-
-    print("Updating documents {} documents...\n".format(count))
 
     for idx, record in enumerate(cursor):
         article = Article(record["xml"])
@@ -52,10 +52,8 @@ if __name__ == "__main__":
         record_update = {
             "article_title": article.article_title(),
             "journal_title": article.journal_title(),
-            "article_meta": {
-                "has_body": True if article.soup.body else False,
-                "article_type": article.article_type()
-            }
+            "article_meta.has_body": True if article.soup.body else False,
+            "article_meta.article_type": article.article_type()
         }
 
         articles.update_one(
@@ -71,7 +69,8 @@ if __name__ == "__main__":
     print("Testing index...")
 
     result_cursor = articles.aggregate(
-        [{"$limit": 100},
+        [
+            {"$limit": 100},
             {
                 "$group": {
                     "_id": "$article_meta.article_type",
