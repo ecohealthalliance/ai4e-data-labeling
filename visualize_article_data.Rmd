@@ -36,6 +36,8 @@ text_matches <- read_csv(here("data", "text_matches.csv")) %>%
   select(-X1)
 geonames <- read_csv(here("data", "geonames.csv")) %>%
   select(-X1)
+subset <- read_csv(here("data", "subset.csv")) %>%
+  select(-X1)
 ```
 
 
@@ -269,7 +271,7 @@ for (term in terms) {
     group_by(keywords) %>%
     summarize(n = n()) %>%
     arrange(desc(n)) %>%
-    write_csv(paste0("~/Desktop/", term, ".csv"))
+    print()
 }
 ```
 
@@ -282,6 +284,90 @@ It looks like articles that match the fieldwork terms have many more geonames in
 summary(geonames)
 geonames %>% filter(any_matches == TRUE) %>% summary
 geonames %>% filter(any_matches == FALSE) %>% summary
+```
+
+
+## Subset
+
+We're going to take a brief look at the distribution of GeoNames and text length in the subset.
+
+```{r subset}
+summary(subset)
+
+ggplot(subset, aes(x = length)) +
+  geom_histogram(binwidth = 1000) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans)) +
+  geom_histogram(binwidth = 10) +
+  theme_bw()
+```
+
+```{r density}
+ggplot(subset, aes(x = n_geospans / length)) +
+  geom_histogram(bins = 500) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans / length)) +
+  geom_histogram(bins = 500) +
+  scale_x_log10() +
+  theme_bw()
+```
+
+```{r quantiles}
+deciles = seq(0, 1, 0.1)
+quantile(subset$length, probs = deciles)
+quantile(subset$n_geospans, probs = deciles)
+
+quantiles = c(0.05, 0.25, 0.5, 0.75, 0.95)
+quantile(subset$length, probs = quantiles)
+quantile(subset$n_geospans, probs = quantiles)
+
+percentiles = seq(0, 1, 0.01)
+quantile(subset$length, probs = percentiles)
+quantile(subset$n_geospans, probs = percentiles)
+
+qplot(seq(0, 1, 0.01), quantile(subset$length, probs = percentiles)) + theme_bw()
+qplot(seq(0, 1, 0.01), quantile(subset$n_geospans, probs = percentiles)) + theme_bw()
+```
+
+We will only include documents which are:
+
+- longer than 1% and shorter than 5% of documents or 60,000 characters;
+- include more GeoNames than 25% of documents, and fewer than 99%.
+
+
+### Density
+
+I will also consider subsetting on `n_geospans / length`.
+
+```{r compute_density}
+subset <- subset %>%
+  filter(n_geospans > 0) %>%
+  mutate(density = n_geospans / length,
+         log_density = log(density))
+
+mean(subset$log_density)
+sd(subset$log_density)
+
+subset <- subset %>%
+  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0))
+
+ggplot(subset, aes(x = density)) +
+  geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
+  theme_bw()
+
+ggplot(subset, aes(x = density)) +
+  geom_histogram(bins = 500, aes(fill = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  theme_bw()
+
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude))) +
+  geom_point() +
+  theme_bw()
+
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  geom_point() +
+  theme_bw()
 ```
 
 

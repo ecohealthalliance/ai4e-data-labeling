@@ -20,7 +20,7 @@ if __name__ == "__main__":
     with open("terms") as f:
         terms = [line.strip() for line in f.readlines()]
 
-    query = {
+    simple_query = {
         "text_matches": {"$in": terms},
         "article_meta.article_type": "research-article",
         "article_meta.has_body": True,
@@ -28,22 +28,28 @@ if __name__ == "__main__":
     }
 
     cursor = articles.aggregate([
-        {"$match": query},
-        {"$project": {"n_geospans": "$article_meta.n_geospans"}}
+        {"$match": simple_query},
+        {"$project": {
+            "n_geospans": "$article_meta.n_geospans",
+            "length": {"$strLenCP": "$extracted_text"}
+        }}
     ])
 
-    geospan_df = pd.DataFrame(cursor)
-    q25 = geospan_df.n_geospans.quantile(q=0.25)
+    subset_df = pd.DataFrame(cursor)
+    quantiles = subset_df.quantile(q=[0.01, 0.25, 0.95, 0.99])
 
-    subset_query = {
+    final_query = {
         "text_matches": {"$in": terms},
         "article_meta.article_type": "research-article",
         "article_meta.has_body": True,
-        "article_meta.n_geospans": {"$gte": q25}
+        "article_meta.n_geospans": {"$gt": quantiles.n_geospans.iloc[1],
+                                    "$lt": quantiles.n_geospans.iloc[3]},
+        "$expr": {"$gte": [{"$strLenCP": "$extracted_text"}, quantiles.length.iloc[0]]},
+        "$expr": {"$lte": [{"$strLenCP": "$extracted_text"}, quantiles.length.iloc[2]]}
     }
 
     print("Dumping articles matching this query:\n{}"
-          .format(json.dumps(subset_query, indent=4)))
+          .format(json.dumps(final_query, indent=4)))
 
     subprocess.run(["mongodump", "--gzip", "--archive=ai4e_articles.gzip",
-                    "-d", "pmc", "-c", "articles", "-q", json.dumps(subset_query)])
+                    "-d", "pmc", "-c", "articles", "-q", json.dumps(final_query)])

@@ -16,6 +16,8 @@ text_matches <- read_csv(here("data", "text_matches.csv")) %>%
   select(-X1)
 geonames <- read_csv(here("data", "geonames.csv")) %>%
   select(-X1)
+subset <- read_csv(here("data", "subset.csv")) %>%
+  select(-X1)
 ```
 
 ## Prevalence of Text Matches
@@ -5157,7 +5159,6 @@ for (term in terms) {
     summarize(n = n()) %>%
     arrange(desc(n)) %>%
     print()
-    print("\n")
 }
 ```
 
@@ -5176,7 +5177,6 @@ for (term in terms) {
     ##  9 Mayotte             2
     ## 10 microsatellites     2
     ## # … with 471 more rows
-    ## [1] "\n"
     ## [1] "Term:  fieldwork"
     ## # A tibble: 762 x 2
     ##    keywords           n
@@ -5192,7 +5192,6 @@ for (term in terms) {
     ##  9 climate change     2
     ## 10 dispersal          2
     ## # … with 752 more rows
-    ## [1] "\n"
     ## [1] "Term:  field study"
     ## # A tibble: 356 x 2
     ##    keywords              n
@@ -5208,7 +5207,6 @@ for (term in terms) {
     ##  9 West Nile virus       2
     ## 10 “quiet” courtyard     1
     ## # … with 346 more rows
-    ## [1] "\n"
     ## [1] "Term:  field site"
     ## # A tibble: 250 x 2
     ##    keywords                     n
@@ -5224,7 +5222,6 @@ for (term in terms) {
     ##  9 Aerial photography           1
     ## 10 agricultural abandonment     1
     ## # … with 240 more rows
-    ## [1] "\n"
     ## [1] "Term:  field area"
     ## # A tibble: 57 x 2
     ##    keywords           n
@@ -5240,7 +5237,6 @@ for (term in terms) {
     ##  9 Cancer             1
     ## 10 cancer therapy     1
     ## # … with 47 more rows
-    ## [1] "\n"
     ## [1] "Term:  study site"
     ## # A tibble: 2,244 x 2
     ##    keywords                   n
@@ -5256,7 +5252,6 @@ for (term in terms) {
     ##  9 antiretroviral therapy     4
     ## 10 Europe                     4
     ## # … with 2,234 more rows
-    ## [1] "\n"
     ## [1] "Term:  study location"
     ## # A tibble: 327 x 2
     ##    keywords                       n
@@ -5272,7 +5267,6 @@ for (term in terms) {
     ##  9 Physical activity              2
     ## 10 Prevalence                     2
     ## # … with 317 more rows
-    ## [1] "\n"
     ## [1] "Term:  study area"
     ## # A tibble: 2,364 x 2
     ##    keywords                  n
@@ -5288,7 +5282,6 @@ for (term in terms) {
     ##  9 India                     6
     ## 10 Plasmodium falciparum     6
     ## # … with 2,354 more rows
-    ## [1] "\n"
     ## [1] "Term:  research site"
     ## # A tibble: 208 x 2
     ##    keywords                      n
@@ -5304,7 +5297,6 @@ for (term in terms) {
     ##  9 agrobiodiversity              1
     ## 10 AHA Scientific Statements     1
     ## # … with 198 more rows
-    ## [1] "\n"
     ## [1] "Term:  research location"
     ## # A tibble: 38 x 2
     ##    keywords                 n
@@ -5320,7 +5312,6 @@ for (term in terms) {
     ##  9 Case study               1
     ## 10 casino                   1
     ## # … with 28 more rows
-    ## [1] "\n"
     ## [1] "Term:  sampling site"
     ## # A tibble: 843 x 2
     ##    keywords                             n
@@ -5336,7 +5327,6 @@ for (term in terms) {
     ##  9 Ammonia-oxidizing archaea (AOA)      2
     ## 10 Ammonia-oxidizing bacteria (AOB)     2
     ## # … with 833 more rows
-    ## [1] "\n"
     ## [1] "Term:  sampling location"
     ## # A tibble: 509 x 2
     ##    keywords                      n
@@ -5352,7 +5342,6 @@ for (term in terms) {
     ##  9 Genetic diversity             2
     ## 10 particulate matter            2
     ## # … with 499 more rows
-    ## [1] "\n"
     ## [1] "Term:  sampling area"
     ## # A tibble: 302 x 2
     ##    keywords                      n
@@ -5368,7 +5357,6 @@ for (term in terms) {
     ##  9 agricultural activity         1
     ## 10 Al2O3–ZrO2 nanocomposites     1
     ## # … with 292 more rows
-    ## [1] "\n"
 
 ## GeoNames
 
@@ -5410,6 +5398,221 @@ geonames %>% filter(any_matches == FALSE) %>% summary
     ##  Mean   : 11.43   Mean   :  4.743                                     
     ##  3rd Qu.: 14.00   3rd Qu.:  5.000                                     
     ##  Max.   :240.00   Max.   :211.000
+
+## Subset
+
+We’re going to take a brief look at the distribution of GeoNames and
+text length in the subset.
+
+``` r
+summary(subset)
+```
+
+    ##       _id              length         n_geospans     
+    ##  Min.   :  59655   Min.   :  3048   Min.   :   0.00  
+    ##  1st Qu.:3776739   1st Qu.: 24279   1st Qu.:  14.00  
+    ##  Median :4719217   Median : 31158   Median :  26.00  
+    ##  Mean   :4652156   Mean   : 33492   Mean   :  43.32  
+    ##  3rd Qu.:5625779   3rd Qu.: 39655   3rd Qu.:  50.00  
+    ##  Max.   :6436149   Max.   :453774   Max.   :2448.00
+
+``` r
+ggplot(subset, aes(x = length)) +
+  geom_histogram(binwidth = 1000) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/subset-1.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans)) +
+  geom_histogram(binwidth = 10) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/subset-2.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans / length)) +
+  geom_histogram(bins = 500) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/density-1.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans / length)) +
+  geom_histogram(bins = 500) +
+  scale_x_log10() +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/density-2.png)<!-- -->
+
+``` r
+deciles = seq(0, 1, 0.1)
+quantile(subset$length, probs = deciles)
+```
+
+    ##     0%    10%    20%    30%    40%    50%    60%    70%    80%    90% 
+    ##   3048  18614  22789  25835  28323  31158  34320  37611  42225  50307 
+    ##   100% 
+    ## 453774
+
+``` r
+quantile(subset$n_geospans, probs = deciles)
+```
+
+    ##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
+    ##    0    7   11   16   21   26   34   43   58   90 2448
+
+``` r
+quantiles = c(0.05, 0.25, 0.5, 0.75, 0.95)
+quantile(subset$length, probs = quantiles)
+```
+
+    ##    5%   25%   50%   75%   95% 
+    ## 15334 24279 31158 39655 56676
+
+``` r
+quantile(subset$n_geospans, probs = quantiles)
+```
+
+    ##  5% 25% 50% 75% 95% 
+    ##   4  14  26  50 128
+
+``` r
+percentiles = seq(0, 1, 0.01)
+quantile(subset$length, probs = percentiles)
+```
+
+    ##       0%       1%       2%       3%       4%       5%       6%       7% 
+    ##   3048.0  10097.2  11867.0  13495.4  14598.2  15334.0  16246.0  17151.4 
+    ##       8%       9%      10%      11%      12%      13%      14%      15% 
+    ##  17570.6  18105.0  18614.0  19172.4  19603.2  20155.6  20623.0  20950.0 
+    ##      16%      17%      18%      19%      20%      21%      22%      23% 
+    ##  21407.4  21783.2  22126.8  22373.6  22789.0  23127.8  23359.2  23707.4 
+    ##      24%      25%      26%      27%      28%      29%      30%      31% 
+    ##  24051.2  24279.0  24621.6  24831.6  25133.2  25467.8  25835.0  26007.4 
+    ##      32%      33%      34%      35%      36%      37%      38%      39% 
+    ##  26309.2  26623.2  26848.8  27138.0  27351.4  27598.8  27845.4  28090.0 
+    ##      40%      41%      42%      43%      44%      45%      46%      47% 
+    ##  28323.0  28659.8  28912.0  29195.4  29395.6  29647.0  29959.0  30204.4 
+    ##      48%      49%      50%      51%      52%      53%      54%      55% 
+    ##  30656.8  30911.8  31158.0  31449.8  31779.6  32028.4  32360.0  32650.0 
+    ##      56%      57%      58%      59%      60%      61%      62%      63% 
+    ##  32893.8  33153.8  33507.8  33925.0  34320.0  34499.0  34928.2  35254.8 
+    ##      64%      65%      66%      67%      68%      69%      70%      71% 
+    ##  35594.4  35905.0  36268.0  36598.8  36887.4  37179.6  37611.0  37950.6 
+    ##      72%      73%      74%      75%      76%      77%      78%      79% 
+    ##  38260.0  38711.4  39043.4  39655.0  39931.2  40562.6  40989.2  41540.2 
+    ##      80%      81%      82%      83%      84%      85%      86%      87% 
+    ##  42225.0  42935.0  43630.4  44397.8  45034.8  45843.0  46560.0  47504.2 
+    ##      88%      89%      90%      91%      92%      93%      94%      95% 
+    ##  48158.2  49131.2  50307.0  51439.0  52317.0  53902.4  55178.2  56676.0 
+    ##      96%      97%      98%      99%     100% 
+    ##  59660.6  64040.8  67078.2  77687.0 453774.0
+
+``` r
+quantile(subset$n_geospans, probs = percentiles)
+```
+
+    ##     0%     1%     2%     3%     4%     5%     6%     7%     8%     9% 
+    ##    0.0    1.0    2.0    3.0    4.0    4.0    5.0    6.0    6.0    7.0 
+    ##    10%    11%    12%    13%    14%    15%    16%    17%    18%    19% 
+    ##    7.0    7.6    8.0    8.0    9.0    9.0   10.0   10.0   11.0   11.0 
+    ##    20%    21%    22%    23%    24%    25%    26%    27%    28%    29% 
+    ##   11.0   12.0   12.0   13.0   13.0   14.0   14.0   15.0   15.0   15.0 
+    ##    30%    31%    32%    33%    34%    35%    36%    37%    38%    39% 
+    ##   16.0   17.0   17.0   18.0   18.0   19.0   19.0   19.2   20.0   21.0 
+    ##    40%    41%    42%    43%    44%    45%    46%    47%    48%    49% 
+    ##   21.0   22.0   22.0   23.0   23.0   24.0   24.0   25.0   25.0   26.0 
+    ##    50%    51%    52%    53%    54%    55%    56%    57%    58%    59% 
+    ##   26.0   27.0   28.0   29.0   29.0   30.0   31.0   32.0   32.0   33.0 
+    ##    60%    61%    62%    63%    64%    65%    66%    67%    68%    69% 
+    ##   34.0   35.0   35.0   37.0   37.0   38.0   39.0   40.0   40.0   42.0 
+    ##    70%    71%    72%    73%    74%    75%    76%    77%    78%    79% 
+    ##   43.0   45.0   47.0   48.0   49.0   50.0   52.0   53.0   55.0   56.0 
+    ##    80%    81%    82%    83%    84%    85%    86%    87%    88%    89% 
+    ##   58.0   60.0   62.0   65.0   67.0   71.0   74.0   77.0   81.0   85.0 
+    ##    90%    91%    92%    93%    94%    95%    96%    97%    98%    99% 
+    ##   90.0   96.2  105.2  110.0  115.4  128.0  141.0  158.0  186.6  234.2 
+    ##   100% 
+    ## 2448.0
+
+``` r
+qplot(seq(0, 1, 0.01), quantile(subset$length, probs = percentiles)) + theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/quantiles-1.png)<!-- -->
+
+``` r
+qplot(seq(0, 1, 0.01), quantile(subset$n_geospans, probs = percentiles)) + theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/quantiles-2.png)<!-- -->
+
+We will only include documents which are:
+
+  - longer than 1% and shorter than 5% of documents or 60,000
+    characters;
+  - include more GeoNames than 25% of documents, and fewer than 99%.
+
+### Density
+
+I will also consider subsetting on `n_geospans / length`.
+
+``` r
+subset <- subset %>%
+  filter(n_geospans > 0) %>%
+  mutate(density = n_geospans / length,
+         log_density = log(density))
+
+mean(subset$log_density)
+```
+
+    ## [1] -7.078539
+
+``` r
+sd(subset$log_density)
+```
+
+    ## [1] 0.9651259
+
+``` r
+subset <- subset %>%
+  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0))
+
+ggplot(subset, aes(x = density)) +
+  geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-1.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = density)) +
+  geom_histogram(bins = 500, aes(fill = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-2.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude))) +
+  geom_point() +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-3.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  geom_point() +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-4.png)<!-- -->
 
 ## Summary
 
