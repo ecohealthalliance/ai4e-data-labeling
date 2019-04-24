@@ -25,7 +25,7 @@ You can pass in a random seed with `-s "seed"` or `--seed "seed"`.
 
 We've been using the seed `"2019-04-05"` for our most recent sample, sampling 50000 documents.
 
-### 2. `extract_article_meta.py`
+### 2. `extract_article_metadata.py`
 
 Iterates over the `articles` collection, setting the following properties for each document:
 

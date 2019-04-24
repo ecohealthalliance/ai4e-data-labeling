@@ -29,7 +29,7 @@ terms used are: field work, fieldwork, field study, field site, field
 area, study site, study location, study area, research site, research
 location, sampling site, sampling location, sampling area.
 
-Matching articles are a smallish subset of the total, 4.442%.
+Matching articles are a smallish subset of the total, 4.429%.
 
 ``` r
 ktable(articles$any_matches)
@@ -69,7 +69,7 @@ FALSE
 
 <td style="text-align:right;">
 
-47779
+95571
 
 </td>
 
@@ -85,7 +85,7 @@ TRUE
 
 <td style="text-align:right;">
 
-2221
+4429
 
 </td>
 
@@ -129,13 +129,45 @@ Freq
 
 <td style="text-align:left;">
 
+\[‘field area’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field area’, ‘study area’\]
 
 </td>
 
 <td style="text-align:right;">
 
-4
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field area’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -151,7 +183,7 @@ Freq
 
 <td style="text-align:right;">
 
-1
+4
 
 </td>
 
@@ -167,7 +199,7 @@ Freq
 
 <td style="text-align:right;">
 
-22
+59
 
 </td>
 
@@ -177,7 +209,7 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘sampling site’, ‘sampling location’\]
+\[‘field site’, ‘research site’\]
 
 </td>
 
@@ -193,13 +225,61 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘sampling site’\]
+\[‘field site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘sampling site’, ‘sampling location’\]
 
 </td>
 
 <td style="text-align:right;">
 
 2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -231,7 +311,7 @@ Freq
 
 <td style="text-align:right;">
 
-6
+13
 
 </td>
 
@@ -263,7 +343,7 @@ Freq
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -289,8 +369,7 @@ Freq
 
 <td style="text-align:left;">
 
-\[‘field site’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
-area’\]
+\[‘field site’, ‘study site’, ‘sampling site’, ‘sampling area’\]
 
 </td>
 
@@ -306,13 +385,46 @@ area’\]
 
 <td style="text-align:left;">
 
+\[‘field site’, ‘study site’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field site’, ‘study site’, ‘study area’, ‘sampling site’, ‘sampling
+area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field site’, ‘study site’, ‘study area’\]
 
 </td>
 
 <td style="text-align:right;">
 
-7
+11
 
 </td>
 
@@ -344,7 +456,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -360,7 +472,7 @@ area’\]
 
 <td style="text-align:right;">
 
-8
+22
 
 </td>
 
@@ -376,7 +488,39 @@ area’\]
 
 <td style="text-align:right;">
 
-32
+79
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field area’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field area’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -387,6 +531,39 @@ area’\]
 <td style="text-align:left;">
 
 \[‘field study’, ‘field site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’, ‘study site’, ‘research site’, ‘sampling
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘field site’, ‘study site’, ‘research site’\]
 
 </td>
 
@@ -424,7 +601,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+4
 
 </td>
 
@@ -440,7 +617,23 @@ area’\]
 
 <td style="text-align:right;">
 
-5
+7
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘research site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -451,6 +644,38 @@ area’\]
 <td style="text-align:left;">
 
 \[‘field study’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘sampling site’, ‘sampling area’\]
 
 </td>
 
@@ -472,7 +697,23 @@ area’\]
 
 <td style="text-align:right;">
 
-2
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -488,7 +729,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -504,7 +745,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -520,7 +761,23 @@ area’\]
 
 <td style="text-align:right;">
 
-9
+12
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -531,6 +788,22 @@ area’\]
 <td style="text-align:left;">
 
 \[‘field study’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field study’, ‘study site’, ‘research site’\]
 
 </td>
 
@@ -568,7 +841,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -601,7 +874,7 @@ area’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -617,7 +890,7 @@ area’\]
 
 <td style="text-align:right;">
 
-4
+11
 
 </td>
 
@@ -649,7 +922,7 @@ area’\]
 
 <td style="text-align:right;">
 
-7
+16
 
 </td>
 
@@ -665,7 +938,24 @@ area’\]
 
 <td style="text-align:right;">
 
-64
+130
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘field site’, ‘study site’, ‘study area’, ‘sampling
+site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -707,7 +997,55 @@ area’\]
 
 <td style="text-align:left;">
 
+\[‘field work’, ‘field study’, ‘field site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field work’, ‘field study’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘field study’, ‘study site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘field study’, ‘study site’\]
 
 </td>
 
@@ -730,6 +1068,22 @@ area’\]
 <td style="text-align:right;">
 
 2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -777,7 +1131,72 @@ area’\]
 
 <td style="text-align:right;">
 
-2
+6
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field study’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘field study’, ‘study site’, ‘study
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘fieldwork’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -793,7 +1212,7 @@ area’\]
 
 <td style="text-align:right;">
 
-5
+11
 
 </td>
 
@@ -826,7 +1245,7 @@ location’\]
 
 <td style="text-align:right;">
 
-3
+4
 
 </td>
 
@@ -858,7 +1277,7 @@ location’\]
 
 <td style="text-align:right;">
 
-9
+21
 
 </td>
 
@@ -890,6 +1309,22 @@ location’\]
 
 <td style="text-align:right;">
 
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
 1
 
 </td>
@@ -916,13 +1351,77 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘field work’, ‘study area’, ‘research location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study area’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field work’, ‘study area’\]
 
 </td>
 
 <td style="text-align:right;">
 
-20
+41
 
 </td>
 
@@ -939,6 +1438,22 @@ location’\]
 <td style="text-align:right;">
 
 3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -980,6 +1495,38 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘field work’, ‘study site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘field work’, ‘study site’, ‘study area’, ‘sampling site’\]
 
 </td>
@@ -1002,7 +1549,23 @@ location’\]
 
 <td style="text-align:right;">
 
-11
+19
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘field work’, ‘study site’, ‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -1034,7 +1597,7 @@ location’\]
 
 <td style="text-align:right;">
 
-16
+28
 
 </td>
 
@@ -1050,7 +1613,7 @@ location’\]
 
 <td style="text-align:right;">
 
-74
+143
 
 </td>
 
@@ -1092,6 +1655,38 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘fieldwork’, ‘field site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field site’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘fieldwork’, ‘field site’, ‘study site’, ‘research location’\]
 
 </td>
@@ -1108,7 +1703,7 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘fieldwork’, ‘field site’\]
+\[‘fieldwork’, ‘field site’, ‘study site’\]
 
 </td>
 
@@ -1124,13 +1719,45 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘fieldwork’, ‘field study’, ‘study area’\]
+\[‘fieldwork’, ‘field site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field study’, ‘field site’, ‘study site’, ‘study area’\]
 
 </td>
 
 <td style="text-align:right;">
 
 1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘field study’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
 
 </td>
 
@@ -1163,7 +1790,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+3
 
 </td>
 
@@ -1179,7 +1806,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+4
 
 </td>
 
@@ -1227,7 +1854,7 @@ location’\]
 
 <td style="text-align:right;">
 
-3
+5
 
 </td>
 
@@ -1253,7 +1880,7 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘fieldwork’, ‘study area’, ‘sampling area’\]
+\[‘fieldwork’, ‘study area’, ‘research site’\]
 
 </td>
 
@@ -1269,7 +1896,39 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘fieldwork’, ‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘fieldwork’, ‘study area’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study area’, ‘sampling site’, ‘sampling area’\]
 
 </td>
 
@@ -1291,7 +1950,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -1307,7 +1966,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -1323,7 +1982,7 @@ location’\]
 
 <td style="text-align:right;">
 
-22
+42
 
 </td>
 
@@ -1334,6 +1993,22 @@ location’\]
 <td style="text-align:left;">
 
 \[‘fieldwork’, ‘study location’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study location’, ‘study area’, ‘research site’\]
 
 </td>
 
@@ -1365,6 +2040,38 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘fieldwork’, ‘study site’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘fieldwork’, ‘study site’, ‘sampling site’\]
 
 </td>
@@ -1372,6 +2079,22 @@ location’\]
 <td style="text-align:right;">
 
 2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study area’, ‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -1414,13 +2137,29 @@ area’\]
 
 <td style="text-align:left;">
 
+\[‘fieldwork’, ‘study site’, ‘study area’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘fieldwork’, ‘study site’, ‘study area’\]
 
 </td>
 
 <td style="text-align:right;">
 
-17
+24
 
 </td>
 
@@ -1447,13 +2186,45 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘fieldwork’, ‘study site’, ‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘fieldwork’, ‘study site’, ‘study location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘fieldwork’, ‘study site’\]
 
 </td>
 
 <td style="text-align:right;">
 
-14
+27
 
 </td>
 
@@ -1469,7 +2240,7 @@ location’\]
 
 <td style="text-align:right;">
 
-126
+233
 
 </td>
 
@@ -1485,7 +2256,7 @@ location’\]
 
 <td style="text-align:right;">
 
-5
+6
 
 </td>
 
@@ -1511,87 +2282,7 @@ location’\]
 
 <td style="text-align:left;">
 
-\[‘research site’\]
-
-</td>
-
-<td style="text-align:right;">
-
-36
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘sampling area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-39
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘sampling location’, ‘sampling area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-6
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘sampling location’\]
-
-</td>
-
-<td style="text-align:right;">
-
-61
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘sampling site’, ‘sampling area’\]
-
-</td>
-
-<td style="text-align:right;">
-
-11
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-\[‘sampling site’, ‘sampling location’, ‘sampling area’\]
+\[‘research site’, ‘sampling site’\]
 
 </td>
 
@@ -1607,13 +2298,109 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘research site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+70
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+64
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+122
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+15
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘sampling site’, ‘sampling location’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘sampling site’, ‘sampling location’\]
 
 </td>
 
 <td style="text-align:right;">
 
-32
+53
 
 </td>
 
@@ -1629,7 +2416,7 @@ location’\]
 
 <td style="text-align:right;">
 
-126
+243
 
 </td>
 
@@ -1640,6 +2427,22 @@ location’\]
 <td style="text-align:left;">
 
 \[‘study area’, ‘research site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study area’, ‘research site’, ‘sampling location’\]
 
 </td>
 
@@ -1693,7 +2496,7 @@ location’\]
 
 <td style="text-align:right;">
 
-5
+14
 
 </td>
 
@@ -1709,7 +2512,7 @@ location’\]
 
 <td style="text-align:right;">
 
-4
+5
 
 </td>
 
@@ -1725,7 +2528,7 @@ location’\]
 
 <td style="text-align:right;">
 
-13
+28
 
 </td>
 
@@ -1741,7 +2544,7 @@ location’\]
 
 <td style="text-align:right;">
 
-4
+8
 
 </td>
 
@@ -1757,7 +2560,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -1773,7 +2576,7 @@ location’\]
 
 <td style="text-align:right;">
 
-7
+14
 
 </td>
 
@@ -1789,7 +2592,7 @@ location’\]
 
 <td style="text-align:right;">
 
-28
+58
 
 </td>
 
@@ -1805,7 +2608,7 @@ location’\]
 
 <td style="text-align:right;">
 
-513
+1009
 
 </td>
 
@@ -1853,7 +2656,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -1869,7 +2672,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
@@ -1885,7 +2688,7 @@ location’\]
 
 <td style="text-align:right;">
 
-12
+22
 
 </td>
 
@@ -1901,7 +2704,7 @@ location’\]
 
 <td style="text-align:right;">
 
-62
+135
 
 </td>
 
@@ -1933,7 +2736,7 @@ location’\]
 
 <td style="text-align:right;">
 
-1
+3
 
 </td>
 
@@ -1959,13 +2762,29 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘study site’, ‘research site’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘study site’, ‘research site’\]
 
 </td>
 
 <td style="text-align:right;">
 
-6
+17
 
 </td>
 
@@ -1976,6 +2795,22 @@ location’\]
 <td style="text-align:left;">
 
 \[‘study site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling location’, ‘sampling area’\]
 
 </td>
 
@@ -1997,7 +2832,7 @@ location’\]
 
 <td style="text-align:right;">
 
-6
+8
 
 </td>
 
@@ -2008,6 +2843,22 @@ location’\]
 <td style="text-align:left;">
 
 \[‘study site’, ‘sampling site’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘sampling site’, ‘sampling location’, ‘sampling area’\]
 
 </td>
 
@@ -2029,7 +2880,7 @@ location’\]
 
 <td style="text-align:right;">
 
-5
+10
 
 </td>
 
@@ -2045,7 +2896,7 @@ location’\]
 
 <td style="text-align:right;">
 
-18
+40
 
 </td>
 
@@ -2061,7 +2912,7 @@ location’\]
 
 <td style="text-align:right;">
 
-3
+4
 
 </td>
 
@@ -2077,7 +2928,7 @@ location’\]
 
 <td style="text-align:right;">
 
-6
+10
 
 </td>
 
@@ -2109,7 +2960,7 @@ location’\]
 
 <td style="text-align:right;">
 
-3
+5
 
 </td>
 
@@ -2125,7 +2976,7 @@ location’\]
 
 <td style="text-align:right;">
 
-2
+4
 
 </td>
 
@@ -2152,13 +3003,29 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘study site’, ‘study area’, ‘sampling site’, ‘sampling location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘study site’, ‘study area’, ‘sampling site’\]
 
 </td>
 
 <td style="text-align:right;">
 
-17
+32
 
 </td>
 
@@ -2174,7 +3041,24 @@ location’\]
 
 <td style="text-align:right;">
 
-120
+232
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study location’, ‘research location’, ‘sampling
+location’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
 
 </td>
 
@@ -2200,13 +3084,61 @@ location’\]
 
 <td style="text-align:left;">
 
+\[‘study site’, ‘study location’, ‘sampling site’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study location’, ‘study area’, ‘sampling area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+\[‘study site’, ‘study location’, ‘study area’\]
+
+</td>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 \[‘study site’, ‘study location’\]
 
 </td>
 
 <td style="text-align:right;">
 
-8
+21
 
 </td>
 
@@ -2222,7 +3154,7 @@ location’\]
 
 <td style="text-align:right;">
 
-476
+999
 
 </td>
 
@@ -2301,7 +3233,7 @@ research-article
 
 <td style="text-align:right;">
 
-36358
+72488
 
 </td>
 
@@ -2317,7 +3249,7 @@ review-article
 
 <td style="text-align:right;">
 
-3313
+6790
 
 </td>
 
@@ -2333,7 +3265,7 @@ case-report
 
 <td style="text-align:right;">
 
-2274
+4570
 
 </td>
 
@@ -2349,7 +3281,7 @@ other
 
 <td style="text-align:right;">
 
-1800
+3619
 
 </td>
 
@@ -2365,7 +3297,7 @@ abstract
 
 <td style="text-align:right;">
 
-1322
+2673
 
 </td>
 
@@ -2381,39 +3313,7 @@ brief-report
 
 <td style="text-align:right;">
 
-801
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-editorial
-
-</td>
-
-<td style="text-align:right;">
-
-785
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-book-review
-
-</td>
-
-<td style="text-align:right;">
-
-772
+1618
 
 </td>
 
@@ -2429,7 +3329,39 @@ letter
 
 <td style="text-align:right;">
 
-759
+1606
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+editorial
+
+</td>
+
+<td style="text-align:right;">
+
+1516
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+book-review
+
+</td>
+
+<td style="text-align:right;">
+
+1496
 
 </td>
 
@@ -2445,23 +3377,7 @@ correction
 
 <td style="text-align:right;">
 
-626
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-news
-
-</td>
-
-<td style="text-align:right;">
-
-224
+1303
 
 </td>
 
@@ -2477,7 +3393,23 @@ article-commentary
 
 <td style="text-align:right;">
 
-201
+434
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+news
+
+</td>
+
+<td style="text-align:right;">
+
+418
 
 </td>
 
@@ -2493,7 +3425,7 @@ meeting-report
 
 <td style="text-align:right;">
 
-163
+333
 
 </td>
 
@@ -2509,7 +3441,7 @@ discussion
 
 <td style="text-align:right;">
 
-95
+181
 
 </td>
 
@@ -2525,7 +3457,7 @@ protocol
 
 <td style="text-align:right;">
 
-85
+154
 
 </td>
 
@@ -2541,7 +3473,7 @@ obituary
 
 <td style="text-align:right;">
 
-83
+142
 
 </td>
 
@@ -2557,7 +3489,7 @@ product-review
 
 <td style="text-align:right;">
 
-56
+98
 
 </td>
 
@@ -2573,7 +3505,7 @@ rapid-communication
 
 <td style="text-align:right;">
 
-45
+94
 
 </td>
 
@@ -2589,23 +3521,7 @@ in-brief
 
 <td style="text-align:right;">
 
-39
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-methods-article
-
-</td>
-
-<td style="text-align:right;">
-
-33
+80
 
 </td>
 
@@ -2621,7 +3537,23 @@ reply
 
 <td style="text-align:right;">
 
-33
+74
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+methods-article
+
+</td>
+
+<td style="text-align:right;">
+
+65
 
 </td>
 
@@ -2637,7 +3569,7 @@ retraction
 
 <td style="text-align:right;">
 
-28
+56
 
 </td>
 
@@ -2653,7 +3585,7 @@ systematic-review
 
 <td style="text-align:right;">
 
-25
+41
 
 </td>
 
@@ -2669,7 +3601,7 @@ data-paper
 
 <td style="text-align:right;">
 
-22
+39
 
 </td>
 
@@ -2685,7 +3617,7 @@ introduction
 
 <td style="text-align:right;">
 
-21
+36
 
 </td>
 
@@ -2701,7 +3633,7 @@ report
 
 <td style="text-align:right;">
 
-10
+18
 
 </td>
 
@@ -2717,7 +3649,7 @@ announcement
 
 <td style="text-align:right;">
 
-7
+17
 
 </td>
 
@@ -2733,23 +3665,7 @@ addendum
 
 <td style="text-align:right;">
 
-4
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-books-received
-
-</td>
-
-<td style="text-align:right;">
-
-4
+14
 
 </td>
 
@@ -2765,7 +3681,39 @@ calendar
 
 <td style="text-align:right;">
 
-4
+10
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+books-received
+
+</td>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+expression-of-concern
+
+</td>
+
+<td style="text-align:right;">
+
+5
 
 </td>
 
@@ -2791,29 +3739,13 @@ oration
 
 <td style="text-align:left;">
 
-expression-of-concern
-
-</td>
-
-<td style="text-align:right;">
-
-2
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 index
 
 </td>
 
 <td style="text-align:right;">
 
-2
+3
 
 </td>
 
@@ -2899,7 +3831,7 @@ FALSE
 
 <td style="text-align:right;">
 
-4519
+9078
 
 </td>
 
@@ -2915,7 +3847,7 @@ TRUE
 
 <td style="text-align:right;">
 
-45481
+90922
 
 </td>
 
@@ -2969,13 +3901,13 @@ research-article
 
 <td style="text-align:right;">
 
-2056
+4125
 
 </td>
 
 <td style="text-align:right;">
 
-34302
+68363
 
 </td>
 
@@ -2991,13 +3923,13 @@ review-article
 
 <td style="text-align:right;">
 
-115
+226
 
 </td>
 
 <td style="text-align:right;">
 
-3198
+6564
 
 </td>
 
@@ -3013,13 +3945,13 @@ case-report
 
 <td style="text-align:right;">
 
-13
+27
 
 </td>
 
 <td style="text-align:right;">
 
-2261
+4543
 
 </td>
 
@@ -3035,13 +3967,13 @@ other
 
 <td style="text-align:right;">
 
-1021
+2099
 
 </td>
 
 <td style="text-align:right;">
 
-779
+1520
 
 </td>
 
@@ -3057,13 +3989,13 @@ abstract
 
 <td style="text-align:right;">
 
-270
+543
 
 </td>
 
 <td style="text-align:right;">
 
-1052
+2130
 
 </td>
 
@@ -3079,57 +4011,13 @@ brief-report
 
 <td style="text-align:right;">
 
-17
+28
 
 </td>
 
 <td style="text-align:right;">
 
-784
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-editorial
-
-</td>
-
-<td style="text-align:right;">
-
-79
-
-</td>
-
-<td style="text-align:right;">
-
-706
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-book-review
-
-</td>
-
-<td style="text-align:right;">
-
-500
-
-</td>
-
-<td style="text-align:right;">
-
-272
+1590
 
 </td>
 
@@ -3145,13 +4033,57 @@ letter
 
 <td style="text-align:right;">
 
-137
+283
 
 </td>
 
 <td style="text-align:right;">
 
-622
+1323
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+editorial
+
+</td>
+
+<td style="text-align:right;">
+
+175
+
+</td>
+
+<td style="text-align:right;">
+
+1341
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+book-review
+
+</td>
+
+<td style="text-align:right;">
+
+989
+
+</td>
+
+<td style="text-align:right;">
+
+507
 
 </td>
 
@@ -3167,35 +4099,13 @@ correction
 
 <td style="text-align:right;">
 
-25
+53
 
 </td>
 
 <td style="text-align:right;">
 
-601
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-news
-
-</td>
-
-<td style="text-align:right;">
-
-93
-
-</td>
-
-<td style="text-align:right;">
-
-131
+1250
 
 </td>
 
@@ -3211,13 +4121,35 @@ article-commentary
 
 <td style="text-align:right;">
 
-3
+6
 
 </td>
 
 <td style="text-align:right;">
 
-198
+428
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+news
+
+</td>
+
+<td style="text-align:right;">
+
+174
+
+</td>
+
+<td style="text-align:right;">
+
+244
 
 </td>
 
@@ -3233,13 +4165,13 @@ meeting-report
 
 <td style="text-align:right;">
 
-98
+195
 
 </td>
 
 <td style="text-align:right;">
 
-65
+138
 
 </td>
 
@@ -3255,13 +4187,13 @@ discussion
 
 <td style="text-align:right;">
 
-2
+4
 
 </td>
 
 <td style="text-align:right;">
 
-93
+177
 
 </td>
 
@@ -3283,7 +4215,7 @@ protocol
 
 <td style="text-align:right;">
 
-85
+154
 
 </td>
 
@@ -3299,13 +4231,13 @@ obituary
 
 <td style="text-align:right;">
 
-72
+125
 
 </td>
 
 <td style="text-align:right;">
 
-11
+17
 
 </td>
 
@@ -3327,7 +4259,7 @@ product-review
 
 <td style="text-align:right;">
 
-56
+98
 
 </td>
 
@@ -3349,7 +4281,7 @@ rapid-communication
 
 <td style="text-align:right;">
 
-45
+94
 
 </td>
 
@@ -3365,13 +4297,35 @@ in-brief
 
 <td style="text-align:right;">
 
-1
+2
 
 </td>
 
 <td style="text-align:right;">
 
-38
+78
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+reply
+
+</td>
+
+<td style="text-align:right;">
+
+10
+
+</td>
+
+<td style="text-align:right;">
+
+64
 
 </td>
 
@@ -3393,29 +4347,7 @@ methods-article
 
 <td style="text-align:right;">
 
-33
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-reply
-
-</td>
-
-<td style="text-align:right;">
-
-7
-
-</td>
-
-<td style="text-align:right;">
-
-26
+65
 
 </td>
 
@@ -3437,7 +4369,7 @@ retraction
 
 <td style="text-align:right;">
 
-28
+56
 
 </td>
 
@@ -3459,7 +4391,7 @@ systematic-review
 
 <td style="text-align:right;">
 
-25
+41
 
 </td>
 
@@ -3481,7 +4413,7 @@ data-paper
 
 <td style="text-align:right;">
 
-22
+39
 
 </td>
 
@@ -3497,13 +4429,13 @@ introduction
 
 <td style="text-align:right;">
 
-2
+4
 
 </td>
 
 <td style="text-align:right;">
 
-19
+32
 
 </td>
 
@@ -3525,7 +4457,7 @@ report
 
 <td style="text-align:right;">
 
-10
+18
 
 </td>
 
@@ -3547,7 +4479,7 @@ announcement
 
 <td style="text-align:right;">
 
-7
+17
 
 </td>
 
@@ -3569,7 +4501,29 @@ addendum
 
 <td style="text-align:right;">
 
+14
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+calendar
+
+</td>
+
+<td style="text-align:right;">
+
 4
+
+</td>
+
+<td style="text-align:right;">
+
+6
 
 </td>
 
@@ -3591,7 +4545,7 @@ books-received
 
 <td style="text-align:right;">
 
-4
+5
 
 </td>
 
@@ -3601,19 +4555,19 @@ books-received
 
 <td style="text-align:left;">
 
-calendar
+expression-of-concern
 
 </td>
 
 <td style="text-align:right;">
 
-3
+0
 
 </td>
 
 <td style="text-align:right;">
 
-1
+5
 
 </td>
 
@@ -3645,35 +4599,13 @@ oration
 
 <td style="text-align:left;">
 
-expression-of-concern
-
-</td>
-
-<td style="text-align:right;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-2
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 index
 
 </td>
 
 <td style="text-align:right;">
 
-2
+3
 
 </td>
 
@@ -3766,7 +4698,7 @@ keywords_per_paper <- keywords %>%
             n = n())
 ```
 
-A total of 25549 papers out of 50000 (51.098%) had keywords.
+A total of 51182 papers out of 100000 (51.182%) had keywords.
 
 For those matching fieldwork terms:
 
@@ -3781,7 +4713,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 57.6317
+    ## [1] 57.66539
 
 For those not matching fieldwork terms:
 
@@ -3796,7 +4728,7 @@ nk <- articles %>%
 k / nk * 100
 ```
 
-    ## [1] 50.79428
+    ## [1] 50.88154
 
 These are the top twenty-five keywords used in all documents:
 
@@ -3844,13 +4776,29 @@ n
 
 <td style="text-align:left;">
 
+apoptosis
+
+</td>
+
+<td style="text-align:right;">
+
+377
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 inflammation
 
 </td>
 
 <td style="text-align:right;">
 
-174
+342
 
 </td>
 
@@ -3866,23 +4814,7 @@ breast cancer
 
 <td style="text-align:right;">
 
-173
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-apoptosis
-
-</td>
-
-<td style="text-align:right;">
-
-171
+314
 
 </td>
 
@@ -3898,7 +4830,7 @@ cancer
 
 <td style="text-align:right;">
 
-163
+313
 
 </td>
 
@@ -3914,7 +4846,7 @@ HIV
 
 <td style="text-align:right;">
 
-163
+299
 
 </td>
 
@@ -3930,7 +4862,7 @@ prognosis
 
 <td style="text-align:right;">
 
-138
+257
 
 </td>
 
@@ -3946,23 +4878,7 @@ Breast cancer
 
 <td style="text-align:right;">
 
-121
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Epidemiology
-
-</td>
-
-<td style="text-align:right;">
-
-118
+245
 
 </td>
 
@@ -3978,7 +4894,7 @@ obesity
 
 <td style="text-align:right;">
 
-113
+244
 
 </td>
 
@@ -3988,77 +4904,13 @@ obesity
 
 <td style="text-align:left;">
 
-Obesity
+Epidemiology
 
 </td>
 
 <td style="text-align:right;">
 
-111
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-meta-analysis
-
-</td>
-
-<td style="text-align:right;">
-
-106
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-oxidative stress
-
-</td>
-
-<td style="text-align:right;">
-
-106
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-children
-
-</td>
-
-<td style="text-align:right;">
-
-105
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Inflammation
-
-</td>
-
-<td style="text-align:right;">
-
-104
+236
 
 </td>
 
@@ -4074,7 +4926,7 @@ epidemiology
 
 <td style="text-align:right;">
 
-102
+219
 
 </td>
 
@@ -4084,13 +4936,13 @@ epidemiology
 
 <td style="text-align:left;">
 
-colorectal cancer
+oxidative stress
 
 </td>
 
 <td style="text-align:right;">
 
-93
+219
 
 </td>
 
@@ -4100,13 +4952,13 @@ colorectal cancer
 
 <td style="text-align:left;">
 
-depression
+meta-analysis
 
 </td>
 
 <td style="text-align:right;">
 
-91
+216
 
 </td>
 
@@ -4116,13 +4968,45 @@ depression
 
 <td style="text-align:left;">
 
-Children
+Obesity
 
 </td>
 
 <td style="text-align:right;">
 
-88
+214
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Inflammation
+
+</td>
+
+<td style="text-align:right;">
+
+209
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+children
+
+</td>
+
+<td style="text-align:right;">
+
+196
 
 </td>
 
@@ -4138,7 +5022,7 @@ aging
 
 <td style="text-align:right;">
 
-87
+190
 
 </td>
 
@@ -4148,13 +5032,13 @@ aging
 
 <td style="text-align:left;">
 
-Apoptosis
+depression
 
 </td>
 
 <td style="text-align:right;">
 
-87
+186
 
 </td>
 
@@ -4164,13 +5048,13 @@ Apoptosis
 
 <td style="text-align:left;">
 
-microRNA
+colorectal cancer
 
 </td>
 
 <td style="text-align:right;">
 
-86
+182
 
 </td>
 
@@ -4180,13 +5064,29 @@ microRNA
 
 <td style="text-align:left;">
 
-Iran
+Cancer
 
 </td>
 
 <td style="text-align:right;">
 
-85
+174
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+174
 
 </td>
 
@@ -4202,7 +5102,7 @@ Alzheimer’s disease
 
 <td style="text-align:right;">
 
-84
+172
 
 </td>
 
@@ -4212,13 +5112,13 @@ Alzheimer’s disease
 
 <td style="text-align:left;">
 
-Prognosis
+Apoptosis
 
 </td>
 
 <td style="text-align:right;">
 
-83
+171
 
 </td>
 
@@ -4234,7 +5134,39 @@ metastasis
 
 <td style="text-align:right;">
 
-80
+165
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Prognosis
+
+</td>
+
+<td style="text-align:right;">
+
+165
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Iran
+
+</td>
+
+<td style="text-align:right;">
+
+158
 
 </td>
 
@@ -4299,39 +5231,7 @@ Malaria
 
 <td style="text-align:right;">
 
-30
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-HIV
-
-</td>
-
-<td style="text-align:right;">
-
-20
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-epidemiology
-
-</td>
-
-<td style="text-align:right;">
-
-19
+64
 
 </td>
 
@@ -4347,7 +5247,7 @@ Ethiopia
 
 <td style="text-align:right;">
 
-18
+40
 
 </td>
 
@@ -4357,13 +5257,29 @@ Ethiopia
 
 <td style="text-align:left;">
 
-Epidemiology
+HIV
 
 </td>
 
 <td style="text-align:right;">
 
-16
+39
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+epidemiology
+
+</td>
+
+<td style="text-align:right;">
+
+34
 
 </td>
 
@@ -4379,7 +5295,23 @@ Plasmodium falciparum
 
 <td style="text-align:right;">
 
-15
+31
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Epidemiology
+
+</td>
+
+<td style="text-align:right;">
+
+30
 
 </td>
 
@@ -4395,135 +5327,7 @@ India
 
 <td style="text-align:right;">
 
-13
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Africa
-
-</td>
-
-<td style="text-align:right;">
-
-12
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-malaria
-
-</td>
-
-<td style="text-align:right;">
-
-12
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Prevalence
-
-</td>
-
-<td style="text-align:right;">
-
-12
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-South Africa
-
-</td>
-
-<td style="text-align:right;">
-
-12
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Tuberculosis
-
-</td>
-
-<td style="text-align:right;">
-
-11
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-children
-
-</td>
-
-<td style="text-align:right;">
-
-10
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Tanzania
-
-</td>
-
-<td style="text-align:right;">
-
-10
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Brazil
-
-</td>
-
-<td style="text-align:right;">
-
-9
+27
 
 </td>
 
@@ -4539,7 +5343,7 @@ Iran
 
 <td style="text-align:right;">
 
-9
+24
 
 </td>
 
@@ -4549,13 +5353,13 @@ Iran
 
 <td style="text-align:left;">
 
-Adolescents
+South Africa
 
 </td>
 
 <td style="text-align:right;">
 
-8
+23
 
 </td>
 
@@ -4565,13 +5369,13 @@ Adolescents
 
 <td style="text-align:left;">
 
-GIS
+Kenya
 
 </td>
 
 <td style="text-align:right;">
 
-8
+21
 
 </td>
 
@@ -4581,13 +5385,13 @@ GIS
 
 <td style="text-align:left;">
 
-influenza
+malaria
 
 </td>
 
 <td style="text-align:right;">
 
-8
+21
 
 </td>
 
@@ -4597,13 +5401,13 @@ influenza
 
 <td style="text-align:left;">
 
-Mental health
+Prevalence
 
 </td>
 
 <td style="text-align:right;">
 
-8
+21
 
 </td>
 
@@ -4613,61 +5417,13 @@ Mental health
 
 <td style="text-align:left;">
 
-Physical activity
+Tanzania
 
 </td>
 
 <td style="text-align:right;">
 
-8
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Plasmodium vivax
-
-</td>
-
-<td style="text-align:right;">
-
-8
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Risk factors
-
-</td>
-
-<td style="text-align:right;">
-
-8
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-viruses
-
-</td>
-
-<td style="text-align:right;">
-
-8
+21
 
 </td>
 
@@ -4683,7 +5439,183 @@ Children
 
 <td style="text-align:right;">
 
-7
+20
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Nigeria
+
+</td>
+
+<td style="text-align:right;">
+
+20
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Africa
+
+</td>
+
+<td style="text-align:right;">
+
+19
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+China
+
+</td>
+
+<td style="text-align:right;">
+
+18
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Bangladesh
+
+</td>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mental health
+
+</td>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pregnancy
+
+</td>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+taxonomy
+
+</td>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Adolescents
+
+</td>
+
+<td style="text-align:right;">
+
+15
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+children
+
+</td>
+
+<td style="text-align:right;">
+
+15
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Depression
+
+</td>
+
+<td style="text-align:right;">
+
+15
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GIS
+
+</td>
+
+<td style="text-align:right;">
+
+15
 
 </td>
 
@@ -4742,13 +5674,13 @@ n
 
 <td style="text-align:left;">
 
-inflammation
+apoptosis
 
 </td>
 
 <td style="text-align:right;">
 
-174
+376
 
 </td>
 
@@ -4758,13 +5690,13 @@ inflammation
 
 <td style="text-align:left;">
 
-apoptosis
+inflammation
 
 </td>
 
 <td style="text-align:right;">
 
-171
+339
 
 </td>
 
@@ -4780,7 +5712,7 @@ breast cancer
 
 <td style="text-align:right;">
 
-170
+310
 
 </td>
 
@@ -4796,7 +5728,7 @@ cancer
 
 <td style="text-align:right;">
 
-161
+310
 
 </td>
 
@@ -4812,7 +5744,7 @@ HIV
 
 <td style="text-align:right;">
 
-143
+260
 
 </td>
 
@@ -4828,7 +5760,7 @@ prognosis
 
 <td style="text-align:right;">
 
-137
+256
 
 </td>
 
@@ -4844,7 +5776,7 @@ Breast cancer
 
 <td style="text-align:right;">
 
-119
+240
 
 </td>
 
@@ -4860,7 +5792,7 @@ obesity
 
 <td style="text-align:right;">
 
-107
+231
 
 </td>
 
@@ -4876,23 +5808,7 @@ oxidative stress
 
 <td style="text-align:right;">
 
-105
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Obesity
-
-</td>
-
-<td style="text-align:right;">
-
-104
+218
 
 </td>
 
@@ -4908,23 +5824,7 @@ Inflammation
 
 <td style="text-align:right;">
 
-103
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-meta-analysis
-
-</td>
-
-<td style="text-align:right;">
-
-103
+207
 
 </td>
 
@@ -4940,7 +5840,7 @@ Epidemiology
 
 <td style="text-align:right;">
 
-102
+206
 
 </td>
 
@@ -4950,13 +5850,13 @@ Epidemiology
 
 <td style="text-align:left;">
 
-children
+Obesity
 
 </td>
 
 <td style="text-align:right;">
 
-95
+204
 
 </td>
 
@@ -4966,45 +5866,13 @@ children
 
 <td style="text-align:left;">
 
-colorectal cancer
+meta-analysis
 
 </td>
 
 <td style="text-align:right;">
 
-93
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-depression
-
-</td>
-
-<td style="text-align:right;">
-
-88
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Apoptosis
-
-</td>
-
-<td style="text-align:right;">
-
-87
+203
 
 </td>
 
@@ -5020,23 +5888,7 @@ aging
 
 <td style="text-align:right;">
 
-86
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-microRNA
-
-</td>
-
-<td style="text-align:right;">
-
-86
+188
 
 </td>
 
@@ -5052,7 +5904,71 @@ epidemiology
 
 <td style="text-align:right;">
 
-83
+185
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+children
+
+</td>
+
+<td style="text-align:right;">
+
+181
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+colorectal cancer
+
+</td>
+
+<td style="text-align:right;">
+
+180
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+depression
+
+</td>
+
+<td style="text-align:right;">
+
+178
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Apoptosis
+
+</td>
+
+<td style="text-align:right;">
+
+171
 
 </td>
 
@@ -5068,55 +5984,7 @@ Alzheimer’s disease
 
 <td style="text-align:right;">
 
-81
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Children
-
-</td>
-
-<td style="text-align:right;">
-
-81
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-Prognosis
-
-</td>
-
-<td style="text-align:right;">
-
-81
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-metastasis
-
-</td>
-
-<td style="text-align:right;">
-
-80
+169
 
 </td>
 
@@ -5132,7 +6000,71 @@ Cancer
 
 <td style="text-align:right;">
 
-76
+169
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+metastasis
+
+</td>
+
+<td style="text-align:right;">
+
+165
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Prognosis
+
+</td>
+
+<td style="text-align:right;">
+
+161
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Children
+
+</td>
+
+<td style="text-align:right;">
+
+154
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+prostate cancer
+
+</td>
+
+<td style="text-align:right;">
+
+153
 
 </td>
 
@@ -5163,200 +6095,200 @@ for (term in terms) {
 ```
 
     ## [1] "Term:  field work"
-    ## # A tibble: 481 x 2
+    ## # A tibble: 956 x 2
+    ##    keywords         n
+    ##    <chr>        <int>
+    ##  1 India            6
+    ##  2 Malaria          6
+    ##  3 Bangladesh       5
+    ##  4 Kenya            5
+    ##  5 taxonomy         4
+    ##  6 Africa           3
+    ##  7 epidemiology     3
+    ##  8 Epidemiology     3
+    ##  9 HIV              3
+    ## 10 rural            3
+    ## # … with 946 more rows
+    ## [1] "Term:  fieldwork"
+    ## # A tibble: 1,482 x 2
+    ##    keywords                 n
+    ##    <chr>                <int>
+    ##  1 South Africa            11
+    ##  2 HIV                     10
+    ##  3 Africa                   6
+    ##  4 taxonomy                 6
+    ##  5 Malaria                  5
+    ##  6 Malawi                   5
+    ##  7 Adolescents              4
+    ##  8 Nepal                    4
+    ##  9 obesity                  4
+    ## 10 qualitative research     4
+    ## # … with 1,472 more rows
+    ## [1] "Term:  field study"
+    ## # A tibble: 715 x 2
     ##    keywords            n
     ##    <chr>           <int>
-    ##  1 India               4
+    ##  1 Epidemiology        4
     ##  2 Malaria             3
-    ##  3 epidemiology        2
-    ##  4 Ghana               2
-    ##  5 HIV/AIDS            2
-    ##  6 Kenya               2
-    ##  7 Loop migration      2
-    ##  8 malaria             2
-    ##  9 Mayotte             2
-    ## 10 microsatellites     2
-    ## # … with 471 more rows
-    ## [1] "Term:  fieldwork"
-    ## # A tibble: 762 x 2
-    ##    keywords           n
-    ##    <chr>          <int>
-    ##  1 South Africa       6
-    ##  2 HIV                5
-    ##  3 Africa             3
-    ##  4 hypertension       3
-    ##  5 Malawi             3
-    ##  6 obesity            3
-    ##  7 Brazil             2
-    ##  8 children           2
-    ##  9 climate change     2
-    ## 10 dispersal          2
-    ## # … with 752 more rows
-    ## [1] "Term:  field study"
-    ## # A tibble: 356 x 2
-    ##    keywords              n
-    ##    <chr>             <int>
-    ##  1 Epidemiology          3
-    ##  2 Malaria               3
-    ##  3 Chiroptera            2
-    ##  4 Drug resistance       2
-    ##  5 Europe                2
-    ##  6 health                2
-    ##  7 Mosquito              2
-    ##  8 seed treatment        2
-    ##  9 West Nile virus       2
-    ## 10 “quiet” courtyard     1
-    ## # … with 346 more rows
+    ##  3 yield               3
+    ##  4 Attitude            2
+    ##  5 biomass             2
+    ##  6 Cattle              2
+    ##  7 Chiroptera          2
+    ##  8 Control             2
+    ##  9 Disability          2
+    ## 10 Drug resistance     2
+    ## # … with 705 more rows
     ## [1] "Term:  field site"
-    ## # A tibble: 250 x 2
-    ##    keywords                     n
-    ##    <chr>                    <int>
-    ##  1 Malaria                      3
-    ##  2 Malawi                       2
-    ##  3 "\nAnthophila\n"             1
-    ##  4 "\nApoidea\n"                1
-    ##  5 Acacia longifolia            1
-    ##  6 Acoustic communication       1
-    ##  7 Acoustic tracking            1
-    ##  8 adaptive landscape           1
-    ##  9 Aerial photography           1
-    ## 10 agricultural abandonment     1
-    ## # … with 240 more rows
+    ## # A tibble: 518 x 2
+    ##    keywords             n
+    ##    <chr>            <int>
+    ##  1 Malaria              4
+    ##  2 Bangladesh           3
+    ##  3 African American     2
+    ##  4 Allometry            2
+    ##  5 bacteria             2
+    ##  6 cause of death       2
+    ##  7 climate change       2
+    ##  8 HIV                  2
+    ##  9 HIV/AIDS             2
+    ## 10 invasive species     2
+    ## # … with 508 more rows
     ## [1] "Term:  field area"
-    ## # A tibble: 57 x 2
-    ##    keywords           n
-    ##    <chr>          <int>
-    ##  1 Antioxidants       1
-    ##  2 Archaea            1
-    ##  3 asymmetry          1
-    ##  4 Axis selective     1
-    ##  5 axon               1
-    ##  6 breast cancer      1
-    ##  7 breast dose        1
-    ##  8 C5aR1              1
-    ##  9 Cancer             1
-    ## 10 cancer therapy     1
-    ## # … with 47 more rows
-    ## [1] "Term:  study site"
-    ## # A tibble: 2,244 x 2
+    ## # A tibble: 187 x 2
     ##    keywords                   n
     ##    <chr>                  <int>
-    ##  1 HIV                       16
-    ##  2 Malaria                   14
-    ##  3 Plasmodium falciparum      9
-    ##  4 Tuberculosis               7
-    ##  5 epidemiology               6
-    ##  6 Ethiopia                   5
-    ##  7 South Africa               5
-    ##  8 Adolescents                4
-    ##  9 antiretroviral therapy     4
-    ## 10 Europe                     4
-    ## # … with 2,234 more rows
-    ## [1] "Term:  study location"
-    ## # A tibble: 327 x 2
-    ##    keywords                       n
-    ##    <chr>                      <int>
-    ##  1 Activities of daily living     2
-    ##  2 Disability                     2
-    ##  3 Epidemiology                   2
-    ##  4 Malaria                        2
-    ##  5 Malaysia                       2
-    ##  6 meta-analysis                  2
-    ##  7 Meta-analysis                  2
-    ##  8 Obesity                        2
-    ##  9 Physical activity              2
-    ## 10 Prevalence                     2
-    ## # … with 317 more rows
-    ## [1] "Term:  study area"
-    ## # A tibble: 2,364 x 2
+    ##  1 Cancer                     2
+    ##  2 Acceleration               1
+    ##  3 Accretion and deletion     1
+    ##  4 Aedes albopictus           1
+    ##  5 alternating tapping        1
+    ##  6 Angiogenesis               1
+    ##  7 Antimetabolites            1
+    ##  8 Antioxidants               1
+    ##  9 apoptosis                  1
+    ## 10 Archaea                    1
+    ## # … with 177 more rows
+    ## [1] "Term:  study site"
+    ## # A tibble: 4,232 x 2
     ##    keywords                  n
     ##    <chr>                 <int>
-    ##  1 Ethiopia                 18
-    ##  2 Malaria                  17
-    ##  3 Epidemiology             10
-    ##  4 epidemiology              9
-    ##  5 malaria                   9
-    ##  6 Iran                      7
-    ##  7 Prevalence                7
-    ##  8 GIS                       6
-    ##  9 India                     6
-    ## 10 Plasmodium falciparum     6
-    ## # … with 2,354 more rows
+    ##  1 Malaria                  30
+    ##  2 HIV                      29
+    ##  3 Plasmodium falciparum    17
+    ##  4 Kenya                    16
+    ##  5 Ethiopia                 14
+    ##  6 Pregnancy                12
+    ##  7 South Africa             12
+    ##  8 Children                 10
+    ##  9 epidemiology             10
+    ## 10 India                    10
+    ## # … with 4,222 more rows
+    ## [1] "Term:  study location"
+    ## # A tibble: 619 x 2
+    ##    keywords                       n
+    ##    <chr>                      <int>
+    ##  1 meta-analysis                  8
+    ##  2 Meta-analysis                  7
+    ##  3 Epidemiology                   3
+    ##  4 Iran                           3
+    ##  5 Malaria                        3
+    ##  6 Prevalence                     3
+    ##  7 Review                         3
+    ##  8 Systematic review              3
+    ##  9 Activities of daily living     2
+    ## 10 Biological control             2
+    ## # … with 609 more rows
+    ## [1] "Term:  study area"
+    ## # A tibble: 4,279 x 2
+    ##    keywords                  n
+    ##    <chr>                 <int>
+    ##  1 Malaria                  39
+    ##  2 Ethiopia                 37
+    ##  3 epidemiology             18
+    ##  4 Epidemiology             17
+    ##  5 Iran                     17
+    ##  6 Plasmodium falciparum    16
+    ##  7 India                    15
+    ##  8 malaria                  14
+    ##  9 Prevalence               13
+    ## 10 Tanzania                 13
+    ## # … with 4,269 more rows
     ## [1] "Term:  research site"
-    ## # A tibble: 208 x 2
-    ##    keywords                      n
-    ##    <chr>                     <int>
-    ##  1 expectations                  2
-    ##  2 Mental health                 2
-    ##  3 Pilot study                   2
-    ##  4 qualitative research          2
-    ##  5 accelerated EPI               1
-    ##  6 Adolescent girls              1
-    ##  7 Africa                        1
-    ##  8 African American              1
-    ##  9 agrobiodiversity              1
-    ## 10 AHA Scientific Statements     1
-    ## # … with 198 more rows
+    ## # A tibble: 428 x 2
+    ##    keywords                            n
+    ##    <chr>                           <int>
+    ##  1 Africa                              2
+    ##  2 Case study                          2
+    ##  3 expectations                        2
+    ##  4 International clinical research     2
+    ##  5 Mental health                       2
+    ##  6 Mortality                           2
+    ##  7 Obesity                             2
+    ##  8 Pilot study                         2
+    ##  9 qualitative research                2
+    ## 10 Quality of life                     2
+    ## # … with 418 more rows
     ## [1] "Term:  research location"
-    ## # A tibble: 38 x 2
+    ## # A tibble: 57 x 2
     ##    keywords                 n
     ##    <chr>                <int>
     ##  1 indoor air pollution     2
     ##  2 particulate matter       2
     ##  3 PM2.5                    2
-    ##  4 Aged                     1
-    ##  5 Aged, 80 and Over        1
-    ##  6 Androgenic alopecia      1
-    ##  7 biomass fuels            1
-    ##  8 Caregivers               1
-    ##  9 Case study               1
-    ## 10 casino                   1
-    ## # … with 28 more rows
+    ##  4 adolescent               1
+    ##  5 Aged                     1
+    ##  6 Aged, 80 and Over        1
+    ##  7 Allied health            1
+    ##  8 Androgenic alopecia      1
+    ##  9 biomass fuels            1
+    ## 10 Caregivers               1
+    ## # … with 47 more rows
     ## [1] "Term:  sampling site"
-    ## # A tibble: 843 x 2
-    ##    keywords                             n
-    ##    <chr>                            <int>
-    ##  1 Genetic diversity                    4
-    ##  2 16S rRNA gene                        3
-    ##  3 bacteria                             3
-    ##  4 Biodiversity                         3
-    ##  5 Genetic structure                    3
-    ##  6 16S rRNA                             2
-    ##  7 Adaptive radiation                   2
-    ##  8 Allergy                              2
-    ##  9 Ammonia-oxidizing archaea (AOA)      2
-    ## 10 Ammonia-oxidizing bacteria (AOB)     2
-    ## # … with 833 more rows
+    ## # A tibble: 1,555 x 2
+    ##    keywords                     n
+    ##    <chr>                    <int>
+    ##  1 Genetic diversity            5
+    ##  2 phylogeography               5
+    ##  3 16S rRNA                     4
+    ##  4 bacteria                     4
+    ##  5 dispersal                    4
+    ##  6 Genetic structure            4
+    ##  7 microbial community          4
+    ##  8 16S rRNA gene                3
+    ##  9 16S rRNA gene sequencing     3
+    ## 10 Atacama Desert               3
+    ## # … with 1,545 more rows
     ## [1] "Term:  sampling location"
-    ## # A tibble: 509 x 2
+    ## # A tibble: 939 x 2
     ##    keywords                      n
     ##    <chr>                     <int>
-    ##  1 16S rRNA gene                 3
-    ##  2 adaptation                    2
-    ##  3 Air                           2
-    ##  4 Antarctica                    2
-    ##  5 Brazil                        2
-    ##  6 Crustacea                     2
-    ##  7 Effective population size     2
-    ##  8 environmental assessment      2
-    ##  9 Genetic diversity             2
-    ## 10 particulate matter            2
-    ## # … with 499 more rows
+    ##  1 Population genetics           5
+    ##  2 Genetic diversity             4
+    ##  3 phylogeography                4
+    ##  4 16S rRNA gene                 3
+    ##  5 adaptation                    3
+    ##  6 Cryptic species               3
+    ##  7 Effective population size     3
+    ##  8 metagenomics                  3
+    ##  9 population genetics           3
+    ## 10 population structure          3
+    ## # … with 929 more rows
     ## [1] "Term:  sampling area"
-    ## # A tibble: 302 x 2
-    ##    keywords                      n
-    ##    <chr>                     <int>
-    ##  1 bacteria                      2
-    ##  2 16S rRNA metagenome           1
-    ##  3 A. incertus                   1
-    ##  4 abundance                     1
-    ##  5 Acanthuridae                  1
-    ##  6 Adolescent                    1
-    ##  7 adult Anura                   1
-    ##  8 African buffaloes             1
-    ##  9 agricultural activity         1
-    ## 10 Al2O3–ZrO2 nanocomposites     1
-    ## # … with 292 more rows
+    ## # A tibble: 525 x 2
+    ##    keywords                                          n
+    ##    <chr>                                         <int>
+    ##  1 abundance                                         2
+    ##  2 bacteria                                          2
+    ##  3 hybridization                                     2
+    ##  4 PM2.5                                             2
+    ##  5 Population genetics                               2
+    ##  6 remote sensing                                    2
+    ##  7 taxonomy                                          2
+    ##  8 (100.2000) Digital image processing               1
+    ##  9 (100.6890) Three-dimensional image processing     1
+    ## 10 (110.4500) Optical coherence tomography           1
+    ## # … with 515 more rows
 
 ## GeoNames
 
@@ -5409,12 +6341,12 @@ summary(subset)
 ```
 
     ##       _id              length         n_geospans     
-    ##  Min.   :  59655   Min.   :  3048   Min.   :   0.00  
-    ##  1st Qu.:3776739   1st Qu.: 24279   1st Qu.:  14.00  
-    ##  Median :4719217   Median : 31158   Median :  26.00  
-    ##  Mean   :4652156   Mean   : 33492   Mean   :  43.32  
-    ##  3rd Qu.:5625779   3rd Qu.: 39655   3rd Qu.:  50.00  
-    ##  Max.   :6436149   Max.   :453774   Max.   :2448.00
+    ##  Min.   :  59655   Min.   :  3157   Min.   :   0.00  
+    ##  1st Qu.:3812252   1st Qu.: 24110   1st Qu.:  14.00  
+    ##  Median :4731496   Median : 31304   Median :  27.00  
+    ##  Mean   :4658743   Mean   : 33630   Mean   :  44.98  
+    ##  3rd Qu.:5637197   3rd Qu.: 39958   3rd Qu.:  51.00  
+    ##  Max.   :6436149   Max.   :483805   Max.   :4313.00
 
 ``` r
 ggplot(subset, aes(x = length)) +
@@ -5443,7 +6375,7 @@ ggplot(subset, aes(x = n_geospans / length)) +
 ``` r
 ggplot(subset, aes(x = n_geospans / length)) +
   geom_histogram(bins = 500) +
-  scale_x_log10() +
+  scale_x_log10(labels = comma) +
   theme_bw()
 ```
 
@@ -5454,91 +6386,99 @@ deciles = seq(0, 1, 0.1)
 quantile(subset$length, probs = deciles)
 ```
 
-    ##     0%    10%    20%    30%    40%    50%    60%    70%    80%    90% 
-    ##   3048  18614  22789  25835  28323  31158  34320  37611  42225  50307 
-    ##   100% 
-    ## 453774
+    ##       0%      10%      20%      30%      40%      50%      60%      70% 
+    ##   3157.0  18483.6  22546.0  25457.9  28384.2  31304.0  34373.4  37878.4 
+    ##      80%      90%     100% 
+    ##  42443.6  50066.5 483805.0
 
 ``` r
 quantile(subset$n_geospans, probs = deciles)
 ```
 
-    ##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
-    ##    0    7   11   16   21   26   34   43   58   90 2448
+    ##     0%    10%    20%    30%    40%    50%    60%    70%    80%    90% 
+    ##    0.0    7.0   12.0   17.0   22.0   27.0   34.0   44.7   59.0   88.0 
+    ##   100% 
+    ## 4313.0
 
 ``` r
 quantiles = c(0.05, 0.25, 0.5, 0.75, 0.95)
 quantile(subset$length, probs = quantiles)
 ```
 
-    ##    5%   25%   50%   75%   95% 
-    ## 15334 24279 31158 39655 56676
+    ##       5%      25%      50%      75%      95% 
+    ## 15178.35 24110.00 31304.00 39958.25 56775.05
 
 ``` r
 quantile(subset$n_geospans, probs = quantiles)
 ```
 
     ##  5% 25% 50% 75% 95% 
-    ##   4  14  26  50 128
+    ##   4  14  27  51 124
 
 ``` r
 percentiles = seq(0, 1, 0.01)
 quantile(subset$length, probs = percentiles)
 ```
 
-    ##       0%       1%       2%       3%       4%       5%       6%       7% 
-    ##   3048.0  10097.2  11867.0  13495.4  14598.2  15334.0  16246.0  17151.4 
-    ##       8%       9%      10%      11%      12%      13%      14%      15% 
-    ##  17570.6  18105.0  18614.0  19172.4  19603.2  20155.6  20623.0  20950.0 
-    ##      16%      17%      18%      19%      20%      21%      22%      23% 
-    ##  21407.4  21783.2  22126.8  22373.6  22789.0  23127.8  23359.2  23707.4 
-    ##      24%      25%      26%      27%      28%      29%      30%      31% 
-    ##  24051.2  24279.0  24621.6  24831.6  25133.2  25467.8  25835.0  26007.4 
-    ##      32%      33%      34%      35%      36%      37%      38%      39% 
-    ##  26309.2  26623.2  26848.8  27138.0  27351.4  27598.8  27845.4  28090.0 
-    ##      40%      41%      42%      43%      44%      45%      46%      47% 
-    ##  28323.0  28659.8  28912.0  29195.4  29395.6  29647.0  29959.0  30204.4 
-    ##      48%      49%      50%      51%      52%      53%      54%      55% 
-    ##  30656.8  30911.8  31158.0  31449.8  31779.6  32028.4  32360.0  32650.0 
-    ##      56%      57%      58%      59%      60%      61%      62%      63% 
-    ##  32893.8  33153.8  33507.8  33925.0  34320.0  34499.0  34928.2  35254.8 
-    ##      64%      65%      66%      67%      68%      69%      70%      71% 
-    ##  35594.4  35905.0  36268.0  36598.8  36887.4  37179.6  37611.0  37950.6 
-    ##      72%      73%      74%      75%      76%      77%      78%      79% 
-    ##  38260.0  38711.4  39043.4  39655.0  39931.2  40562.6  40989.2  41540.2 
-    ##      80%      81%      82%      83%      84%      85%      86%      87% 
-    ##  42225.0  42935.0  43630.4  44397.8  45034.8  45843.0  46560.0  47504.2 
-    ##      88%      89%      90%      91%      92%      93%      94%      95% 
-    ##  48158.2  49131.2  50307.0  51439.0  52317.0  53902.4  55178.2  56676.0 
-    ##      96%      97%      98%      99%     100% 
-    ##  59660.6  64040.8  67078.2  77687.0 453774.0
+    ##        0%        1%        2%        3%        4%        5%        6% 
+    ##   3157.00  10474.29  11987.74  13345.44  14351.88  15178.35  16128.62 
+    ##        7%        8%        9%       10%       11%       12%       13% 
+    ##  16842.49  17413.08  17956.59  18483.60  18986.10  19489.32  19847.59 
+    ##       14%       15%       16%       17%       18%       19%       20% 
+    ##  20361.78  20777.80  21137.56  21626.44  21915.98  22237.99  22546.00 
+    ##       21%       22%       23%       24%       25%       26%       27% 
+    ##  22900.93  23178.52  23452.77  23818.60  24110.00  24387.72  24703.97 
+    ##       28%       29%       30%       31%       32%       33%       34% 
+    ##  24983.24  25178.19  25457.90  25823.82  26122.52  26382.30  26689.22 
+    ##       35%       36%       37%       38%       39%       40%       41% 
+    ##  26911.85  27220.84  27505.07  27803.18  28051.77  28384.20  28667.67 
+    ##       42%       43%       44%       45%       46%       47%       48% 
+    ##  28987.58  29222.00  29546.52  29835.80  30051.30  30353.36  30678.28 
+    ##       49%       50%       51%       52%       53%       54%       55% 
+    ##  31029.78  31304.00  31606.37  31885.48  32135.75  32485.94  32791.55 
+    ##       56%       57%       58%       59%       60%       61%       62% 
+    ##  33047.92  33381.54  33696.42  34077.47  34373.40  34726.07  35068.64 
+    ##       63%       64%       65%       66%       67%       68%       69% 
+    ##  35440.74  35798.16  36114.05  36452.04  36787.74  37166.08  37470.54 
+    ##       70%       71%       72%       73%       74%       75%       76% 
+    ##  37878.40  38226.62  38680.72  39047.42  39616.98  39958.25  40341.44 
+    ##       77%       78%       79%       80%       81%       82%       83% 
+    ##  40804.88  41305.40  41848.07  42443.60  43027.21  43668.12  44297.78 
+    ##       84%       85%       86%       87%       88%       89%       90% 
+    ##  45029.24  45755.40  46603.32  47295.55  48019.76  48931.11  50066.50 
+    ##       91%       92%       93%       94%       95%       96%       97% 
+    ##  50960.05  52469.96  53623.65  54817.54  56775.05  59333.20  64293.78 
+    ##       98%       99%      100% 
+    ##  68171.26  79112.45 483805.00
 
 ``` r
 quantile(subset$n_geospans, probs = percentiles)
 ```
 
-    ##     0%     1%     2%     3%     4%     5%     6%     7%     8%     9% 
-    ##    0.0    1.0    2.0    3.0    4.0    4.0    5.0    6.0    6.0    7.0 
-    ##    10%    11%    12%    13%    14%    15%    16%    17%    18%    19% 
-    ##    7.0    7.6    8.0    8.0    9.0    9.0   10.0   10.0   11.0   11.0 
-    ##    20%    21%    22%    23%    24%    25%    26%    27%    28%    29% 
-    ##   11.0   12.0   12.0   13.0   13.0   14.0   14.0   15.0   15.0   15.0 
-    ##    30%    31%    32%    33%    34%    35%    36%    37%    38%    39% 
-    ##   16.0   17.0   17.0   18.0   18.0   19.0   19.0   19.2   20.0   21.0 
-    ##    40%    41%    42%    43%    44%    45%    46%    47%    48%    49% 
-    ##   21.0   22.0   22.0   23.0   23.0   24.0   24.0   25.0   25.0   26.0 
-    ##    50%    51%    52%    53%    54%    55%    56%    57%    58%    59% 
-    ##   26.0   27.0   28.0   29.0   29.0   30.0   31.0   32.0   32.0   33.0 
-    ##    60%    61%    62%    63%    64%    65%    66%    67%    68%    69% 
-    ##   34.0   35.0   35.0   37.0   37.0   38.0   39.0   40.0   40.0   42.0 
-    ##    70%    71%    72%    73%    74%    75%    76%    77%    78%    79% 
-    ##   43.0   45.0   47.0   48.0   49.0   50.0   52.0   53.0   55.0   56.0 
-    ##    80%    81%    82%    83%    84%    85%    86%    87%    88%    89% 
-    ##   58.0   60.0   62.0   65.0   67.0   71.0   74.0   77.0   81.0   85.0 
-    ##    90%    91%    92%    93%    94%    95%    96%    97%    98%    99% 
-    ##   90.0   96.2  105.2  110.0  115.4  128.0  141.0  158.0  186.6  234.2 
-    ##   100% 
-    ## 2448.0
+    ##      0%      1%      2%      3%      4%      5%      6%      7%      8% 
+    ##    0.00    1.00    2.00    3.00    4.00    4.00    5.00    6.00    6.00 
+    ##      9%     10%     11%     12%     13%     14%     15%     16%     17% 
+    ##    7.00    7.00    8.00    8.00    9.00    9.00   10.00   10.00   11.00 
+    ##     18%     19%     20%     21%     22%     23%     24%     25%     26% 
+    ##   11.00   11.00   12.00   12.00   13.00   13.00   14.00   14.00   15.00 
+    ##     27%     28%     29%     30%     31%     32%     33%     34%     35% 
+    ##   15.00   16.00   16.00   17.00   17.00   18.00   18.00   19.00   19.00 
+    ##     36%     37%     38%     39%     40%     41%     42%     43%     44% 
+    ##   20.00   20.00   21.00   21.00   22.00   22.00   23.00   23.00   24.00 
+    ##     45%     46%     47%     48%     49%     50%     51%     52%     53% 
+    ##   24.00   25.00   25.00   26.00   27.00   27.00   28.00   28.00   29.00 
+    ##     54%     55%     56%     57%     58%     59%     60%     61%     62% 
+    ##   30.00   30.05   31.00   32.00   33.00   34.00   34.00   35.00   36.00 
+    ##     63%     64%     65%     66%     67%     68%     69%     70%     71% 
+    ##   37.00   38.00   39.00   39.00   40.00   42.00   43.00   44.70   46.00 
+    ##     72%     73%     74%     75%     76%     77%     78%     79%     80% 
+    ##   47.00   48.00   49.14   51.00   52.00   54.00   55.58   57.00   59.00 
+    ##     81%     82%     83%     84%     85%     86%     87%     88%     89% 
+    ##   61.00   63.00   65.00   67.00   70.00   73.00   76.57   80.00   84.79 
+    ##     90%     91%     92%     93%     94%     95%     96%     97%     98% 
+    ##   88.00   94.01  101.12  110.00  116.00  124.00  136.00  148.67  171.78 
+    ##     99%    100% 
+    ##  234.89 4313.00
 
 ``` r
 qplot(seq(0, 1, 0.01), quantile(subset$length, probs = percentiles)) + theme_bw()
@@ -5571,17 +6511,18 @@ subset <- subset %>%
 mean(subset$log_density)
 ```
 
-    ## [1] -7.078539
+    ## [1] -7.063298
 
 ``` r
 sd(subset$log_density)
 ```
 
-    ## [1] 0.9651259
+    ## [1] 0.9587384
 
 ``` r
 subset <- subset %>%
-  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0))
+  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0),
+         density_excludem = ifelse(log_density < median(log_density), 1, 0))
 
 ggplot(subset, aes(x = density)) +
   geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
@@ -5592,7 +6533,7 @@ ggplot(subset, aes(x = density)) +
 
 ``` r
 ggplot(subset, aes(x = density)) +
-  geom_histogram(bins = 500, aes(fill = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  geom_histogram(bins = 500, aes(fill = factor(density_excludem))) +
   theme_bw()
 ```
 
@@ -5607,12 +6548,137 @@ ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude)))
 ![](visualize_article_data_files/figure-gfm/compute_density-3.png)<!-- -->
 
 ``` r
-ggplot(subset, aes(x = length, y = n_geospans, color = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_excludem))) +
   geom_point() +
   theme_bw()
 ```
 
 ![](visualize_article_data_files/figure-gfm/compute_density-4.png)<!-- -->
+
+``` r
+subset %>%
+  filter(density_exclude == 1) %>%
+  summary()
+```
+
+    ##       _id              length        n_geospans        density         
+    ##  Min.   : 115849   Min.   : 9367   Min.   : 1.000   Min.   :1.456e-05  
+    ##  1st Qu.:3836758   1st Qu.:26074   1st Qu.: 4.000   1st Qu.:1.399e-04  
+    ##  Median :4764600   Median :33144   Median : 7.000   Median :2.101e-04  
+    ##  Mean   :4709862   Mean   :35183   Mean   : 6.928   Mean   :1.992e-04  
+    ##  3rd Qu.:5714953   3rd Qu.:41631   3rd Qu.: 9.000   3rd Qu.:2.738e-04  
+    ##  Max.   :6428738   Max.   :87262   Max.   :21.000   Max.   :3.279e-04  
+    ##   log_density      density_exclude density_excludem
+    ##  Min.   :-11.137   Min.   :1       Min.   :1       
+    ##  1st Qu.: -8.874   1st Qu.:1       1st Qu.:1       
+    ##  Median : -8.468   Median :1       Median :1       
+    ##  Mean   : -8.658   Mean   :1       Mean   :1       
+    ##  3rd Qu.: -8.203   3rd Qu.:1       3rd Qu.:1       
+    ##  Max.   : -8.023   Max.   :1       Max.   :1
+
+``` r
+subset %>%
+  filter(density_exclude == 0) %>%
+  summary()
+```
+
+    ##       _id              length         n_geospans         density         
+    ##  Min.   :  59655   Min.   :  5434   Min.   :   3.00   Min.   :0.0003284  
+    ##  1st Qu.:3810636   1st Qu.: 23787   1st Qu.:  20.00   1st Qu.:0.0006631  
+    ##  Median :4727902   Median : 30989   Median :  33.00   Median :0.0010684  
+    ##  Mean   :4648982   Mean   : 33392   Mean   :  51.96   Mean   :0.0014746  
+    ##  3rd Qu.:5620660   3rd Qu.: 39715   3rd Qu.:  57.00   3rd Qu.:0.0018300  
+    ##  Max.   :6436149   Max.   :483805   Max.   :4313.00   Max.   :0.0182470  
+    ##   log_density     density_exclude density_excludem
+    ##  Min.   :-8.021   Min.   :0       Min.   :0.0000  
+    ##  1st Qu.:-7.319   1st Qu.:0       1st Qu.:0.0000  
+    ##  Median :-6.842   Median :0       Median :0.0000  
+    ##  Mean   :-6.782   Mean   :0       Mean   :0.4117  
+    ##  3rd Qu.:-6.303   3rd Qu.:0       3rd Qu.:1.0000  
+    ##  Max.   :-4.004   Max.   :0       Max.   :1.0000
+
+``` r
+# Plot of density exclusion
+
+ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
+  geom_histogram(binwidth = 1000) +
+  facet_grid(density_exclude~.) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-5.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
+  geom_histogram(binwidth = 10) +
+  facet_grid(density_exclude~.) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-6.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
+  geom_histogram(binwidth = 1000) +
+  facet_grid(density_excludem~.) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-7.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
+  geom_histogram(binwidth = 10) +
+  facet_grid(density_excludem~.) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-8.png)<!-- -->
+
+``` r
+# Log version 
+
+ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_exclude~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-9.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_exclude~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-10.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_excludem~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-11.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_excludem~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-12.png)<!-- -->
+
+We will exclude articles which are more than one standard deviation
+below the mean of log density.
 
 ## Summary
 

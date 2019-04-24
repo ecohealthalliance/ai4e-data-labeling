@@ -310,7 +310,7 @@ ggplot(subset, aes(x = n_geospans / length)) +
 
 ggplot(subset, aes(x = n_geospans / length)) +
   geom_histogram(bins = 500) +
-  scale_x_log10() +
+  scale_x_log10(labels = comma) +
   theme_bw()
 ```
 
@@ -351,24 +351,90 @@ mean(subset$log_density)
 sd(subset$log_density)
 
 subset <- subset %>%
-  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0))
+  mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0),
+         density_excludem = ifelse(log_density < median(log_density), 1, 0))
 
 ggplot(subset, aes(x = density)) +
   geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
   theme_bw()
 
 ggplot(subset, aes(x = density)) +
-  geom_histogram(bins = 500, aes(fill = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+  geom_histogram(bins = 500, aes(fill = factor(density_excludem))) +
   theme_bw()
 
 ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude))) +
   geom_point() +
   theme_bw()
 
-ggplot(subset, aes(x = length, y = n_geospans, color = factor(ifelse(log_density < median(log_density), 1, 0)))) +
+ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_excludem))) +
   geom_point() +
   theme_bw()
+
+subset %>%
+  filter(density_exclude == 1) %>%
+  summary()
+
+subset %>%
+  filter(density_exclude == 0) %>%
+  summary()
+
+
+# Plot of density exclusion
+
+ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
+  geom_histogram(binwidth = 1000) +
+  facet_grid(density_exclude~.) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
+  geom_histogram(binwidth = 10) +
+  facet_grid(density_exclude~.) +
+  theme_bw()
+
+
+ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
+  geom_histogram(binwidth = 1000) +
+  facet_grid(density_excludem~.) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
+  geom_histogram(binwidth = 10) +
+  facet_grid(density_excludem~.) +
+  theme_bw()
+
+
+
+
+# Log version 
+
+ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_exclude~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_exclude~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+
+ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_excludem~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
+
+ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
+  geom_histogram(bins = 100) +
+  facet_grid(density_excludem~.) +
+  scale_x_log10(labels = comma) +
+  theme_bw()
 ```
+
+
+We will exclude articles which are more than one standard deviation below the mean of log density.
 
 
 ## Summary
