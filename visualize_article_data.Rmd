@@ -354,6 +354,10 @@ subset <- subset %>%
   mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0),
          density_excludem = ifelse(log_density < median(log_density), 1, 0))
 
+ggplot(subset, aes(x = log_density)) +
+  geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
+  theme_bw()
+
 ggplot(subset, aes(x = density)) +
   geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
   theme_bw()

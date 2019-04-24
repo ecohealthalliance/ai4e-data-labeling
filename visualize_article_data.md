@@ -6524,7 +6524,7 @@ subset <- subset %>%
   mutate(density_exclude = ifelse(log_density < mean(log_density) - sd(log_density), 1, 0),
          density_excludem = ifelse(log_density < median(log_density), 1, 0))
 
-ggplot(subset, aes(x = density)) +
+ggplot(subset, aes(x = log_density)) +
   geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
   theme_bw()
 ```
@@ -6533,11 +6533,19 @@ ggplot(subset, aes(x = density)) +
 
 ``` r
 ggplot(subset, aes(x = density)) +
-  geom_histogram(bins = 500, aes(fill = factor(density_excludem))) +
+  geom_histogram(bins = 500, aes(fill = factor(density_exclude))) +
   theme_bw()
 ```
 
 ![](visualize_article_data_files/figure-gfm/compute_density-2.png)<!-- -->
+
+``` r
+ggplot(subset, aes(x = density)) +
+  geom_histogram(bins = 500, aes(fill = factor(density_excludem))) +
+  theme_bw()
+```
+
+![](visualize_article_data_files/figure-gfm/compute_density-3.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude))) +
@@ -6545,7 +6553,7 @@ ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_exclude)))
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-3.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-4.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_excludem))) +
@@ -6553,7 +6561,7 @@ ggplot(subset, aes(x = length, y = n_geospans, color = factor(density_excludem))
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-4.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-5.png)<!-- -->
 
 ``` r
 subset %>%
@@ -6606,7 +6614,7 @@ ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-5.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-6.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
@@ -6615,7 +6623,7 @@ ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-6.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-7.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
@@ -6624,7 +6632,7 @@ ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-7.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-8.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
@@ -6633,7 +6641,7 @@ ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-8.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-9.png)<!-- -->
 
 ``` r
 # Log version 
@@ -6645,7 +6653,7 @@ ggplot(subset, aes(x = length, fill = factor(density_exclude))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-9.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-10.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
@@ -6655,7 +6663,7 @@ ggplot(subset, aes(x = n_geospans, fill = factor(density_exclude))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-10.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-11.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
@@ -6665,7 +6673,7 @@ ggplot(subset, aes(x = length, fill = factor(density_excludem))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-11.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-12.png)<!-- -->
 
 ``` r
 ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
@@ -6675,7 +6683,7 @@ ggplot(subset, aes(x = n_geospans, fill = factor(density_excludem))) +
   theme_bw()
 ```
 
-![](visualize_article_data_files/figure-gfm/compute_density-12.png)<!-- -->
+![](visualize_article_data_files/figure-gfm/compute_density-13.png)<!-- -->
 
 We will exclude articles which are more than one standard deviation
 below the mean of log density.
