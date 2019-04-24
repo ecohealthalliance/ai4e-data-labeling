@@ -44,7 +44,15 @@ The latter behavior is to allow searches which MongoDB's built-in text search en
 
 If you want to *add*, rather than *replace*, the `text_matches` array, pass in `--keep_previous`.
 
-### 4. `dump_articles.py`
+### 4. `count_geonames.py`
+
+This script goes through all the documents matching search terms and counts the number of `geospan` objects created by EpiTator's `GeonameAnnotator()`.
+
+It runs in parallel, with a number of threads set by `--num_workers`.
+
+If you run it without passing `--keep_previous`, it'll drop its previous efforts.
+
+### 5. `dump_articles.py`
 
 Dumps a subset of articles into a MongoDump file named `ai4e_articles.gzip`.
 
@@ -53,13 +61,16 @@ The subset includes articles with all of the following:
 - `text_matches` for any of the terms
 - a `<body>` tag
 - `article_type` research-article
+- `article_meta.n_geospans` is between the 1st and 99th percentile
+- text length is between the 1st and 95th percentiles
+- `article_meta.geospan_density` (n_geospans / length) is not more than one standard deviation below the mean (when log-transformed).
 
-### 5. `export_csvs.py`, `count_geonames_to_csvs.py`
+### 6. `export_csvs.py`, `count_geonames_to_csvs.py`
 
 These files export CSVs to the `data/` directory for use by `visualize_article_data.Rmd`.
 
 The former iterates through all documents and exports a few different summaries, and the latter samples `-n` articles with and without `text_matches` to run our GeoName annotator (from `EpiTator`) and count the number of GeoNames found for each article.
 
-### 6. `visualize_article_data.Rmd`
+### 7. `visualize_article_data.Rmd`
 
 Build this with `rmarkdown::render()` in R, and it'll update the Markdown and HTML reports with summary statistics.

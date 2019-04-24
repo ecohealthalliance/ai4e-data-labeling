@@ -15,15 +15,22 @@ def do_work(queue):
     geoname_annotator = GeonameAnnotator()
     for i in iter(queue.get, "STOP"):
         record = articles.find_one(i)
-        article = AnnoDoc(record["extracted_text"]).add_tier(geoname_annotator)
-        geospans = article.tiers["geonames"]
-        all_geospans = len(geospans)
-        n_geospans = sum([1 for span in geospans
-                         if span.metadata["geoname"].score > 0.13])
+        if len(record["extracted_text"]) > 100000:
+            all_geospans = 0
+            n_geospans = 0
+            geospan_density = 0
+        else:
+            article = AnnoDoc(record["extracted_text"]).add_tier(geoname_annotator)
+            geospans = article.tiers["geonames"]
+            all_geospans = len(geospans)
+            n_geospans = sum([1 for span in geospans
+                             if span.metadata["geoname"].score > 0.13])
+            geospan_density = n_geospans / len(record["extracted_text"])
         articles.update_one(i,
                             {"$set": {
                                 "article_meta.all_geospans": all_geospans,
-                                "article_meta.n_geospans": n_geospans
+                                "article_meta.n_geospans": n_geospans,
+                                "article_meta.geospan_density": geospan_density
                             }}
                             )
         record = articles.find_one(i)
@@ -67,11 +74,14 @@ if __name__ == "__main__":
 
     query = {
         "text_matches": {"$in": terms},
-        "article_meta.n_geospans": {"$exists": False}
+        "$or": [
+            {"article_meta.n_geospans": {"$exists": False}},
+            {"article_meta.geospan_density": {"$exists": False}}
+        ]
     }
 
     count = articles.count_documents(query)
-    print("Updating documents {} documents...".format(count))
+    print("Updating GeoName count and density in {} documents...".format(count))
 
     cursor = articles.find(query, ["_id"])
 
