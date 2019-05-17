@@ -10,21 +10,11 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-p", "--pmc_path", default="pmc", dest="pmc_path"
-    )
-    parser.add_argument(
-        "-n", default=1000, dest="n", type=int
-    )
-    parser.add_argument(
-        "--mongo_host", default="localhost", dest="mongo_host"
-    )
-    parser.add_argument(
-        "--mongo_port", default=27017
-    )
-    parser.add_argument(
-        "-s", "--seed", default=None, dest="seed"
-    )
+    parser.add_argument("-p", "--pmc_path", default="pmc", dest="pmc_path")
+    parser.add_argument("-n", default=1000, dest="n", type=int)
+    parser.add_argument("--mongo_host", default="localhost", dest="mongo_host")
+    parser.add_argument("--mongo_port", default=27017)
+    parser.add_argument("-s", "--seed", default=None, dest="seed")
     args = parser.parse_args()
 
     articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
@@ -52,19 +42,20 @@ if __name__ == "__main__":
         reporter.report(idx)
 
     article_df = pd.DataFrame.from_records(rows)
-    article_df["any_matches"] = [False if row is None else True
-                                 for row in article_df["text_matches"]]
+    article_df["any_matches"] = [
+        False if row is None else True for row in article_df["text_matches"]
+    ]
 
     # Small function to unnest nested iterables.
     def unnest(data, unnest_var, keep_vars):
         nested = article_df.loc[:, keep_vars + [unnest_var]]
-        lens = [len(item) if item is not None else 1
-                for item in nested[unnest_var]]
-        unnested_dict = {var: np.repeat([nested[var].values], lens)
-                         for var in keep_vars}
+        lens = [len(item) if item is not None else 1 for item in nested[unnest_var]]
+        unnested_dict = {
+            var: np.repeat([nested[var].values], lens) for var in keep_vars
+        }
         unnested_dict[unnest_var] = np.hstack(nested[unnest_var])
         unnested = pd.DataFrame(unnested_dict)
-        return(unnested)
+        return unnested
 
     keywords = unnest(article_df, "keywords", ["id", "any_matches"])
     id_types = unnest(article_df, "id_types", ["id", "any_matches"])

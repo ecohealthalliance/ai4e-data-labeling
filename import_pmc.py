@@ -10,28 +10,15 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-p", "--pmc_path", default="pmc", dest="pmc_path"
-    )
-    parser.add_argument(
-        "-n", default=1000, dest="n", type=int
-    )
-    parser.add_argument(
-        "--mongo_host", default="localhost", dest="mongo_host"
-    )
-    parser.add_argument(
-        "--mongo_port", default=27017
-    )
-    parser.add_argument(
-        "-s", "--seed", default=None, dest="seed"
-    )
-    parser.add_argument(
-        "-d", "--drop", action="store_true", dest="drop"
-    )
+    parser.add_argument("-p", "--pmc_path", default="pmc", dest="pmc_path")
+    parser.add_argument("-n", default=1000, dest="n", type=int)
+    parser.add_argument("--mongo_host", default="localhost", dest="mongo_host")
+    parser.add_argument("--mongo_port", default=27017)
+    parser.add_argument("-s", "--seed", default=None, dest="seed")
+    parser.add_argument("-d", "--drop", action="store_true", dest="drop")
     args = parser.parse_args()
 
-    articles = pymongo.MongoClient(args.mongo_host,
-                                   args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
     if args.drop:
         articles.drop()
 
@@ -39,8 +26,11 @@ if __name__ == "__main__":
 
     all_files = []
     for (dirpath, dirnames, filenames) in os.walk(args.pmc_path):
-        all_files += [os.path.join(dirpath, filename) for
-                      filename in filenames if filename.endswith("xml")]
+        all_files += [
+            os.path.join(dirpath, filename)
+            for filename in filenames
+            if filename.endswith("xml")
+        ]
 
     seed(args.seed)
     files = sample(all_files, args.n)
@@ -54,11 +44,16 @@ if __name__ == "__main__":
         with open(file, "r") as f:
             xml = f.read()
             article = Article(xml)
-            articles.insert_one({
-                "_id": article.pub_ids().get("pmc"),
-                "xml": xml,
-                "extracted_text": article.extract_text()
-            })
+            articles.insert_one(
+                {
+                    "_id": article.pub_ids().get("pmc"),
+                    "xml": xml,
+                    "extracted_text": article.extract_text(),
+                }
+            )
 
-    print("Loaded {} articles into MongoDB collection."
-          .format(articles.count_documents({})))
+    print(
+        "Loaded {} articles into MongoDB collection.".format(
+            articles.count_documents({})
+        )
+    )

@@ -6,18 +6,11 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--mongo_host", default="localhost", dest="mongo_host"
-    )
-    parser.add_argument(
-        "--mongo_port", default=27017
-    )
-    parser.add_argument(
-        "--keep_previous", action="store_true", dest="keep_previous"
-    )
+    parser.add_argument("--mongo_host", default="localhost", dest="mongo_host")
+    parser.add_argument("--mongo_port", default=27017)
+    parser.add_argument("--keep_previous", action="store_true", dest="keep_previous")
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host,
-                                   args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
 
     with open("terms") as f:
         terms = [line.strip() for line in f.readlines()]
@@ -25,14 +18,11 @@ if __name__ == "__main__":
     print("Creating text index...")
 
     # Make sure we have a text index
-    articles.create_index([("extracted_text", pymongo.TEXT,)])
+    articles.create_index([("extracted_text", pymongo.TEXT)])
 
     if not args.keep_previous:
         print("Dropping previously-matched terms...")
-        articles.update_many(
-            filter={},
-            update={"$unset": {"text_matches": ""}}
-        )
+        articles.update_many(filter={}, update={"$unset": {"text_matches": ""}})
 
     print("Searching for terms:")
 
@@ -40,8 +30,8 @@ if __name__ == "__main__":
     for term in terms:
         print(term)
         results = articles.update_many(
-            filter={'$text': {'$search': '"' + term + '"'}},
-            update={"$addToSet": {"text_matches": term}}
+            filter={"$text": {"$search": '"' + term + '"'}},
+            update={"$addToSet": {"text_matches": term}},
         )
 
     print("Creating index on search results...")
@@ -52,10 +42,7 @@ if __name__ == "__main__":
     by_term = dict()
     by_id = defaultdict(list)
     for term in terms:
-        results = articles.find(
-            {"text_matches": term},
-            {'_id': '_id'}
-        )
+        results = articles.find({"text_matches": term}, {"_id": "_id"})
         result_set = {result["_id"] for result in results}
         by_term[term] = result_set
         [by_id[result].append(term) for result in result_set]

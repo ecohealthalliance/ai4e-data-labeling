@@ -7,37 +7,34 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--mongo_host", default="localhost", dest="mongo_host"
-    )
-    parser.add_argument(
-        "--mongo_port", default=27017
-    )
-    parser.add_argument(
-        "--drop_previous", action="store_false", dest="keep_previous"
-    )
+    parser.add_argument("--mongo_host", default="localhost", dest="mongo_host")
+    parser.add_argument("--mongo_port", default=27017)
+    parser.add_argument("--drop_previous", action="store_false", dest="keep_previous")
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host,
-                                   args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
 
     if not args.keep_previous:
         print("Dropping previously-extracted metadata...")
         articles.update_many(
             filter={},
-            update={"$unset": {
-                "article_title": "",
-                "journal_title": "",
-                "article_meta.has_body": "",
-                "article_meta.article_type": ""
-            }}
+            update={
+                "$unset": {
+                    "article_title": "",
+                    "journal_title": "",
+                    "article_meta.has_body": "",
+                    "article_meta.article_type": "",
+                }
+            },
         )
 
-    query = {"$or": [
-              {"article_title": {"$exists": False}},
-              {"journal_title": {"$exists": False}},
-              {"article_meta.has_body": {"$exists": False}},
-              {"article_meta.article_type": {"$exists": False}},
-    ]}
+    query = {
+        "$or": [
+            {"article_title": {"$exists": False}},
+            {"journal_title": {"$exists": False}},
+            {"article_meta.has_body": {"$exists": False}},
+            {"article_meta.article_type": {"$exists": False}},
+        ]
+    }
 
     count = articles.count_documents(query)
 
@@ -53,12 +50,11 @@ if __name__ == "__main__":
             "article_title": article.article_title(),
             "journal_title": article.journal_title(),
             "article_meta.has_body": True if article.soup.body else False,
-            "article_meta.article_type": article.article_type()
+            "article_meta.article_type": article.article_type(),
         }
 
         articles.update_one(
-            filter={"_id": record["_id"]},
-            update={"$set": record_update}
+            filter={"_id": record["_id"]}, update={"$set": record_update}
         )
 
         reporter.report(idx)
@@ -71,12 +67,7 @@ if __name__ == "__main__":
     result_cursor = articles.aggregate(
         [
             {"$limit": 100},
-            {
-                "$group": {
-                    "_id": "$article_meta.article_type",
-                    "count": {"$sum": 1}
-                }
-            }
+            {"$group": {"_id": "$article_meta.article_type", "count": {"$sum": 1}}},
         ]
     )
 

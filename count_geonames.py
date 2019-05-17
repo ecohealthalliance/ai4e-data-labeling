@@ -23,16 +23,20 @@ def do_work(queue):
             article = AnnoDoc(record["extracted_text"]).add_tier(geoname_annotator)
             geospans = article.tiers["geonames"]
             all_geospans = len(geospans)
-            n_geospans = sum([1 for span in geospans
-                             if span.metadata["geoname"].score > 0.13])
+            n_geospans = sum(
+                [1 for span in geospans if span.metadata["geoname"].score > 0.13]
+            )
             geospan_density = n_geospans / len(record["extracted_text"])
-        articles.update_one(i,
-                            {"$set": {
-                                "article_meta.all_geospans": all_geospans,
-                                "article_meta.n_geospans": n_geospans,
-                                "article_meta.geospan_density": geospan_density
-                            }}
-                            )
+        articles.update_one(
+            i,
+            {
+                "$set": {
+                    "article_meta.all_geospans": all_geospans,
+                    "article_meta.n_geospans": n_geospans,
+                    "article_meta.geospan_density": geospan_density,
+                }
+            },
+        )
         record = articles.find_one(i)
 
 
@@ -53,31 +57,20 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--mongo_host", default="localhost", dest="mongo_host"
-    )
-    parser.add_argument(
-        "--mongo_port", default=27017
-    )
-    parser.add_argument(
-        "--keep_previous", action="store_true", dest="keep_previous"
-    )
-    parser.add_argument(
-        "--num_workers", type=int, default=4, dest="num_workers"
-    )
-    parser.add_argument(
-        "--silent", action="store_false", dest="report_progress"
-    )
+    parser.add_argument("--mongo_host", default="localhost", dest="mongo_host")
+    parser.add_argument("--mongo_port", default=27017)
+    parser.add_argument("--keep_previous", action="store_true", dest="keep_previous")
+    parser.add_argument("--num_workers", type=int, default=4, dest="num_workers")
+    parser.add_argument("--silent", action="store_false", dest="report_progress")
     args = parser.parse_args()
-    articles = pymongo.MongoClient(args.mongo_host,
-                                   args.mongo_port).pmc.articles
+    articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
 
     query = {
         "text_matches": {"$in": terms},
         "$or": [
             {"article_meta.n_geospans": {"$exists": False}},
-            {"article_meta.geospan_density": {"$exists": False}}
-        ]
+            {"article_meta.geospan_density": {"$exists": False}},
+        ],
     }
 
     count = articles.count_documents(query)
@@ -91,8 +84,9 @@ if __name__ == "__main__":
     for x in range(args.num_workers):
         queue.put("STOP")
 
-    workers = [mp.Process(target=do_work, args=(queue,))
-               for w in range(args.num_workers)]
+    workers = [
+        mp.Process(target=do_work, args=(queue,)) for w in range(args.num_workers)
+    ]
 
     for w in workers:
         w.start()
