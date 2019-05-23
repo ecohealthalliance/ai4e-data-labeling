@@ -20,20 +20,35 @@ def do_work(queue):
             n_geospans = 0
             geospan_density = 0
         else:
-            article = AnnoDoc(record["extracted_text"]).add_tier(geoname_annotator)
-            geospans = article.tiers["geonames"]
-            all_geospans = len(geospans)
-            n_geospans = sum(
-                [1 for span in geospans if span.metadata["geoname"].score > 0.13]
-            )
+            article = AnnoDoc(record["extracted_text"])
+            article.add_tier(geoname_annotator)
+            article.tiers.update({"parentheticals": article.create_regex_tier("\(.*?\)")})
+
+            all_geospans = article.tiers["geonames"]
+            geospans = AnnoTier([span for span in geospans if span.metadata["geoname"].score > 0.13])
+            parentheticals = article.tiers["parentheticals"]
+            nonparen_geospans = geospans.subtract_overlaps(parentheticals)
+            paren_geospans = geospans.subtract_overlaps(nonparen_geospans)
+            
+            n_all_geospans = len(all_geospans)
+            n_geospans = len(geospans)
+            n_nonparen_geospans = len(nonparen_geospans)
+            n_paren_geospans = len(paren_geospans)
+
             geospan_density = n_geospans / len(record["extracted_text"])
+            nonparen_geospan_density = n_nonparen_geospans / len(record["extracted_text"])
+            paren_geospan_density = n_paren_geospans / len(record["extracted_text"])
         articles.update_one(
             i,
             {
                 "$set": {
                     "article_meta.all_geospans": all_geospans,
                     "article_meta.n_geospans": n_geospans,
+                    "article_meta.n_nonparen_geospans": n_nonparen_geospans,
+                    "article_meta.n_paren_geospans": n_paren_geospans,
                     "article_meta.geospan_density": geospan_density,
+                    "article_meta.nonparen_geospan_density": nonparen_geospan_density,
+                    "article_meta.paren_geospan_density": paren_geospan_density,
                 }
             },
         )
@@ -69,7 +84,11 @@ if __name__ == "__main__":
         "text_matches": {"$in": terms},
         "$or": [
             {"article_meta.n_geospans": {"$exists": False}},
+            {"article_meta.n_nonparen_geospans": {"$exists": False}},
+            {"article_meta.n_paren_geospans": {"$exists": False}},
             {"article_meta.geospan_density": {"$exists": False}},
+            {"article_meta.nonparen_geospan_density": {"$exists": False}},
+            {"article_meta.paren_geospan_density": {"$exists": False}},
         ],
     }
 

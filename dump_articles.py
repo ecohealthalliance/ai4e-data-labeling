@@ -20,8 +20,8 @@ if __name__ == "__main__":
         "text_matches": {"$in": terms},
         "article_meta.article_type": "research-article",
         "article_meta.has_body": True,
-        "article_meta.n_geospans": {"$exists": True},
-        "article_meta.geospan_density": {"$exists": True},
+        "article_meta.n_nonparen_geospans": {"$exists": True},
+        "article_meta.nonparen_geospan_density": {"$exists": True},
     }
 
     cursor = articles.aggregate(
@@ -29,8 +29,8 @@ if __name__ == "__main__":
             {"$match": simple_query},
             {
                 "$project": {
-                    "n_geospans": "$article_meta.n_geospans",
-                    "geospan_density": "$article_meta.geospan_density",
+                    "n_nonparen_geospans": "$article_meta.n_nonparen_geospans",
+                    "nonparen_geospan_density": "$article_meta.nonparen_geospan_density",
                     "length": {"$strLenCP": "$extracted_text"},
                 }
             },
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     subset_df = pd.DataFrame(cursor)
     quantiles = subset_df.quantile(q=[0.01, 0.25, 0.95, 0.99])
 
-    density = subset_df["geospan_density"]
+    density = subset_df["nonparen_geospan_density"]
     density = density[density != 0]
     log_density = np.log(density)
     threshold_density = np.exp(np.mean(log_density) - np.std(log_density))
@@ -49,11 +49,11 @@ if __name__ == "__main__":
         "text_matches": {"$in": terms},
         "article_meta.article_type": "research-article",
         "article_meta.has_body": True,
-        "article_meta.n_geospans": {
-            "$gt": quantiles.n_geospans.iloc[0],
-            "$lte": quantiles.n_geospans.iloc[3],
+        "article_meta.n_nonparen_geospans": {
+            "$gt": quantiles.n_nonparen_geospans.iloc[0],
+            "$lte": quantiles.n_nonparen_geospans.iloc[3],
         },
-        "article_meta.geospan_density": {"$gt": threshold_density},
+        "article_meta.nonparen_geospan_density": {"$gt": threshold_density},
         "$and": [
             {
                 "$expr": {

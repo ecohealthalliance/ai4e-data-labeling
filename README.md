@@ -61,9 +61,9 @@ The subset includes articles with all of the following:
 - `text_matches` for any of the terms
 - a `<body>` tag
 - `article_type` research-article
-- `article_meta.n_geospans` is between the 1st and 99th percentile
+- `article_meta.n_nonparen_geospans` is between the 1st and 99th percentile
 - text length is between the 1st and 95th percentiles
-- `article_meta.geospan_density` (n_geospans / length) is not more than one standard deviation below the mean (when log-transformed).
+- `article_meta.nonparen_geospan_density` (n_nonparen_geospans / length) is not more than one standard deviation below the mean (when log-transformed).
 
 ### 6. `export_csvs.py`, `count_geonames_to_csvs.py`
 
