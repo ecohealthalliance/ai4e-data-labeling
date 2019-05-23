@@ -5,6 +5,7 @@ import multiprocessing as mp
 import pymongo
 from pubcrawler.article import Article
 from epitator.annodoc import AnnoDoc
+from epitator.annotier import AnnoTier
 from epitator.geoname_annotator import GeonameAnnotator
 
 from reporter import Reporter, MongoQueryReporter
