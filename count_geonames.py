@@ -23,21 +23,27 @@ def do_work(queue):
         else:
             article = AnnoDoc(record["extracted_text"])
             article.add_tier(geoname_annotator)
-            article.tiers.update({"parentheticals": article.create_regex_tier("\(.*?\)")})
+            article.tiers.update(
+                {"parentheticals": article.create_regex_tier("\(.*?\)")}
+            )
 
             all_geospans = article.tiers["geonames"]
-            geospans = AnnoTier([span for span in all_geospans if span.metadata["geoname"].score > 0.13])
+            geospans = AnnoTier(
+                [span for span in all_geospans if span.metadata["geoname"].score > 0.13]
+            )
             parentheticals = article.tiers["parentheticals"]
             nonparen_geospans = geospans.subtract_overlaps(parentheticals)
             paren_geospans = geospans.subtract_overlaps(nonparen_geospans)
-            
+
             n_all_geospans = len(all_geospans)
             n_geospans = len(geospans)
             n_nonparen_geospans = len(nonparen_geospans)
             n_paren_geospans = len(paren_geospans)
 
             geospan_density = n_geospans / len(record["extracted_text"])
-            nonparen_geospan_density = n_nonparen_geospans / len(record["extracted_text"])
+            nonparen_geospan_density = n_nonparen_geospans / len(
+                record["extracted_text"]
+            )
             paren_geospan_density = n_paren_geospans / len(record["extracted_text"])
         articles.update_one(
             i,
@@ -80,6 +86,22 @@ if __name__ == "__main__":
     parser.add_argument("--silent", action="store_false", dest="report_progress")
     args = parser.parse_args()
     articles = pymongo.MongoClient(args.mongo_host, args.mongo_port).pmc.articles
+
+    if not args.keep_previous:
+        print("Dropping previously-matched terms...")
+        articles.update_many(
+            filter={},
+            update={
+                "$unset": {
+                    "article_meta.n_geospans": "",
+                    "article_meta.n_nonparen_geospans": "",
+                    "article_meta.n_paren_geospans": "",
+                    "article_meta.geospan_density": "",
+                    "article_meta.nonparen_geospan_density": "",
+                    "article_meta.paren_geospan_density": "",
+                }
+            },
+        )
 
     query = {
         "text_matches": {"$in": terms},
