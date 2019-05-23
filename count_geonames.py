@@ -26,7 +26,7 @@ def do_work(queue):
             article.tiers.update({"parentheticals": article.create_regex_tier("\(.*?\)")})
 
             all_geospans = article.tiers["geonames"]
-            geospans = AnnoTier([span for span in geospans if span.metadata["geoname"].score > 0.13])
+            geospans = AnnoTier([span for span in all_geospans if span.metadata["geoname"].score > 0.13])
             parentheticals = article.tiers["parentheticals"]
             nonparen_geospans = geospans.subtract_overlaps(parentheticals)
             paren_geospans = geospans.subtract_overlaps(nonparen_geospans)
