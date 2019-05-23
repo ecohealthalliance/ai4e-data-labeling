@@ -43,7 +43,7 @@ def do_work(queue):
             i,
             {
                 "$set": {
-                    "article_meta.all_geospans": all_geospans,
+                    "article_meta.n_all_geospans": n_all_geospans,
                     "article_meta.n_geospans": n_geospans,
                     "article_meta.n_nonparen_geospans": n_nonparen_geospans,
                     "article_meta.n_paren_geospans": n_paren_geospans,
